@@ -29,18 +29,26 @@ namespace HRManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dash_Board));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tbHeadings = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbDashBoard = new System.Windows.Forms.Label();
+            this.lbMyProfile = new System.Windows.Forms.Label();
+            this.lbAppraisal = new System.Windows.Forms.Label();
+            this.lbVacations = new System.Windows.Forms.Label();
+            this.lbEmployees = new System.Windows.Forms.Label();
+            this.lbDepartments = new System.Windows.Forms.Label();
+            this.lb_DashBoard2 = new System.Windows.Forms.Label();
+            this.lbOverview = new System.Windows.Forms.Label();
+            this.hrms = new System.Windows.Forms.Label();
+            this.pbHome = new System.Windows.Forms.PictureBox();
             this.pbATL = new System.Windows.Forms.PictureBox();
+            this.rbDepartments = new HRManagementSystem.RoundButton();
+            this.rbMyProfile = new HRManagementSystem.RoundButton();
+            this.rbEmployees = new HRManagementSystem.RoundButton();
+            this.rbAppraisal = new HRManagementSystem.RoundButton();
+            this.rbVacations = new HRManagementSystem.RoundButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbATL)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,120 +70,197 @@ namespace HRManagementSystem
             this.tbHeadings.Size = new System.Drawing.Size(213, 409);
             this.tbHeadings.TabIndex = 1;
             // 
-            // label1
+            // lbDashBoard
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Info;
-            this.label1.Location = new System.Drawing.Point(31, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Dash Board";
+            this.lbDashBoard.AutoSize = true;
+            this.lbDashBoard.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbDashBoard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbDashBoard.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDashBoard.ForeColor = System.Drawing.SystemColors.Info;
+            this.lbDashBoard.Location = new System.Drawing.Point(31, 110);
+            this.lbDashBoard.Name = "lbDashBoard";
+            this.lbDashBoard.Size = new System.Drawing.Size(101, 18);
+            this.lbDashBoard.TabIndex = 2;
+            this.lbDashBoard.Text = "Dash Board";
             // 
-            // label2
+            // lbMyProfile
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Info;
-            this.label2.Location = new System.Drawing.Point(31, 160);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "My Profile";
+            this.lbMyProfile.AutoSize = true;
+            this.lbMyProfile.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbMyProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbMyProfile.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMyProfile.ForeColor = System.Drawing.SystemColors.Info;
+            this.lbMyProfile.Location = new System.Drawing.Point(31, 160);
+            this.lbMyProfile.Name = "lbMyProfile";
+            this.lbMyProfile.Size = new System.Drawing.Size(92, 18);
+            this.lbMyProfile.TabIndex = 3;
+            this.lbMyProfile.Text = "My Profile";
             // 
-            // label3
+            // lbAppraisal
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label3.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Info;
-            this.label3.Location = new System.Drawing.Point(31, 388);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Appraisal";
+            this.lbAppraisal.AutoSize = true;
+            this.lbAppraisal.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbAppraisal.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAppraisal.ForeColor = System.Drawing.SystemColors.Info;
+            this.lbAppraisal.Location = new System.Drawing.Point(31, 388);
+            this.lbAppraisal.Name = "lbAppraisal";
+            this.lbAppraisal.Size = new System.Drawing.Size(84, 18);
+            this.lbAppraisal.TabIndex = 4;
+            this.lbAppraisal.Text = "Appraisal";
             // 
-            // label4
+            // lbVacations
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label4.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Info;
-            this.label4.Location = new System.Drawing.Point(31, 335);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 18);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Vacations";
+            this.lbVacations.AutoSize = true;
+            this.lbVacations.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbVacations.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbVacations.ForeColor = System.Drawing.SystemColors.Info;
+            this.lbVacations.Location = new System.Drawing.Point(31, 335);
+            this.lbVacations.Name = "lbVacations";
+            this.lbVacations.Size = new System.Drawing.Size(87, 18);
+            this.lbVacations.TabIndex = 5;
+            this.lbVacations.Text = "Vacations";
             // 
-            // label5
+            // lbEmployees
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label5.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.Info;
-            this.label5.Location = new System.Drawing.Point(31, 278);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 18);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Employees";
+            this.lbEmployees.AutoSize = true;
+            this.lbEmployees.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbEmployees.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEmployees.ForeColor = System.Drawing.SystemColors.Info;
+            this.lbEmployees.Location = new System.Drawing.Point(31, 278);
+            this.lbEmployees.Name = "lbEmployees";
+            this.lbEmployees.Size = new System.Drawing.Size(96, 18);
+            this.lbEmployees.TabIndex = 6;
+            this.lbEmployees.Text = "Employees";
             // 
-            // label6
+            // lbDepartments
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label6.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Info;
-            this.label6.Location = new System.Drawing.Point(31, 217);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 18);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Departments";
+            this.lbDepartments.AutoSize = true;
+            this.lbDepartments.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lbDepartments.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbDepartments.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDepartments.ForeColor = System.Drawing.SystemColors.Info;
+            this.lbDepartments.Location = new System.Drawing.Point(31, 217);
+            this.lbDepartments.Name = "lbDepartments";
+            this.lbDepartments.Size = new System.Drawing.Size(114, 18);
+            this.lbDepartments.TabIndex = 7;
+            this.lbDepartments.Text = "Departments";
             // 
-            // label7
+            // lb_DashBoard2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(256, 45);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 18);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Dash Board";
+            this.lb_DashBoard2.AutoSize = true;
+            this.lb_DashBoard2.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_DashBoard2.Location = new System.Drawing.Point(266, 58);
+            this.lb_DashBoard2.Name = "lb_DashBoard2";
+            this.lb_DashBoard2.Size = new System.Drawing.Size(101, 18);
+            this.lb_DashBoard2.TabIndex = 8;
+            this.lb_DashBoard2.Text = "Dash Board";
             // 
-            // label8
+            // lbOverview
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(792, 45);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(84, 18);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Overview";
+            this.lbOverview.AutoSize = true;
+            this.lbOverview.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbOverview.Location = new System.Drawing.Point(792, 58);
+            this.lbOverview.Name = "lbOverview";
+            this.lbOverview.Size = new System.Drawing.Size(84, 18);
+            this.lbOverview.TabIndex = 9;
+            this.lbOverview.Text = "Overview";
             // 
-            // label9
+            // hrms
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label9.Font = new System.Drawing.Font("Lucida Sans Unicode", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.Info;
-            this.label9.Location = new System.Drawing.Point(110, 45);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 34);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "HRMS";
+            this.hrms.AutoSize = true;
+            this.hrms.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.hrms.Font = new System.Drawing.Font("Lucida Sans Unicode", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hrms.ForeColor = System.Drawing.SystemColors.Info;
+            this.hrms.Location = new System.Drawing.Point(110, 45);
+            this.hrms.Name = "hrms";
+            this.hrms.Size = new System.Drawing.Size(94, 34);
+            this.hrms.TabIndex = 10;
+            this.hrms.Text = "HRMS";
+            // 
+            // pbHome
+            // 
+            this.pbHome.Image = global::HRManagementSystem.Properties.Resources.home;
+            this.pbHome.Location = new System.Drawing.Point(220, 45);
+            this.pbHome.Name = "pbHome";
+            this.pbHome.Size = new System.Drawing.Size(40, 34);
+            this.pbHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbHome.TabIndex = 12;
+            this.pbHome.TabStop = false;
             // 
             // pbATL
             // 
             this.pbATL.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.pbATL.Image = global::HRManagementSystem.Properties.Resources.ATL_Logo;
-            this.pbATL.Location = new System.Drawing.Point(10, 40);
+            this.pbATL.Image = global::HRManagementSystem.Properties.Resources.atl_logo2;
+            this.pbATL.Location = new System.Drawing.Point(10, 45);
             this.pbATL.Name = "pbATL";
             this.pbATL.Size = new System.Drawing.Size(105, 53);
             this.pbATL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbATL.TabIndex = 11;
             this.pbATL.TabStop = false;
+            // 
+            // rbDepartments
+            // 
+            this.rbDepartments.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbDepartments.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbDepartments.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbDepartments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbDepartments.Location = new System.Drawing.Point(447, 90);
+            this.rbDepartments.Name = "rbDepartments";
+            this.rbDepartments.Size = new System.Drawing.Size(113, 102);
+            this.rbDepartments.TabIndex = 13;
+            this.rbDepartments.UseVisualStyleBackColor = false;
+            // 
+            // rbMyProfile
+            // 
+            this.rbMyProfile.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbMyProfile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbMyProfile.BackgroundImage")));
+            this.rbMyProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rbMyProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbMyProfile.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbMyProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbMyProfile.Location = new System.Drawing.Point(286, 176);
+            this.rbMyProfile.Name = "rbMyProfile";
+            this.rbMyProfile.Size = new System.Drawing.Size(113, 102);
+            this.rbMyProfile.TabIndex = 14;
+            this.rbMyProfile.UseVisualStyleBackColor = false;
+            // 
+            // rbEmployees
+            // 
+            this.rbEmployees.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbEmployees.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbEmployees.BackgroundImage")));
+            this.rbEmployees.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rbEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbEmployees.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbEmployees.Location = new System.Drawing.Point(621, 176);
+            this.rbEmployees.Name = "rbEmployees";
+            this.rbEmployees.Size = new System.Drawing.Size(113, 102);
+            this.rbEmployees.TabIndex = 15;
+            this.rbEmployees.UseVisualStyleBackColor = false;
+            // 
+            // rbAppraisal
+            // 
+            this.rbAppraisal.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbAppraisal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbAppraisal.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbAppraisal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbAppraisal.Location = new System.Drawing.Point(573, 326);
+            this.rbAppraisal.Name = "rbAppraisal";
+            this.rbAppraisal.Size = new System.Drawing.Size(113, 102);
+            this.rbAppraisal.TabIndex = 16;
+            this.rbAppraisal.UseVisualStyleBackColor = false;
+            // 
+            // rbVacations
+            // 
+            this.rbVacations.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbVacations.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbVacations.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbVacations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbVacations.Location = new System.Drawing.Point(362, 326);
+            this.rbVacations.Name = "rbVacations";
+            this.rbVacations.Size = new System.Drawing.Size(113, 102);
+            this.rbVacations.TabIndex = 17;
+            this.rbVacations.UseVisualStyleBackColor = false;
             // 
             // Dash_Board
             // 
@@ -183,20 +268,27 @@ namespace HRManagementSystem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(876, 451);
+            this.Controls.Add(this.rbVacations);
+            this.Controls.Add(this.rbAppraisal);
+            this.Controls.Add(this.rbEmployees);
+            this.Controls.Add(this.rbMyProfile);
+            this.Controls.Add(this.rbDepartments);
+            this.Controls.Add(this.pbHome);
             this.Controls.Add(this.pbATL);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.hrms);
+            this.Controls.Add(this.lbOverview);
+            this.Controls.Add(this.lb_DashBoard2);
+            this.Controls.Add(this.lbDepartments);
+            this.Controls.Add(this.lbEmployees);
+            this.Controls.Add(this.lbVacations);
+            this.Controls.Add(this.lbAppraisal);
+            this.Controls.Add(this.lbMyProfile);
+            this.Controls.Add(this.lbDashBoard);
             this.Controls.Add(this.tbHeadings);
             this.Controls.Add(this.textBox1);
             this.Name = "Dash_Board";
             this.Text = "Dash_Board";
+            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbATL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -207,15 +299,21 @@ namespace HRManagementSystem
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox tbHeadings;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbDashBoard;
+        private System.Windows.Forms.Label lbMyProfile;
+        private System.Windows.Forms.Label lbAppraisal;
+        private System.Windows.Forms.Label lbVacations;
+        private System.Windows.Forms.Label lbEmployees;
+        private System.Windows.Forms.Label lbDepartments;
+        private System.Windows.Forms.Label lb_DashBoard2;
+        private System.Windows.Forms.Label lbOverview;
+        private System.Windows.Forms.Label hrms;
         private System.Windows.Forms.PictureBox pbATL;
+        private System.Windows.Forms.PictureBox pbHome;
+        private RoundButton rbDepartments;
+        private RoundButton rbMyProfile;
+        private RoundButton rbEmployees;
+        private RoundButton rbAppraisal;
+        private RoundButton rbVacations;
     }
 }
