@@ -73,21 +73,6 @@
     <Compile Include="Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
-    <Compile Include="HRMSDb.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HRMSDb.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HRMSDb.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HRMSDb.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HRMSDb.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HRMSDb.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoundButton.cs">
@@ -112,13 +97,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="HRMSDb.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HRMSDb.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="HRMSDb.edmx.diagram">
-      <DependentUpon>HRMSDb.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -141,18 +119,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\home.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="HRMSDb.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>HRMSDb.Context.cs</LastGenOutput>
-      <DependentUpon>HRMSDb.edmx</DependentUpon>
-    </Content>
-    <Content Include="HRMSDb.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HRMSDb.edmx</DependentUpon>
-      <LastGenOutput>HRMSDb.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
