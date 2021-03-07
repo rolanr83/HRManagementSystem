@@ -17,9 +17,5 @@ namespace HRManagementSystem
             InitializeComponent();
         }
 
-        private void tbpost_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
