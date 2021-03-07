@@ -1,7 +1,7 @@
 ﻿
 namespace HRManagementSystem
 {
-    partial class Form1
+    partial class CreateUser
     {
         /// <summary>
         /// Required designer variable.

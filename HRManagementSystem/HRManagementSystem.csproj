@@ -55,11 +55,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Create User.cs">
+    <Compile Include="Appraisal.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreateUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Create User.Designer.cs">
-      <DependentUpon>Create User.cs</DependentUpon>
+    <Compile Include="CreateUser.Designer.cs">
+      <DependentUpon>CreateUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Dash_Board.cs">
       <SubType>Form</SubType>
@@ -67,19 +70,73 @@
     <Compile Include="Dash_Board.Designer.cs">
       <DependentUpon>Dash_Board.cs</DependentUpon>
     </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emergency.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employee_Previous_Jobs.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRMSDb.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRMSDb.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRMSDb.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HRMSDb.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HRMSDb.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Internal_Employment_History.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Leave_Type.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Position.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Qualification.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Relationsip.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="Create User.resx">
-      <DependentUpon>Create User.cs</DependentUpon>
+    <Compile Include="Staff_Education.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_Leave.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_Table.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CreateUser.resx">
+      <DependentUpon>CreateUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dash_Board.resx">
       <DependentUpon>Dash_Board.cs</DependentUpon>
@@ -97,6 +154,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="HRMSDb.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HRMSDb.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="HRMSDb.edmx.diagram">
+      <DependentUpon>HRMSDb.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -122,6 +186,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HRMSDb.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HRMSDb.edmx</DependentUpon>
+      <LastGenOutput>HRMSDb.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="HRMSDb.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HRMSDb.edmx</DependentUpon>
+      <LastGenOutput>HRMSDb.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
