@@ -43,16 +43,17 @@ namespace HRManagementSystem
             // 
             this.tbpw.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.tbpw.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbpw.Location = new System.Drawing.Point(242, 249);
+            this.tbpw.Location = new System.Drawing.Point(401, 262);
             this.tbpw.Name = "tbpw";
-            this.tbpw.Size = new System.Drawing.Size(248, 26);
+            this.tbpw.PasswordChar = '*';
+            this.tbpw.Size = new System.Drawing.Size(215, 26);
             this.tbpw.TabIndex = 3;
             // 
             // unlabel
             // 
             this.unlabel.AutoSize = true;
             this.unlabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unlabel.Location = new System.Drawing.Point(124, 194);
+            this.unlabel.Location = new System.Drawing.Point(292, 194);
             this.unlabel.Name = "unlabel";
             this.unlabel.Size = new System.Drawing.Size(70, 19);
             this.unlabel.TabIndex = 4;
@@ -62,16 +63,16 @@ namespace HRManagementSystem
             // 
             this.tbun.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.tbun.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbun.Location = new System.Drawing.Point(242, 194);
+            this.tbun.Location = new System.Drawing.Point(401, 194);
             this.tbun.Name = "tbun";
-            this.tbun.Size = new System.Drawing.Size(248, 29);
+            this.tbun.Size = new System.Drawing.Size(215, 29);
             this.tbun.TabIndex = 2;
             // 
             // pwlabel
             // 
             this.pwlabel.AutoSize = true;
             this.pwlabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pwlabel.Location = new System.Drawing.Point(124, 252);
+            this.pwlabel.Location = new System.Drawing.Point(292, 262);
             this.pwlabel.Name = "pwlabel";
             this.pwlabel.Size = new System.Drawing.Size(69, 19);
             this.pwlabel.TabIndex = 5;
@@ -81,17 +82,18 @@ namespace HRManagementSystem
             // 
             this.wellabel.AutoSize = true;
             this.wellabel.Font = new System.Drawing.Font("Bernard MT Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wellabel.Location = new System.Drawing.Point(278, 65);
+            this.wellabel.Location = new System.Drawing.Point(374, 52);
             this.wellabel.Name = "wellabel";
             this.wellabel.Size = new System.Drawing.Size(121, 34);
             this.wellabel.TabIndex = 7;
             this.wellabel.Text = "Welcome";
+            this.wellabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // signlabel
             // 
             this.signlabel.AutoSize = true;
             this.signlabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signlabel.Location = new System.Drawing.Point(247, 122);
+            this.signlabel.Location = new System.Drawing.Point(345, 123);
             this.signlabel.Name = "signlabel";
             this.signlabel.Size = new System.Drawing.Size(174, 22);
             this.signlabel.TabIndex = 8;
@@ -99,13 +101,14 @@ namespace HRManagementSystem
             // 
             // btnlogin
             // 
-            this.btnlogin.Font = new System.Drawing.Font("Adobe Gothic Std B", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogin.Location = new System.Drawing.Point(304, 334);
+            this.btnlogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnlogin.Location = new System.Drawing.Point(365, 328);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(95, 34);
             this.btnlogin.TabIndex = 9;
             this.btnlogin.Text = "Login";
             this.btnlogin.UseVisualStyleBackColor = true;
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // Login
             // 
