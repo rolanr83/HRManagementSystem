@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="HRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="HRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Appraisal">
           <Key>
             <PropertyRef Name="AppraisalId" />
@@ -354,7 +354,8 @@ warning 6002: The table/view 'HRMS.dbo.User_Table' does not have a primary key d
             <End Role="Staff_Leave" EntitySet="Staff_Leave" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HRMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -519,6 +520,16 @@ warning 6002: The table/view 'HRMS.dbo.User_Table' does not have a primary key d
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <EntityType Name="User_Table">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="username" />
+            <PropertyRef Name="password" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
         <Association Name="FK_Internal_Employment_History_Appraisal">
           <End Role="Appraisal" Type="Self.Appraisal" Multiplicity="0..1" />
           <End Role="Internal_Employment_History" Type="Self.Internal_Employment_History" Multiplicity="*" />
@@ -651,7 +662,7 @@ warning 6002: The table/view 'HRMS.dbo.User_Table' does not have a primary key d
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="HRMSEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="HRMSEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Appraisals" EntityType="Self.Appraisal" />
           <EntitySet Name="Departments" EntityType="Self.Department" />
           <EntitySet Name="Emergencies" EntityType="Self.Emergency" />
@@ -665,6 +676,7 @@ warning 6002: The table/view 'HRMS.dbo.User_Table' does not have a primary key d
           <EntitySet Name="Staff_Education" EntityType="Self.Staff_Education" />
           <EntitySet Name="Staff_Leave" EntityType="Self.Staff_Leave" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="User_Table" EntityType="Self.User_Table" />
           <AssociationSet Name="FK_Internal_Employment_History_Appraisal" Association="Self.FK_Internal_Employment_History_Appraisal">
             <End Role="Appraisal" EntitySet="Appraisals" />
             <End Role="Internal_Employment_History" EntitySet="Internal_Employment_History" />
@@ -709,24 +721,13 @@ warning 6002: The table/view 'HRMS.dbo.User_Table' does not have a primary key d
             <End Role="Qualification" EntitySet="Qualifications" />
             <End Role="Staff_Education" EntitySet="Staff_Education" />
           </AssociationSet>
-          <EntitySet Name="User_Table" EntityType="HRMSModel.User_Table" />
         </EntityContainer>
-        <EntityType Name="User_Table">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="username" />
-            <PropertyRef Name="password" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="HRMSModelStoreContainer" CdmEntityContainer="HRMSEntities">
+        <EntityContainerMapping StorageEntityContainer="HRMSModelStoreContainer" CdmEntityContainer="HRMSEntities1">
           <EntitySetMapping Name="Appraisals">
             <EntityTypeMapping TypeName="HRMSModel.Appraisal">
               <MappingFragment StoreEntitySet="Appraisal">
@@ -882,9 +883,9 @@ warning 6002: The table/view 'HRMS.dbo.User_Table' does not have a primary key d
           <EntitySetMapping Name="User_Table">
             <EntityTypeMapping TypeName="HRMSModel.User_Table">
               <MappingFragment StoreEntitySet="User_Table">
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

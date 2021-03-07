@@ -55,11 +55,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appraisal.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Dash_Board.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dash_Board.Designer.cs">
       <DependentUpon>Dash_Board.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Emergency.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee_Previous_Jobs.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -82,10 +97,37 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HRMSDb.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Internal_Employment_History.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Leave_Type.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Position.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Qualification.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Relationsip.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Staff_Education.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_Leave.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User_Table.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Dash_Board.resx">
       <DependentUpon>Dash_Board.cs</DependentUpon>
@@ -134,19 +176,19 @@
     <None Include="Resources\home.png" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="HRMSDb.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>HRMSDb.Context.cs</LastGenOutput>
       <DependentUpon>HRMSDb.edmx</DependentUpon>
+      <LastGenOutput>HRMSDb.Context.cs</LastGenOutput>
     </Content>
     <Content Include="HRMSDb.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HRMSDb.edmx</DependentUpon>
       <LastGenOutput>HRMSDb.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
