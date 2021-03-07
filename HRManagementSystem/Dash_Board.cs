@@ -12,9 +12,17 @@ namespace HRManagementSystem
 {
     public partial class Dash_Board : Form
     {
-        public Dash_Board()
+        private Login _login;
+        public string _roleName;
+        public User_Table _user;
+
+        public Dash_Board(Login login, User_Table user)
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            _login = login;
+            _user = user;
+            _roleName = user.UserRoles.FirstOrDefault().Role.shortname;
+
         }
     }
 }
