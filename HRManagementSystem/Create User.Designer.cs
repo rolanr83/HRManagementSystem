@@ -30,7 +30,7 @@ namespace HRManagementSystem
         private void InitializeComponent()
         {
             this.tbfname = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.nelabel = new System.Windows.Forms.Label();
             this.fnlabel = new System.Windows.Forms.Label();
             this.nis = new System.Windows.Forms.Label();
             this.trn = new System.Windows.Forms.Label();
@@ -43,7 +43,7 @@ namespace HRManagementSystem
             this.tbtrn = new System.Windows.Forms.TextBox();
             this.tbgenname = new System.Windows.Forms.TextBox();
             this.tbadd2 = new System.Windows.Forms.TextBox();
-            this.tbpostcode = new System.Windows.Forms.TextBox();
+            this.tbpcode = new System.Windows.Forms.TextBox();
             this.tbadd1 = new System.Windows.Forms.TextBox();
             this.ad1label = new System.Windows.Forms.Label();
             this.ad2label = new System.Windows.Forms.Label();
@@ -63,16 +63,15 @@ namespace HRManagementSystem
             this.edlabel = new System.Windows.Forms.Label();
             this.tbpost = new System.Windows.Forms.TextBox();
             this.tbmnum = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dtpsd = new System.Windows.Forms.DateTimePicker();
+            this.dtpdob = new System.Windows.Forms.DateTimePicker();
+            this.btnadd = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.toelabel = new System.Windows.Forms.Label();
             this.tbeadd = new System.Windows.Forms.TextBox();
             this.tbdept = new System.Windows.Forms.TextBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.cbtoe = new System.Windows.Forms.ComboBox();
+            this.dtped = new System.Windows.Forms.DateTimePicker();
+            this.tbtoe = new System.Windows.Forms.ComboBox();
             this.postlabel = new System.Windows.Forms.Label();
             this.deptlabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -84,17 +83,17 @@ namespace HRManagementSystem
             this.tbfname.Size = new System.Drawing.Size(204, 20);
             this.tbfname.TabIndex = 20;
             // 
-            // label1
+            // nelabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Font = new System.Drawing.Font("Lucida Bright", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(272, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(294, 42);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "New Employee";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.nelabel.AutoSize = true;
+            this.nelabel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.nelabel.Font = new System.Drawing.Font("Lucida Bright", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nelabel.Location = new System.Drawing.Point(272, 9);
+            this.nelabel.Name = "nelabel";
+            this.nelabel.Size = new System.Drawing.Size(294, 42);
+            this.nelabel.TabIndex = 21;
+            this.nelabel.Text = "New Employee";
+            this.nelabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // fnlabel
             // 
@@ -198,12 +197,12 @@ namespace HRManagementSystem
             this.tbadd2.Size = new System.Drawing.Size(193, 20);
             this.tbadd2.TabIndex = 33;
             // 
-            // tbpostcode
+            // tbpcode
             // 
-            this.tbpostcode.Location = new System.Drawing.Point(565, 217);
-            this.tbpostcode.Name = "tbpostcode";
-            this.tbpostcode.Size = new System.Drawing.Size(200, 20);
-            this.tbpostcode.TabIndex = 34;
+            this.tbpcode.Location = new System.Drawing.Point(565, 217);
+            this.tbpcode.Name = "tbpcode";
+            this.tbpcode.Size = new System.Drawing.Size(200, 20);
+            this.tbpcode.TabIndex = 34;
             // 
             // tbadd1
             // 
@@ -366,7 +365,6 @@ namespace HRManagementSystem
             this.tbpost.Name = "tbpost";
             this.tbpost.Size = new System.Drawing.Size(200, 20);
             this.tbpost.TabIndex = 54;
-            this.tbpost.TextChanged += new System.EventHandler(this.tbpost_TextChanged);
             // 
             // tbmnum
             // 
@@ -375,39 +373,29 @@ namespace HRManagementSystem
             this.tbmnum.Size = new System.Drawing.Size(200, 20);
             this.tbmnum.TabIndex = 56;
             // 
-            // dateTimePicker1
+            // dtpsd
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(290, 397);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(193, 20);
-            this.dateTimePicker1.TabIndex = 57;
+            this.dtpsd.Location = new System.Drawing.Point(290, 397);
+            this.dtpsd.Name = "dtpsd";
+            this.dtpsd.Size = new System.Drawing.Size(193, 20);
+            this.dtpsd.TabIndex = 57;
             // 
-            // dateTimePicker2
+            // dtpdob
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(565, 272);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 58;
+            this.dtpdob.Location = new System.Drawing.Point(565, 272);
+            this.dtpdob.Name = "dtpdob";
+            this.dtpdob.Size = new System.Drawing.Size(200, 20);
+            this.dtpdob.TabIndex = 58;
             // 
-            // button1
+            // btnadd
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(174, 528);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 45);
-            this.button1.TabIndex = 59;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(502, 528);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(97, 45);
-            this.button2.TabIndex = 60;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnadd.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnadd.Location = new System.Drawing.Point(329, 528);
+            this.btnadd.Name = "btnadd";
+            this.btnadd.Size = new System.Drawing.Size(97, 45);
+            this.btnadd.TabIndex = 59;
+            this.btnadd.Text = "Add";
+            this.btnadd.UseVisualStyleBackColor = true;
             // 
             // label20
             // 
@@ -442,23 +430,23 @@ namespace HRManagementSystem
             this.tbdept.Size = new System.Drawing.Size(193, 20);
             this.tbdept.TabIndex = 64;
             // 
-            // dateTimePicker3
+            // dtped
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(565, 397);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(193, 20);
-            this.dateTimePicker3.TabIndex = 66;
+            this.dtped.Location = new System.Drawing.Point(565, 397);
+            this.dtped.Name = "dtped";
+            this.dtped.Size = new System.Drawing.Size(193, 20);
+            this.dtped.TabIndex = 66;
             // 
-            // cbtoe
+            // tbtoe
             // 
-            this.cbtoe.FormattingEnabled = true;
-            this.cbtoe.Items.AddRange(new object[] {
+            this.tbtoe.FormattingEnabled = true;
+            this.tbtoe.Items.AddRange(new object[] {
             "Permanent",
             "Contract"});
-            this.cbtoe.Location = new System.Drawing.Point(16, 464);
-            this.cbtoe.Name = "cbtoe";
-            this.cbtoe.Size = new System.Drawing.Size(189, 21);
-            this.cbtoe.TabIndex = 67;
+            this.tbtoe.Location = new System.Drawing.Point(16, 464);
+            this.tbtoe.Name = "tbtoe";
+            this.tbtoe.Size = new System.Drawing.Size(189, 21);
+            this.tbtoe.TabIndex = 67;
             // 
             // postlabel
             // 
@@ -487,16 +475,15 @@ namespace HRManagementSystem
             this.ClientSize = new System.Drawing.Size(827, 585);
             this.Controls.Add(this.deptlabel);
             this.Controls.Add(this.postlabel);
-            this.Controls.Add(this.cbtoe);
-            this.Controls.Add(this.dateTimePicker3);
+            this.Controls.Add(this.tbtoe);
+            this.Controls.Add(this.dtped);
             this.Controls.Add(this.tbdept);
             this.Controls.Add(this.tbeadd);
             this.Controls.Add(this.toelabel);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.btnadd);
+            this.Controls.Add(this.dtpdob);
+            this.Controls.Add(this.dtpsd);
             this.Controls.Add(this.tbmnum);
             this.Controls.Add(this.tbpost);
             this.Controls.Add(this.edlabel);
@@ -516,7 +503,7 @@ namespace HRManagementSystem
             this.Controls.Add(this.ad2label);
             this.Controls.Add(this.ad1label);
             this.Controls.Add(this.tbadd1);
-            this.Controls.Add(this.tbpostcode);
+            this.Controls.Add(this.tbpcode);
             this.Controls.Add(this.tbadd2);
             this.Controls.Add(this.tbgenname);
             this.Controls.Add(this.tbtrn);
@@ -529,10 +516,10 @@ namespace HRManagementSystem
             this.Controls.Add(this.trn);
             this.Controls.Add(this.nis);
             this.Controls.Add(this.fnlabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.nelabel);
             this.Controls.Add(this.tbfname);
             this.Name = "Form1";
-            this.Text = "Add Employee";
+            this.Text = "New Employee";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -541,7 +528,7 @@ namespace HRManagementSystem
         #endregion
 
         private System.Windows.Forms.TextBox tbfname;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label nelabel;
         private System.Windows.Forms.Label fnlabel;
         private System.Windows.Forms.Label nis;
         private System.Windows.Forms.Label trn;
@@ -554,7 +541,7 @@ namespace HRManagementSystem
         private System.Windows.Forms.TextBox tbtrn;
         private System.Windows.Forms.TextBox tbgenname;
         private System.Windows.Forms.TextBox tbadd2;
-        private System.Windows.Forms.TextBox tbpostcode;
+        private System.Windows.Forms.TextBox tbpcode;
         private System.Windows.Forms.TextBox tbadd1;
         private System.Windows.Forms.Label ad1label;
         private System.Windows.Forms.Label ad2label;
@@ -574,16 +561,15 @@ namespace HRManagementSystem
         private System.Windows.Forms.Label edlabel;
         private System.Windows.Forms.TextBox tbpost;
         private System.Windows.Forms.TextBox tbmnum;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker dtpsd;
+        private System.Windows.Forms.DateTimePicker dtpdob;
+        private System.Windows.Forms.Button btnadd;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label toelabel;
         private System.Windows.Forms.TextBox tbeadd;
         private System.Windows.Forms.TextBox tbdept;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.ComboBox cbtoe;
+        private System.Windows.Forms.DateTimePicker dtped;
+        private System.Windows.Forms.ComboBox tbtoe;
         private System.Windows.Forms.Label postlabel;
         private System.Windows.Forms.Label deptlabel;
     }

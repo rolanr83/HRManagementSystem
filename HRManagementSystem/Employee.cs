@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace HRManagementSystem
 {
-    public partial class Form1 : Form
+    public partial class Employee : Form
     {
-        public Form1()
+        public Employee()
         {
             InitializeComponent();
-        }
-
-        private void tbpost_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
