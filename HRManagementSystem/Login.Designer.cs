@@ -106,6 +106,7 @@ namespace HRManagementSystem
             this.btnlogin.TabIndex = 9;
             this.btnlogin.Text = "Login";
             this.btnlogin.UseVisualStyleBackColor = true;
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // Login
             // 
