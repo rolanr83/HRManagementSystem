@@ -55,19 +55,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Create User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create User.Designer.cs">
+      <DependentUpon>Create User.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dash_Board.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dash_Board.Designer.cs">
       <DependentUpon>Dash_Board.cs</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeForm.Designer.cs">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="Create User.resx">
+      <DependentUpon>Create User.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dash_Board.resx">
       <DependentUpon>Dash_Board.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeForm.resx">
+      <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
