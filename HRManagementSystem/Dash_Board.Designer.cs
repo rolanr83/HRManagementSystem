@@ -200,9 +200,11 @@ namespace HRManagementSystem
             // 
             // rbDepartments
             // 
-            this.rbDepartments.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbDepartments.BackColor = System.Drawing.Color.GhostWhite;
+            this.rbDepartments.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbDepartments.BackgroundImage")));
+            this.rbDepartments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.rbDepartments.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbDepartments.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbDepartments.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
             this.rbDepartments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbDepartments.Location = new System.Drawing.Point(447, 90);
             this.rbDepartments.Name = "rbDepartments";
@@ -212,11 +214,11 @@ namespace HRManagementSystem
             // 
             // rbMyProfile
             // 
-            this.rbMyProfile.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbMyProfile.BackColor = System.Drawing.Color.GhostWhite;
             this.rbMyProfile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbMyProfile.BackgroundImage")));
             this.rbMyProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.rbMyProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbMyProfile.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbMyProfile.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
             this.rbMyProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbMyProfile.Location = new System.Drawing.Point(286, 176);
             this.rbMyProfile.Name = "rbMyProfile";
@@ -226,11 +228,11 @@ namespace HRManagementSystem
             // 
             // rbEmployees
             // 
-            this.rbEmployees.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbEmployees.BackColor = System.Drawing.Color.GhostWhite;
             this.rbEmployees.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbEmployees.BackgroundImage")));
             this.rbEmployees.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.rbEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbEmployees.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbEmployees.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
             this.rbEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbEmployees.Location = new System.Drawing.Point(621, 176);
             this.rbEmployees.Name = "rbEmployees";
