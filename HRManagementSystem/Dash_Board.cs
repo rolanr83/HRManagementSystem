@@ -21,7 +21,7 @@ namespace HRManagementSystem
             InitializeComponent(); 
             _login = login;
             _user = user;
-            _roleName = user.UserRoles.FirstOrDefault().Role.shortname;
+            //_roleName = user.UserRoles.FirstOrDefault().Role.shortname;
 
         }
     }

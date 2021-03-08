@@ -32,10 +32,20 @@ namespace HRManagementSystem
                 var username = unlabel.Text.Trim();
                 var password = pwlabel.Text;
 
-                var hashed_password = Utils.HashPassword(password);
+                byte[] data = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
 
-                var user = _Db.User_Table.FirstOrDefault(q => q.username == username && q.password == hashed_password
-                           && q.isActive == true);
+                StringBuilder sBuilder = new StringBuilder();
+
+                for (int i = 0; i < data.Length; i++)
+                {
+                    sBuilder.Append(data[i].ToString("x2"));
+                }
+
+                var hashed_password = sBuilder.ToString();
+                //var hashed_password = Utils.HashPassword(password);
+
+                var user = _Db.User_Table.FirstOrDefault(q => q.username == username && q.password == hashed_password);
+                //&& q.isActive == true
                 if (user == null)
                 {
                     MessageBox.Show("Please provide valid credentials");

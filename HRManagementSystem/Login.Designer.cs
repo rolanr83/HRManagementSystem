@@ -43,8 +43,9 @@ namespace HRManagementSystem
             // 
             this.tbpw.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.tbpw.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbpw.Location = new System.Drawing.Point(242, 249);
+            this.tbpw.Location = new System.Drawing.Point(281, 249);
             this.tbpw.Name = "tbpw";
+            this.tbpw.PasswordChar = '*';
             this.tbpw.Size = new System.Drawing.Size(248, 26);
             this.tbpw.TabIndex = 3;
             // 
@@ -62,7 +63,7 @@ namespace HRManagementSystem
             // 
             this.tbun.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.tbun.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbun.Location = new System.Drawing.Point(242, 194);
+            this.tbun.Location = new System.Drawing.Point(281, 194);
             this.tbun.Name = "tbun";
             this.tbun.Size = new System.Drawing.Size(248, 29);
             this.tbun.TabIndex = 2;
@@ -81,7 +82,7 @@ namespace HRManagementSystem
             // 
             this.wellabel.AutoSize = true;
             this.wellabel.Font = new System.Drawing.Font("Bernard MT Condensed", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wellabel.Location = new System.Drawing.Point(278, 65);
+            this.wellabel.Location = new System.Drawing.Point(339, 68);
             this.wellabel.Name = "wellabel";
             this.wellabel.Size = new System.Drawing.Size(121, 34);
             this.wellabel.TabIndex = 7;
@@ -91,7 +92,7 @@ namespace HRManagementSystem
             // 
             this.signlabel.AutoSize = true;
             this.signlabel.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signlabel.Location = new System.Drawing.Point(247, 122);
+            this.signlabel.Location = new System.Drawing.Point(316, 125);
             this.signlabel.Name = "signlabel";
             this.signlabel.Size = new System.Drawing.Size(174, 22);
             this.signlabel.TabIndex = 8;
@@ -99,8 +100,9 @@ namespace HRManagementSystem
             // 
             // btnlogin
             // 
+            this.btnlogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnlogin.Font = new System.Drawing.Font("Adobe Gothic Std B", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnlogin.Location = new System.Drawing.Point(304, 334);
+            this.btnlogin.Location = new System.Drawing.Point(365, 336);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(95, 34);
             this.btnlogin.TabIndex = 9;
