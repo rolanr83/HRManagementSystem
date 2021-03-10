@@ -42,14 +42,12 @@ namespace HRManagementSystem
             this.lbOverview = new System.Windows.Forms.Label();
             this.hrms = new System.Windows.Forms.Label();
             this.pbHome = new System.Windows.Forms.PictureBox();
-            this.pbATL = new System.Windows.Forms.PictureBox();
             this.rbDepartments = new HRManagementSystem.RoundButton();
             this.rbMyProfile = new HRManagementSystem.RoundButton();
             this.rbEmployees = new HRManagementSystem.RoundButton();
             this.rbAppraisal = new HRManagementSystem.RoundButton();
             this.rbVacations = new HRManagementSystem.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbATL)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -187,17 +185,6 @@ namespace HRManagementSystem
             this.pbHome.TabIndex = 12;
             this.pbHome.TabStop = false;
             // 
-            // pbATL
-            // 
-            this.pbATL.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.pbATL.Image = global::HRManagementSystem.Properties.Resources.atl_logo2;
-            this.pbATL.Location = new System.Drawing.Point(10, 45);
-            this.pbATL.Name = "pbATL";
-            this.pbATL.Size = new System.Drawing.Size(105, 53);
-            this.pbATL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbATL.TabIndex = 11;
-            this.pbATL.TabStop = false;
-            // 
             // rbDepartments
             // 
             this.rbDepartments.BackColor = System.Drawing.Color.GhostWhite;
@@ -242,9 +229,11 @@ namespace HRManagementSystem
             // 
             // rbAppraisal
             // 
-            this.rbAppraisal.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbAppraisal.BackColor = System.Drawing.Color.GhostWhite;
+            this.rbAppraisal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbAppraisal.BackgroundImage")));
+            this.rbAppraisal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.rbAppraisal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbAppraisal.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbAppraisal.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
             this.rbAppraisal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbAppraisal.Location = new System.Drawing.Point(573, 326);
             this.rbAppraisal.Name = "rbAppraisal";
@@ -254,9 +243,11 @@ namespace HRManagementSystem
             // 
             // rbVacations
             // 
-            this.rbVacations.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbVacations.BackColor = System.Drawing.Color.GhostWhite;
+            this.rbVacations.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbVacations.BackgroundImage")));
+            this.rbVacations.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.rbVacations.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbVacations.FlatAppearance.BorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.rbVacations.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
             this.rbVacations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbVacations.Location = new System.Drawing.Point(362, 326);
             this.rbVacations.Name = "rbVacations";
@@ -276,7 +267,6 @@ namespace HRManagementSystem
             this.Controls.Add(this.rbMyProfile);
             this.Controls.Add(this.rbDepartments);
             this.Controls.Add(this.pbHome);
-            this.Controls.Add(this.pbATL);
             this.Controls.Add(this.hrms);
             this.Controls.Add(this.lbOverview);
             this.Controls.Add(this.lb_DashBoard2);
@@ -291,7 +281,6 @@ namespace HRManagementSystem
             this.Name = "Dash_Board";
             this.Text = "Dash_Board";
             ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbATL)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,7 +299,6 @@ namespace HRManagementSystem
         private System.Windows.Forms.Label lb_DashBoard2;
         private System.Windows.Forms.Label lbOverview;
         private System.Windows.Forms.Label hrms;
-        private System.Windows.Forms.PictureBox pbATL;
         private System.Windows.Forms.PictureBox pbHome;
         private RoundButton rbDepartments;
         private RoundButton rbMyProfile;

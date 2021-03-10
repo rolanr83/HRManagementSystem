@@ -14,7 +14,11 @@ namespace HRManagementSystem
     {
         public Dash_Board()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            _login = login;
+            _user = user;
+            //_roleName = user.UserRoles.FirstOrDefault().Role.shortname;
+
         }
     }
 }
