@@ -18,7 +18,7 @@ namespace HRManagementSystem
 
         public Dash_Board(Login login, User_Table user)
         {
-            InitializeComponent(); 
+            InitializeComponent();
             _login = login;
             _user = user;
             //_roleName = user.UserRoles.FirstOrDefault().Role.shortname;

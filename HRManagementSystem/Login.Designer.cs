@@ -53,7 +53,7 @@ namespace HRManagementSystem
             // 
             this.unlabel.AutoSize = true;
             this.unlabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.unlabel.Location = new System.Drawing.Point(124, 194);
+            this.unlabel.Location = new System.Drawing.Point(292, 194);
             this.unlabel.Name = "unlabel";
             this.unlabel.Size = new System.Drawing.Size(70, 19);
             this.unlabel.TabIndex = 4;
@@ -72,7 +72,7 @@ namespace HRManagementSystem
             // 
             this.pwlabel.AutoSize = true;
             this.pwlabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pwlabel.Location = new System.Drawing.Point(124, 252);
+            this.pwlabel.Location = new System.Drawing.Point(292, 262);
             this.pwlabel.Name = "pwlabel";
             this.pwlabel.Size = new System.Drawing.Size(69, 19);
             this.pwlabel.TabIndex = 5;
@@ -87,6 +87,7 @@ namespace HRManagementSystem
             this.wellabel.Size = new System.Drawing.Size(121, 34);
             this.wellabel.TabIndex = 7;
             this.wellabel.Text = "Welcome";
+            this.wellabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // signlabel
             // 
