@@ -24,5 +24,9 @@ namespace HRManagementSystem
             //_roleName = user.UserRoles.FirstOrDefault().Role.shortname;
 
         }
+
+        public Dash_Board()
+        {
+        }
     }
 }

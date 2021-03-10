@@ -30,24 +30,24 @@ namespace HRManagementSystem
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.tbpw = new System.Windows.Forms.TextBox();
+            this.tbPassword = new System.Windows.Forms.TextBox();
             this.unlabel = new System.Windows.Forms.Label();
-            this.tbun = new System.Windows.Forms.TextBox();
+            this.tbUserName = new System.Windows.Forms.TextBox();
             this.pwlabel = new System.Windows.Forms.Label();
             this.wellabel = new System.Windows.Forms.Label();
             this.signlabel = new System.Windows.Forms.Label();
             this.btnlogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // tbpw
+            // tbPassword
             // 
-            this.tbpw.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.tbpw.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbpw.Location = new System.Drawing.Point(281, 249);
-            this.tbpw.Name = "tbpw";
-            this.tbpw.PasswordChar = '*';
-            this.tbpw.Size = new System.Drawing.Size(248, 26);
-            this.tbpw.TabIndex = 3;
+            this.tbPassword.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.tbPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPassword.Location = new System.Drawing.Point(281, 249);
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
+            this.tbPassword.Size = new System.Drawing.Size(248, 26);
+            this.tbPassword.TabIndex = 3;
             // 
             // unlabel
             // 
@@ -59,14 +59,14 @@ namespace HRManagementSystem
             this.unlabel.TabIndex = 4;
             this.unlabel.Text = "Username";
             // 
-            // tbun
+            // tbUserName
             // 
-            this.tbun.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.tbun.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbun.Location = new System.Drawing.Point(281, 194);
-            this.tbun.Name = "tbun";
-            this.tbun.Size = new System.Drawing.Size(248, 29);
-            this.tbun.TabIndex = 2;
+            this.tbUserName.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.tbUserName.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUserName.Location = new System.Drawing.Point(281, 194);
+            this.tbUserName.Name = "tbUserName";
+            this.tbUserName.Size = new System.Drawing.Size(248, 29);
+            this.tbUserName.TabIndex = 2;
             // 
             // pwlabel
             // 
@@ -121,8 +121,8 @@ namespace HRManagementSystem
             this.Controls.Add(this.wellabel);
             this.Controls.Add(this.pwlabel);
             this.Controls.Add(this.unlabel);
-            this.Controls.Add(this.tbpw);
-            this.Controls.Add(this.tbun);
+            this.Controls.Add(this.tbPassword);
+            this.Controls.Add(this.tbUserName);
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -131,9 +131,9 @@ namespace HRManagementSystem
         }
 
         #endregion
-        private System.Windows.Forms.TextBox tbpw;
+        private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label unlabel;
-        private System.Windows.Forms.TextBox tbun;
+        private System.Windows.Forms.TextBox tbUserName;
         private System.Windows.Forms.Label pwlabel;
         private System.Windows.Forms.Label wellabel;
         private System.Windows.Forms.Label signlabel;
