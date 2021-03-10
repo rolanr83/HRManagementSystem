@@ -33,7 +33,7 @@ namespace HRManagementSystem
                 var password = tbPassword.Text;
 
 
-                var user = _Db.User_Table.FirstOrDefault(q => q.username == username && q.password == password);
+                var user = _Db.Users.FirstOrDefault(q => q.username == username && q.password == password);
                 //&& q.isActive == true
                 if (user == null)
                 {

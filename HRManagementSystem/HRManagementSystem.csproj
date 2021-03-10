@@ -170,7 +170,7 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>HRMSDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="User_Table.cs">
+    <Compile Include="User.cs">
       <DependentUpon>HRMSDb.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CreateUser.resx">

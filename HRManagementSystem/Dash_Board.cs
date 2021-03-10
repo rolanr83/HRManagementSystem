@@ -14,9 +14,9 @@ namespace HRManagementSystem
     {
         private Login _login;
         public string _roleName;
-        public User_Table _user;
+        public User _user;
 
-        public Dash_Board(Login login, User_Table user)
+        public Dash_Board(Login login, User user)
         {
             InitializeComponent();
             _login = login;

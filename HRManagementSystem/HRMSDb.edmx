@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="HRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="HRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Appraisal">
           <Key>
             <PropertyRef Name="AppraisalId" />
@@ -144,13 +144,9 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'HRMS.dbo.User_Table' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="User_Table">
+        <EntityType Name="User">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="username" />
-            <PropertyRef Name="password" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -302,13 +298,7 @@ warning 6002: The table/view 'HRMS.dbo.User_Table' does not have a primary key d
           <EntitySet Name="Staff_Education" EntityType="Self.Staff_Education" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Staff_Leave" EntityType="Self.Staff_Leave" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="User_Table" EntityType="Self.User_Table" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [User_Table].[id] AS [id], 
-    [User_Table].[username] AS [username], 
-    [User_Table].[password] AS [password]
-    FROM [dbo].[User_Table] AS [User_Table]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Emergency_Employee" Association="Self.FK_Emergency_Employee">
             <End Role="Employee" EntitySet="Employee" />
             <End Role="Emergency" EntitySet="Emergency" />
@@ -354,8 +344,7 @@ warning 6002: The table/view 'HRMS.dbo.User_Table' does not have a primary key d
             <End Role="Staff_Leave" EntitySet="Staff_Leave" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HRMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -520,16 +509,6 @@ warning 6002: The table/view 'HRMS.dbo.User_Table' does not have a primary key d
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="User_Table">
-          <Key>
-            <PropertyRef Name="id" />
-            <PropertyRef Name="username" />
-            <PropertyRef Name="password" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
         <Association Name="FK_Internal_Employment_History_Appraisal">
           <End Role="Appraisal" Type="Self.Appraisal" Multiplicity="0..1" />
           <End Role="Internal_Employment_History" Type="Self.Internal_Employment_History" Multiplicity="*" />
@@ -676,7 +655,6 @@ warning 6002: The table/view 'HRMS.dbo.User_Table' does not have a primary key d
           <EntitySet Name="Staff_Education" EntityType="Self.Staff_Education" />
           <EntitySet Name="Staff_Leave" EntityType="Self.Staff_Leave" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="User_Table" EntityType="Self.User_Table" />
           <AssociationSet Name="FK_Internal_Employment_History_Appraisal" Association="Self.FK_Internal_Employment_History_Appraisal">
             <End Role="Appraisal" EntitySet="Appraisals" />
             <End Role="Internal_Employment_History" EntitySet="Internal_Employment_History" />
@@ -721,7 +699,16 @@ warning 6002: The table/view 'HRMS.dbo.User_Table' does not have a primary key d
             <End Role="Qualification" EntitySet="Qualifications" />
             <End Role="Staff_Education" EntitySet="Staff_Education" />
           </AssociationSet>
+          <EntitySet Name="Users" EntityType="HRMSModel.User" />
         </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -880,12 +867,12 @@ warning 6002: The table/view 'HRMS.dbo.User_Table' does not have a primary key d
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="User_Table">
-            <EntityTypeMapping TypeName="HRMSModel.User_Table">
-              <MappingFragment StoreEntitySet="User_Table">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="username" ColumnName="username" />
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="HRMSModel.User">
+              <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

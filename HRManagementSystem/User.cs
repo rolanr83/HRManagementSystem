@@ -12,7 +12,7 @@ namespace HRManagementSystem
     using System;
     using System.Collections.Generic;
     
-    public partial class User_Table
+    public partial class User
     {
         public int id { get; set; }
         public string username { get; set; }

@@ -18,7 +18,6 @@
         <EntityTypeShape EntityType="HRMSModel.Staff_Education" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="HRMSModel.Staff_Leave" Width="1.5" PointX="8.25" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="HRMSModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HRMSModel.User_Table" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="HRMSModel.FK_Internal_Employment_History_Appraisal" ManuallyRouted="false" />
         <AssociationConnector Association="HRMSModel.FK_Employee_Department" ManuallyRouted="false" />
         <AssociationConnector Association="HRMSModel.FK_Emergency_Employee" ManuallyRouted="false" />
@@ -30,6 +29,7 @@
         <AssociationConnector Association="HRMSModel.FK_Internal_Employment_History_Position" ManuallyRouted="false" />
         <AssociationConnector Association="HRMSModel.FK_Staff_Leave_Staff_Type" ManuallyRouted="false" />
         <AssociationConnector Association="HRMSModel.FK_Staff_Education_Qualification" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="HRMSModel.User" Width="1.5" PointX="3.75" PointY="1.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
