@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic.CompilerServices;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +14,14 @@ namespace HRManagementSystem
     public partial class Login : Form
     {
         private readonly HRMSEntities2 _Db;
+
         public Login()
         {
             InitializeComponent();
             _Db = new HRMSEntities2();
+
         }
+
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
@@ -50,18 +52,19 @@ namespace HRManagementSystem
                 }
                 else
                 {
-                    var DashBoard = new Dash_Board (this, user);
-                    Dash_Board.Show();
+                    var DashBoard = new Dash_Board(this, user);
+                    DashBoard.Show();
                     Hide();
                 }
+
 
             }
             catch (Exception)
             {
 
-                throw;
-            }
+                MessageBox.Show("Something went wrong. Please try again");
 
+            }
         }
     }
 }
