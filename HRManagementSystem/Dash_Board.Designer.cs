@@ -32,22 +32,20 @@ namespace HRManagementSystem
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dash_Board));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.tbHeadings = new System.Windows.Forms.TextBox();
-            this.lbDashBoard = new System.Windows.Forms.Label();
-            this.lbMyProfile = new System.Windows.Forms.Label();
-            this.lbAppraisal = new System.Windows.Forms.Label();
-            this.lbVacations = new System.Windows.Forms.Label();
-            this.lbEmployees = new System.Windows.Forms.Label();
-            this.lbDepartments = new System.Windows.Forms.Label();
-            this.lb_DashBoard2 = new System.Windows.Forms.Label();
-            this.lbOverview = new System.Windows.Forms.Label();
             this.hrms = new System.Windows.Forms.Label();
-            this.pbHome = new System.Windows.Forms.PictureBox();
-            this.rbDepartments = new HRManagementSystem.RoundButton();
-            this.rbMyProfile = new HRManagementSystem.RoundButton();
-            this.rbEmployees = new HRManagementSystem.RoundButton();
-            this.rbAppraisal = new HRManagementSystem.RoundButton();
+            this.dbButton = new System.Windows.Forms.Button();
+            this.proButton = new System.Windows.Forms.Button();
+            this.deptButton = new System.Windows.Forms.Button();
+            this.empButton = new System.Windows.Forms.Button();
+            this.VacButton = new System.Windows.Forms.Button();
+            this.appButton = new System.Windows.Forms.Button();
             this.rbVacations = new HRManagementSystem.RoundButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).BeginInit();
+            this.rbAppraisal = new HRManagementSystem.RoundButton();
+            this.rbEmployees = new HRManagementSystem.RoundButton();
+            this.rbMyProfile = new HRManagementSystem.RoundButton();
+            this.rbDepartments = new HRManagementSystem.RoundButton();
+            this.userButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -68,178 +66,99 @@ namespace HRManagementSystem
             this.tbHeadings.Size = new System.Drawing.Size(213, 409);
             this.tbHeadings.TabIndex = 1;
             // 
-            // lbDashBoard
-            // 
-            this.lbDashBoard.AutoSize = true;
-            this.lbDashBoard.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbDashBoard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbDashBoard.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDashBoard.ForeColor = System.Drawing.SystemColors.Info;
-            this.lbDashBoard.Location = new System.Drawing.Point(31, 110);
-            this.lbDashBoard.Name = "lbDashBoard";
-            this.lbDashBoard.Size = new System.Drawing.Size(101, 18);
-            this.lbDashBoard.TabIndex = 2;
-            this.lbDashBoard.Text = "Dash Board";
-            // 
-            // lbMyProfile
-            // 
-            this.lbMyProfile.AutoSize = true;
-            this.lbMyProfile.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbMyProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbMyProfile.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMyProfile.ForeColor = System.Drawing.SystemColors.Info;
-            this.lbMyProfile.Location = new System.Drawing.Point(31, 160);
-            this.lbMyProfile.Name = "lbMyProfile";
-            this.lbMyProfile.Size = new System.Drawing.Size(92, 18);
-            this.lbMyProfile.TabIndex = 3;
-            this.lbMyProfile.Text = "My Profile";
-            // 
-            // lbAppraisal
-            // 
-            this.lbAppraisal.AutoSize = true;
-            this.lbAppraisal.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbAppraisal.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAppraisal.ForeColor = System.Drawing.SystemColors.Info;
-            this.lbAppraisal.Location = new System.Drawing.Point(31, 388);
-            this.lbAppraisal.Name = "lbAppraisal";
-            this.lbAppraisal.Size = new System.Drawing.Size(84, 18);
-            this.lbAppraisal.TabIndex = 4;
-            this.lbAppraisal.Text = "Appraisal";
-            // 
-            // lbVacations
-            // 
-            this.lbVacations.AutoSize = true;
-            this.lbVacations.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbVacations.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVacations.ForeColor = System.Drawing.SystemColors.Info;
-            this.lbVacations.Location = new System.Drawing.Point(31, 335);
-            this.lbVacations.Name = "lbVacations";
-            this.lbVacations.Size = new System.Drawing.Size(87, 18);
-            this.lbVacations.TabIndex = 5;
-            this.lbVacations.Text = "Vacations";
-            // 
-            // lbEmployees
-            // 
-            this.lbEmployees.AutoSize = true;
-            this.lbEmployees.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbEmployees.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEmployees.ForeColor = System.Drawing.SystemColors.Info;
-            this.lbEmployees.Location = new System.Drawing.Point(31, 278);
-            this.lbEmployees.Name = "lbEmployees";
-            this.lbEmployees.Size = new System.Drawing.Size(96, 18);
-            this.lbEmployees.TabIndex = 6;
-            this.lbEmployees.Text = "Employees";
-            // 
-            // lbDepartments
-            // 
-            this.lbDepartments.AutoSize = true;
-            this.lbDepartments.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbDepartments.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbDepartments.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDepartments.ForeColor = System.Drawing.SystemColors.Info;
-            this.lbDepartments.Location = new System.Drawing.Point(31, 217);
-            this.lbDepartments.Name = "lbDepartments";
-            this.lbDepartments.Size = new System.Drawing.Size(114, 18);
-            this.lbDepartments.TabIndex = 7;
-            this.lbDepartments.Text = "Departments";
-            // 
-            // lb_DashBoard2
-            // 
-            this.lb_DashBoard2.AutoSize = true;
-            this.lb_DashBoard2.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_DashBoard2.Location = new System.Drawing.Point(266, 58);
-            this.lb_DashBoard2.Name = "lb_DashBoard2";
-            this.lb_DashBoard2.Size = new System.Drawing.Size(101, 18);
-            this.lb_DashBoard2.TabIndex = 8;
-            this.lb_DashBoard2.Text = "Dash Board";
-            // 
-            // lbOverview
-            // 
-            this.lbOverview.AutoSize = true;
-            this.lbOverview.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbOverview.Location = new System.Drawing.Point(792, 58);
-            this.lbOverview.Name = "lbOverview";
-            this.lbOverview.Size = new System.Drawing.Size(84, 18);
-            this.lbOverview.TabIndex = 9;
-            this.lbOverview.Text = "Overview";
-            // 
             // hrms
             // 
             this.hrms.AutoSize = true;
             this.hrms.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.hrms.Font = new System.Drawing.Font("Lucida Sans Unicode", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hrms.ForeColor = System.Drawing.SystemColors.Info;
-            this.hrms.Location = new System.Drawing.Point(110, 45);
+            this.hrms.Location = new System.Drawing.Point(51, 42);
             this.hrms.Name = "hrms";
             this.hrms.Size = new System.Drawing.Size(94, 34);
             this.hrms.TabIndex = 10;
             this.hrms.Text = "HRMS";
             // 
-            // pbHome
+            // dbButton
             // 
-            this.pbHome.Image = global::HRManagementSystem.Properties.Resources.home;
-            this.pbHome.Location = new System.Drawing.Point(220, 45);
-            this.pbHome.Name = "pbHome";
-            this.pbHome.Size = new System.Drawing.Size(40, 34);
-            this.pbHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbHome.TabIndex = 12;
-            this.pbHome.TabStop = false;
+            this.dbButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dbButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dbButton.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dbButton.ForeColor = System.Drawing.Color.White;
+            this.dbButton.Location = new System.Drawing.Point(34, 105);
+            this.dbButton.Name = "dbButton";
+            this.dbButton.Size = new System.Drawing.Size(129, 39);
+            this.dbButton.TabIndex = 18;
+            this.dbButton.Text = "Dash Board";
+            this.dbButton.UseVisualStyleBackColor = false;
+            this.dbButton.Click += new System.EventHandler(this.dbButton_Click);
             // 
-            // rbDepartments
+            // proButton
             // 
-            this.rbDepartments.BackColor = System.Drawing.Color.GhostWhite;
-            this.rbDepartments.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbDepartments.BackgroundImage")));
-            this.rbDepartments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rbDepartments.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbDepartments.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
-            this.rbDepartments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbDepartments.Location = new System.Drawing.Point(447, 90);
-            this.rbDepartments.Name = "rbDepartments";
-            this.rbDepartments.Size = new System.Drawing.Size(113, 102);
-            this.rbDepartments.TabIndex = 13;
-            this.rbDepartments.UseVisualStyleBackColor = false;
+            this.proButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.proButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.proButton.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.proButton.ForeColor = System.Drawing.Color.White;
+            this.proButton.Location = new System.Drawing.Point(34, 165);
+            this.proButton.Name = "proButton";
+            this.proButton.Size = new System.Drawing.Size(129, 39);
+            this.proButton.TabIndex = 19;
+            this.proButton.Text = "My Profile";
+            this.proButton.UseVisualStyleBackColor = false;
+            this.proButton.Click += new System.EventHandler(this.proButton_Click);
             // 
-            // rbMyProfile
+            // deptButton
             // 
-            this.rbMyProfile.BackColor = System.Drawing.Color.GhostWhite;
-            this.rbMyProfile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbMyProfile.BackgroundImage")));
-            this.rbMyProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rbMyProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbMyProfile.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
-            this.rbMyProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbMyProfile.Location = new System.Drawing.Point(286, 176);
-            this.rbMyProfile.Name = "rbMyProfile";
-            this.rbMyProfile.Size = new System.Drawing.Size(113, 102);
-            this.rbMyProfile.TabIndex = 14;
-            this.rbMyProfile.UseVisualStyleBackColor = false;
+            this.deptButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.deptButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.deptButton.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deptButton.ForeColor = System.Drawing.Color.White;
+            this.deptButton.Location = new System.Drawing.Point(34, 226);
+            this.deptButton.Name = "deptButton";
+            this.deptButton.Size = new System.Drawing.Size(129, 39);
+            this.deptButton.TabIndex = 20;
+            this.deptButton.Text = "Departments";
+            this.deptButton.UseVisualStyleBackColor = false;
+            this.deptButton.Click += new System.EventHandler(this.deptButton_Click);
             // 
-            // rbEmployees
+            // empButton
             // 
-            this.rbEmployees.BackColor = System.Drawing.Color.GhostWhite;
-            this.rbEmployees.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbEmployees.BackgroundImage")));
-            this.rbEmployees.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rbEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbEmployees.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
-            this.rbEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbEmployees.Location = new System.Drawing.Point(621, 176);
-            this.rbEmployees.Name = "rbEmployees";
-            this.rbEmployees.Size = new System.Drawing.Size(113, 102);
-            this.rbEmployees.TabIndex = 15;
-            this.rbEmployees.UseVisualStyleBackColor = false;
+            this.empButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.empButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.empButton.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empButton.ForeColor = System.Drawing.Color.White;
+            this.empButton.Location = new System.Drawing.Point(34, 283);
+            this.empButton.Name = "empButton";
+            this.empButton.Size = new System.Drawing.Size(129, 39);
+            this.empButton.TabIndex = 21;
+            this.empButton.Text = "Employees";
+            this.empButton.UseVisualStyleBackColor = false;
+            this.empButton.Click += new System.EventHandler(this.empButton_Click);
             // 
-            // rbAppraisal
+            // VacButton
             // 
-            this.rbAppraisal.BackColor = System.Drawing.Color.GhostWhite;
-            this.rbAppraisal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbAppraisal.BackgroundImage")));
-            this.rbAppraisal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rbAppraisal.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbAppraisal.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
-            this.rbAppraisal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbAppraisal.Location = new System.Drawing.Point(573, 326);
-            this.rbAppraisal.Name = "rbAppraisal";
-            this.rbAppraisal.Size = new System.Drawing.Size(113, 102);
-            this.rbAppraisal.TabIndex = 16;
-            this.rbAppraisal.UseVisualStyleBackColor = false;
+            this.VacButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.VacButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.VacButton.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VacButton.ForeColor = System.Drawing.Color.White;
+            this.VacButton.Location = new System.Drawing.Point(34, 342);
+            this.VacButton.Name = "VacButton";
+            this.VacButton.Size = new System.Drawing.Size(129, 39);
+            this.VacButton.TabIndex = 22;
+            this.VacButton.Text = "Vacation";
+            this.VacButton.UseVisualStyleBackColor = false;
+            // 
+            // appButton
+            // 
+            this.appButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.appButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.appButton.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appButton.ForeColor = System.Drawing.Color.White;
+            this.appButton.Location = new System.Drawing.Point(34, 397);
+            this.appButton.Name = "appButton";
+            this.appButton.Size = new System.Drawing.Size(129, 39);
+            this.appButton.TabIndex = 23;
+            this.appButton.Text = "Appraisal";
+            this.appButton.UseVisualStyleBackColor = false;
             // 
             // rbVacations
             // 
@@ -255,32 +174,111 @@ namespace HRManagementSystem
             this.rbVacations.TabIndex = 17;
             this.rbVacations.UseVisualStyleBackColor = false;
             // 
+            // rbAppraisal
+            // 
+            this.rbAppraisal.BackColor = System.Drawing.Color.GhostWhite;
+            this.rbAppraisal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbAppraisal.BackgroundImage")));
+            this.rbAppraisal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rbAppraisal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbAppraisal.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
+            this.rbAppraisal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbAppraisal.Location = new System.Drawing.Point(573, 326);
+            this.rbAppraisal.Name = "rbAppraisal";
+            this.rbAppraisal.Size = new System.Drawing.Size(113, 102);
+            this.rbAppraisal.TabIndex = 16;
+            this.rbAppraisal.UseVisualStyleBackColor = false;
+            // 
+            // rbEmployees
+            // 
+            this.rbEmployees.BackColor = System.Drawing.Color.GhostWhite;
+            this.rbEmployees.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbEmployees.BackgroundImage")));
+            this.rbEmployees.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rbEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbEmployees.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
+            this.rbEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbEmployees.Location = new System.Drawing.Point(621, 176);
+            this.rbEmployees.Name = "rbEmployees";
+            this.rbEmployees.Size = new System.Drawing.Size(113, 102);
+            this.rbEmployees.TabIndex = 15;
+            this.rbEmployees.UseVisualStyleBackColor = false;
+            // 
+            // rbMyProfile
+            // 
+            this.rbMyProfile.BackColor = System.Drawing.Color.GhostWhite;
+            this.rbMyProfile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbMyProfile.BackgroundImage")));
+            this.rbMyProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rbMyProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbMyProfile.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
+            this.rbMyProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbMyProfile.Location = new System.Drawing.Point(286, 176);
+            this.rbMyProfile.Name = "rbMyProfile";
+            this.rbMyProfile.Size = new System.Drawing.Size(113, 102);
+            this.rbMyProfile.TabIndex = 14;
+            this.rbMyProfile.UseVisualStyleBackColor = false;
+            // 
+            // rbDepartments
+            // 
+            this.rbDepartments.BackColor = System.Drawing.Color.GhostWhite;
+            this.rbDepartments.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbDepartments.BackgroundImage")));
+            this.rbDepartments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rbDepartments.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbDepartments.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
+            this.rbDepartments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbDepartments.Location = new System.Drawing.Point(447, 90);
+            this.rbDepartments.Name = "rbDepartments";
+            this.rbDepartments.Size = new System.Drawing.Size(113, 102);
+            this.rbDepartments.TabIndex = 13;
+            this.rbDepartments.UseVisualStyleBackColor = false;
+            // 
+            // userButton
+            // 
+            this.userButton.BackColor = System.Drawing.Color.LightBlue;
+            this.userButton.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userButton.ForeColor = System.Drawing.Color.Black;
+            this.userButton.Location = new System.Drawing.Point(746, 48);
+            this.userButton.Name = "userButton";
+            this.userButton.Size = new System.Drawing.Size(130, 28);
+            this.userButton.TabIndex = 24;
+            this.userButton.Text = "Manage User";
+            this.userButton.UseVisualStyleBackColor = false;
+            this.userButton.Click += new System.EventHandler(this.userButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(758, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 16);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Howdy, Admin";
+            // 
             // Dash_Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(876, 451);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.userButton);
+            this.Controls.Add(this.appButton);
+            this.Controls.Add(this.VacButton);
+            this.Controls.Add(this.empButton);
+            this.Controls.Add(this.deptButton);
+            this.Controls.Add(this.proButton);
+            this.Controls.Add(this.dbButton);
             this.Controls.Add(this.rbVacations);
             this.Controls.Add(this.rbAppraisal);
             this.Controls.Add(this.rbEmployees);
             this.Controls.Add(this.rbMyProfile);
             this.Controls.Add(this.rbDepartments);
-            this.Controls.Add(this.pbHome);
             this.Controls.Add(this.hrms);
-            this.Controls.Add(this.lbOverview);
-            this.Controls.Add(this.lb_DashBoard2);
-            this.Controls.Add(this.lbDepartments);
-            this.Controls.Add(this.lbEmployees);
-            this.Controls.Add(this.lbVacations);
-            this.Controls.Add(this.lbAppraisal);
-            this.Controls.Add(this.lbMyProfile);
-            this.Controls.Add(this.lbDashBoard);
             this.Controls.Add(this.tbHeadings);
             this.Controls.Add(this.textBox1);
             this.Name = "Dash_Board";
             this.Text = "Dash_Board";
-            ((System.ComponentModel.ISupportInitialize)(this.pbHome)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,20 +288,19 @@ namespace HRManagementSystem
 
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox tbHeadings;
-        private System.Windows.Forms.Label lbDashBoard;
-        private System.Windows.Forms.Label lbMyProfile;
-        private System.Windows.Forms.Label lbAppraisal;
-        private System.Windows.Forms.Label lbVacations;
-        private System.Windows.Forms.Label lbEmployees;
-        private System.Windows.Forms.Label lbDepartments;
-        private System.Windows.Forms.Label lb_DashBoard2;
-        private System.Windows.Forms.Label lbOverview;
         private System.Windows.Forms.Label hrms;
-        private System.Windows.Forms.PictureBox pbHome;
         private RoundButton rbDepartments;
         private RoundButton rbMyProfile;
         private RoundButton rbEmployees;
         private RoundButton rbAppraisal;
         private RoundButton rbVacations;
+        private System.Windows.Forms.Button dbButton;
+        private System.Windows.Forms.Button proButton;
+        private System.Windows.Forms.Button deptButton;
+        private System.Windows.Forms.Button empButton;
+        private System.Windows.Forms.Button VacButton;
+        private System.Windows.Forms.Button appButton;
+        private System.Windows.Forms.Button userButton;
+        private System.Windows.Forms.Label label1;
     }
 }

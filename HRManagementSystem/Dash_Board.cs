@@ -20,7 +20,6 @@ namespace HRManagementSystem
         {
             InitializeComponent();
            
-
         }
 
         public Dash_Board(Login login)
@@ -29,6 +28,31 @@ namespace HRManagementSystem
             _login = login;
             //_user = user;
             //_roleName = user.UserRoles.FirstOrDefault().Role.shortname;
+        }
+
+        private void dbButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void proButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deptButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void empButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
