@@ -13,20 +13,22 @@ namespace HRManagementSystem
     public partial class Dash_Board : Form
     {
         private Login _login;
-        public string _roleName;
-        public User _user;
-
-        public Dash_Board(Login login, User user)
-        {
-            InitializeComponent();
-            _login = login;
-            _user = user;
-            //_roleName = user.UserRoles.FirstOrDefault().Role.shortname;
-
-        }
+        //public string _roleName;
+        //public User _user;
 
         public Dash_Board()
         {
+            InitializeComponent();
+           
+
+        }
+
+        public Dash_Board(Login login)
+        {
+            InitializeComponent();
+            _login = login;
+            //_user = user;
+            //_roleName = user.UserRoles.FirstOrDefault().Role.shortname;
         }
     }
 }
