@@ -39,13 +39,13 @@ namespace HRManagementSystem
             this.empButton = new System.Windows.Forms.Button();
             this.VacButton = new System.Windows.Forms.Button();
             this.appButton = new System.Windows.Forms.Button();
+            this.userButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.rbVacations = new HRManagementSystem.RoundButton();
             this.rbAppraisal = new HRManagementSystem.RoundButton();
             this.rbEmployees = new HRManagementSystem.RoundButton();
             this.rbMyProfile = new HRManagementSystem.RoundButton();
             this.rbDepartments = new HRManagementSystem.RoundButton();
-            this.userButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -160,6 +160,31 @@ namespace HRManagementSystem
             this.appButton.Text = "Appraisal";
             this.appButton.UseVisualStyleBackColor = false;
             // 
+            // userButton
+            // 
+            this.userButton.BackColor = System.Drawing.Color.LightBlue;
+            this.userButton.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userButton.ForeColor = System.Drawing.Color.Black;
+            this.userButton.Location = new System.Drawing.Point(746, 48);
+            this.userButton.Name = "userButton";
+            this.userButton.Size = new System.Drawing.Size(130, 28);
+            this.userButton.TabIndex = 24;
+            this.userButton.Text = "Manage User";
+            this.userButton.UseVisualStyleBackColor = false;
+            this.userButton.Click += new System.EventHandler(this.userButton_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(758, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 16);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Howdy, Admin";
+            // 
             // rbVacations
             // 
             this.rbVacations.BackColor = System.Drawing.Color.GhostWhite;
@@ -230,31 +255,6 @@ namespace HRManagementSystem
             this.rbDepartments.TabIndex = 13;
             this.rbDepartments.UseVisualStyleBackColor = false;
             // 
-            // userButton
-            // 
-            this.userButton.BackColor = System.Drawing.Color.LightBlue;
-            this.userButton.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userButton.ForeColor = System.Drawing.Color.Black;
-            this.userButton.Location = new System.Drawing.Point(746, 48);
-            this.userButton.Name = "userButton";
-            this.userButton.Size = new System.Drawing.Size(130, 28);
-            this.userButton.TabIndex = 24;
-            this.userButton.Text = "Manage User";
-            this.userButton.UseVisualStyleBackColor = false;
-            this.userButton.Click += new System.EventHandler(this.userButton_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Font = new System.Drawing.Font("Lucida Sans Unicode", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(758, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 16);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Howdy, Admin";
-            // 
             // Dash_Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,6 +279,7 @@ namespace HRManagementSystem
             this.Controls.Add(this.textBox1);
             this.Name = "Dash_Board";
             this.Text = "Dash_Board";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dash_Board_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -44,7 +44,7 @@ namespace HRManagementSystem
                     var dashBoard = new Dash_Board(this);
                     //this, user
                     dashBoard.Show();
-                    //Hide();
+                   Hide();
                     //Close();
                 }
 

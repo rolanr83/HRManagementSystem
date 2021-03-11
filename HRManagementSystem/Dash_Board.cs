@@ -47,12 +47,21 @@ namespace HRManagementSystem
 
         private void empButton_Click(object sender, EventArgs e)
         {
+            var employeeFrom = new EmployeeForm ();
+                employeeFrom.Show();
+            //Hide();
+            
 
         }
 
         private void userButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Dash_Board_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _login.Close();
         }
     }
 }
