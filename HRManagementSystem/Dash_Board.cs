@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace HRManagementSystem
     public partial class Dash_Board : Form
     {
         private Login _login;
+        public ManageUsers _manageUsers;
         //public string _roleName;
         //public User _user;
 
@@ -30,6 +32,11 @@ namespace HRManagementSystem
             //_roleName = user.UserRoles.FirstOrDefault().Role.shortname;
         }
 
+        public Dash_Board(ManageUsers manageUsers)
+        {
+            InitializeComponent();
+            _manageUsers = manageUsers;
+        }
         private void dbButton_Click(object sender, EventArgs e)
         {
 
@@ -56,7 +63,13 @@ namespace HRManagementSystem
 
         private void userButton_Click(object sender, EventArgs e)
         {
-
+            //if (!Utils.FormIsOpen(""))
+           // {
+                var manageUsers = new ManageUsers();
+                manageUsers.MdiParent = this;
+                manageUsers.Show();
+                //Hide();
+            //}
         }
 
         private void Dash_Board_FormClosing(object sender, FormClosingEventArgs e)

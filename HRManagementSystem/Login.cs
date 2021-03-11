@@ -27,13 +27,24 @@ namespace HRManagementSystem
         {
             try
             {
-                //SHA256 sha = SHA256.Create();
+                SHA256 sha = SHA256.Create();
 
                 var username = tbUserName.Text.Trim();
                 var password = tbPassword.Text;
 
+                byte[] data = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
 
-                var user = _Db.Users.FirstOrDefault(q => q.username == username && q.password == password);
+                StringBuilder sBuilder = new StringBuilder();
+
+                for (int i = 0; i < data.Length; i++)
+                {
+                    sBuilder.Append(data[i].ToString("x2"));
+                }
+
+                var hashed_password = sBuilder.ToString();
+
+
+                var user = _Db.Users.FirstOrDefault(q => q.username == username && q.password == hashed_password);
                 //&& q.isActive == true
                 if (user == null)
                 {
@@ -42,10 +53,8 @@ namespace HRManagementSystem
                 else
                 {
                     var dashBoard = new Dash_Board(this);
-                    //this, user
                     dashBoard.Show();
                    Hide();
-                    //Close();
                 }
 
 
