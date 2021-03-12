@@ -173,9 +173,6 @@
     <Compile Include="Staff_Leave.cs">
       <DependentUpon>HRMSDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>HRMSDb.tt</DependentUpon>
-    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>HRMSDb.tt</DependentUpon>
     </Compile>

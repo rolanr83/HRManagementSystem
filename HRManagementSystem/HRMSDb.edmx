@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="HRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="HRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Appraisal">
           <Key>
             <PropertyRef Name="AppraisalId" />
@@ -133,16 +133,6 @@
           <Property Name="End_Date" Type="date" Nullable="false" />
           <Property Name="StaffId" Type="int" />
           <Property Name="LeaveTypeId" Type="int" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -297,7 +287,6 @@
           <EntitySet Name="Relationsip" EntityType="Self.Relationsip" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Staff_Education" EntityType="Self.Staff_Education" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Staff_Leave" EntityType="Self.Staff_Leave" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Emergency_Employee" Association="Self.FK_Emergency_Employee">
             <End Role="Employee" EntitySet="Employee" />
@@ -344,7 +333,8 @@
             <End Role="Staff_Leave" EntitySet="Staff_Leave" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HRMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -499,15 +489,13 @@
           <NavigationProperty Name="Employee" Relationship="Self.FK_Staff_Leave_Employee" FromRole="Staff_Leave" ToRole="Employee" />
           <NavigationProperty Name="Leave_Type" Relationship="Self.FK_Staff_Leave_Staff_Type" FromRole="Staff_Leave" ToRole="Leave_Type" />
         </EntityType>
-        <EntityType Name="sysdiagram">
+        <EntityType Name="User">
           <Key>
-            <PropertyRef Name="diagram_id" />
+            <PropertyRef Name="id" />
           </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <Association Name="FK_Internal_Employment_History_Appraisal">
           <End Role="Appraisal" Type="Self.Appraisal" Multiplicity="0..1" />
@@ -654,7 +642,7 @@
           <EntitySet Name="Relationsips" EntityType="Self.Relationsip" />
           <EntitySet Name="Staff_Education" EntityType="Self.Staff_Education" />
           <EntitySet Name="Staff_Leave" EntityType="Self.Staff_Leave" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Users" EntityType="Self.User" />
           <AssociationSet Name="FK_Internal_Employment_History_Appraisal" Association="Self.FK_Internal_Employment_History_Appraisal">
             <End Role="Appraisal" EntitySet="Appraisals" />
             <End Role="Internal_Employment_History" EntitySet="Internal_Employment_History" />
@@ -699,16 +687,7 @@
             <End Role="Qualification" EntitySet="Qualifications" />
             <End Role="Staff_Education" EntitySet="Staff_Education" />
           </AssociationSet>
-          <EntitySet Name="Users" EntityType="HRMSModel.User" />
         </EntityContainer>
-        <EntityType Name="User">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -856,23 +835,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="HRMSModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="HRMSModel.User">
               <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
