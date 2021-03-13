@@ -32,18 +32,18 @@ namespace HRManagementSystem
             this.tbfname = new System.Windows.Forms.TextBox();
             this.nelabel = new System.Windows.Forms.Label();
             this.fnlabel = new System.Windows.Forms.Label();
-            this.nis = new System.Windows.Forms.Label();
-            this.trn = new System.Windows.Forms.Label();
-            this.genlabel = new System.Windows.Forms.Label();
+            this.nislabel = new System.Windows.Forms.Label();
+            this.trnlabel = new System.Windows.Forms.Label();
+            this.genderlabel = new System.Windows.Forms.Label();
             this.lnlabel = new System.Windows.Forms.Label();
             this.mnlabel = new System.Windows.Forms.Label();
-            this.tnlname = new System.Windows.Forms.TextBox();
+            this.tblname = new System.Windows.Forms.TextBox();
             this.tbmname = new System.Windows.Forms.TextBox();
             this.tbnis = new System.Windows.Forms.TextBox();
             this.tbtrn = new System.Windows.Forms.TextBox();
-            this.tbgenname = new System.Windows.Forms.TextBox();
+            this.tbgender = new System.Windows.Forms.TextBox();
             this.tbadd2 = new System.Windows.Forms.TextBox();
-            this.tbpcode = new System.Windows.Forms.TextBox();
+            this.tbpostalcode = new System.Windows.Forms.TextBox();
             this.tbadd1 = new System.Windows.Forms.TextBox();
             this.ad1label = new System.Windows.Forms.Label();
             this.ad2label = new System.Windows.Forms.Label();
@@ -58,22 +58,22 @@ namespace HRManagementSystem
             this.tbparish = new System.Windows.Forms.TextBox();
             this.tbpnum = new System.Windows.Forms.TextBox();
             this.tbms = new System.Windows.Forms.TextBox();
-            this.moblabel = new System.Windows.Forms.Label();
+            this.mobilelabel = new System.Windows.Forms.Label();
             this.eaddlabel = new System.Windows.Forms.Label();
             this.edlabel = new System.Windows.Forms.Label();
             this.tbpost = new System.Windows.Forms.TextBox();
             this.tbmnum = new System.Windows.Forms.TextBox();
-            this.dtpsd = new System.Windows.Forms.DateTimePicker();
-            this.dtpdob = new System.Windows.Forms.DateTimePicker();
-            this.btnadd = new System.Windows.Forms.Button();
+            this.dtstartdate = new System.Windows.Forms.DateTimePicker();
+            this.dtdob = new System.Windows.Forms.DateTimePicker();
+            this.submitbtn = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.toelabel = new System.Windows.Forms.Label();
             this.tbeadd = new System.Windows.Forms.TextBox();
-            this.tbdept = new System.Windows.Forms.TextBox();
-            this.dtped = new System.Windows.Forms.DateTimePicker();
+            this.tbdepartment = new System.Windows.Forms.TextBox();
+            this.dtenddate = new System.Windows.Forms.DateTimePicker();
             this.tbtoe = new System.Windows.Forms.ComboBox();
             this.postlabel = new System.Windows.Forms.Label();
-            this.deptlabel = new System.Windows.Forms.Label();
+            this.departmentlabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbfname
@@ -105,35 +105,35 @@ namespace HRManagementSystem
             this.fnlabel.TabIndex = 22;
             this.fnlabel.Text = "First Name";
             // 
-            // nis
+            // nislabel
             // 
-            this.nis.AutoSize = true;
-            this.nis.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nis.Location = new System.Drawing.Point(563, 133);
-            this.nis.Name = "nis";
-            this.nis.Size = new System.Drawing.Size(36, 19);
-            this.nis.TabIndex = 23;
-            this.nis.Text = "NIS";
+            this.nislabel.AutoSize = true;
+            this.nislabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nislabel.Location = new System.Drawing.Point(563, 133);
+            this.nislabel.Name = "nislabel";
+            this.nislabel.Size = new System.Drawing.Size(36, 19);
+            this.nislabel.TabIndex = 23;
+            this.nislabel.Text = "NIS";
             // 
-            // trn
+            // trnlabel
             // 
-            this.trn.AutoSize = true;
-            this.trn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trn.Location = new System.Drawing.Point(286, 133);
-            this.trn.Name = "trn";
-            this.trn.Size = new System.Drawing.Size(43, 19);
-            this.trn.TabIndex = 24;
-            this.trn.Text = "TRN";
+            this.trnlabel.AutoSize = true;
+            this.trnlabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trnlabel.Location = new System.Drawing.Point(286, 133);
+            this.trnlabel.Name = "trnlabel";
+            this.trnlabel.Size = new System.Drawing.Size(43, 19);
+            this.trnlabel.TabIndex = 24;
+            this.trnlabel.Text = "TRN";
             // 
-            // genlabel
+            // genderlabel
             // 
-            this.genlabel.AutoSize = true;
-            this.genlabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genlabel.Location = new System.Drawing.Point(12, 133);
-            this.genlabel.Name = "genlabel";
-            this.genlabel.Size = new System.Drawing.Size(59, 19);
-            this.genlabel.TabIndex = 25;
-            this.genlabel.Text = "Gender";
+            this.genderlabel.AutoSize = true;
+            this.genderlabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderlabel.Location = new System.Drawing.Point(12, 133);
+            this.genderlabel.Name = "genderlabel";
+            this.genderlabel.Size = new System.Drawing.Size(59, 19);
+            this.genderlabel.TabIndex = 25;
+            this.genderlabel.Text = "Gender";
             // 
             // lnlabel
             // 
@@ -155,12 +155,12 @@ namespace HRManagementSystem
             this.mnlabel.TabIndex = 27;
             this.mnlabel.Text = "Middle Name";
             // 
-            // tnlname
+            // tblname
             // 
-            this.tnlname.Location = new System.Drawing.Point(565, 94);
-            this.tnlname.Name = "tnlname";
-            this.tnlname.Size = new System.Drawing.Size(200, 20);
-            this.tnlname.TabIndex = 28;
+            this.tblname.Location = new System.Drawing.Point(565, 94);
+            this.tblname.Name = "tblname";
+            this.tblname.Size = new System.Drawing.Size(200, 20);
+            this.tblname.TabIndex = 28;
             // 
             // tbmname
             // 
@@ -183,12 +183,12 @@ namespace HRManagementSystem
             this.tbtrn.Size = new System.Drawing.Size(193, 20);
             this.tbtrn.TabIndex = 31;
             // 
-            // tbgenname
+            // tbgender
             // 
-            this.tbgenname.Location = new System.Drawing.Point(12, 155);
-            this.tbgenname.Name = "tbgenname";
-            this.tbgenname.Size = new System.Drawing.Size(204, 20);
-            this.tbgenname.TabIndex = 32;
+            this.tbgender.Location = new System.Drawing.Point(12, 155);
+            this.tbgender.Name = "tbgender";
+            this.tbgender.Size = new System.Drawing.Size(204, 20);
+            this.tbgender.TabIndex = 32;
             // 
             // tbadd2
             // 
@@ -197,12 +197,12 @@ namespace HRManagementSystem
             this.tbadd2.Size = new System.Drawing.Size(193, 20);
             this.tbadd2.TabIndex = 33;
             // 
-            // tbpcode
+            // tbpostalcode
             // 
-            this.tbpcode.Location = new System.Drawing.Point(565, 217);
-            this.tbpcode.Name = "tbpcode";
-            this.tbpcode.Size = new System.Drawing.Size(200, 20);
-            this.tbpcode.TabIndex = 34;
+            this.tbpostalcode.Location = new System.Drawing.Point(565, 217);
+            this.tbpostalcode.Name = "tbpostalcode";
+            this.tbpostalcode.Size = new System.Drawing.Size(200, 20);
+            this.tbpostalcode.TabIndex = 34;
             // 
             // tbadd1
             // 
@@ -329,15 +329,15 @@ namespace HRManagementSystem
             this.tbms.Size = new System.Drawing.Size(204, 20);
             this.tbms.TabIndex = 50;
             // 
-            // moblabel
+            // mobilelabel
             // 
-            this.moblabel.AutoSize = true;
-            this.moblabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.moblabel.Location = new System.Drawing.Point(561, 310);
-            this.moblabel.Name = "moblabel";
-            this.moblabel.Size = new System.Drawing.Size(115, 19);
-            this.moblabel.TabIndex = 51;
-            this.moblabel.Text = "Mobile Number";
+            this.mobilelabel.AutoSize = true;
+            this.mobilelabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mobilelabel.Location = new System.Drawing.Point(561, 310);
+            this.mobilelabel.Name = "mobilelabel";
+            this.mobilelabel.Size = new System.Drawing.Size(115, 19);
+            this.mobilelabel.TabIndex = 51;
+            this.mobilelabel.Text = "Mobile Number";
             // 
             // eaddlabel
             // 
@@ -373,29 +373,30 @@ namespace HRManagementSystem
             this.tbmnum.Size = new System.Drawing.Size(200, 20);
             this.tbmnum.TabIndex = 56;
             // 
-            // dtpsd
+            // dtstartdate
             // 
-            this.dtpsd.Location = new System.Drawing.Point(290, 397);
-            this.dtpsd.Name = "dtpsd";
-            this.dtpsd.Size = new System.Drawing.Size(193, 20);
-            this.dtpsd.TabIndex = 57;
+            this.dtstartdate.Location = new System.Drawing.Point(290, 397);
+            this.dtstartdate.Name = "dtstartdate";
+            this.dtstartdate.Size = new System.Drawing.Size(193, 20);
+            this.dtstartdate.TabIndex = 57;
             // 
-            // dtpdob
+            // dtdob
             // 
-            this.dtpdob.Location = new System.Drawing.Point(565, 272);
-            this.dtpdob.Name = "dtpdob";
-            this.dtpdob.Size = new System.Drawing.Size(200, 20);
-            this.dtpdob.TabIndex = 58;
+            this.dtdob.Location = new System.Drawing.Point(565, 272);
+            this.dtdob.Name = "dtdob";
+            this.dtdob.Size = new System.Drawing.Size(200, 20);
+            this.dtdob.TabIndex = 58;
             // 
-            // btnadd
+            // submitbtn
             // 
-            this.btnadd.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnadd.Location = new System.Drawing.Point(329, 528);
-            this.btnadd.Name = "btnadd";
-            this.btnadd.Size = new System.Drawing.Size(97, 45);
-            this.btnadd.TabIndex = 59;
-            this.btnadd.Text = "Add";
-            this.btnadd.UseVisualStyleBackColor = true;
+            this.submitbtn.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.submitbtn.Location = new System.Drawing.Point(292, 528);
+            this.submitbtn.Name = "submitbtn";
+            this.submitbtn.Size = new System.Drawing.Size(191, 45);
+            this.submitbtn.TabIndex = 59;
+            this.submitbtn.Text = "Submit";
+            this.submitbtn.UseVisualStyleBackColor = true;
+            this.submitbtn.Click += new System.EventHandler(this.submitbtn_Click);
             // 
             // label20
             // 
@@ -423,19 +424,19 @@ namespace HRManagementSystem
             this.tbeadd.Size = new System.Drawing.Size(193, 20);
             this.tbeadd.TabIndex = 63;
             // 
-            // tbdept
+            // tbdepartment
             // 
-            this.tbdept.Location = new System.Drawing.Point(290, 464);
-            this.tbdept.Name = "tbdept";
-            this.tbdept.Size = new System.Drawing.Size(193, 20);
-            this.tbdept.TabIndex = 64;
+            this.tbdepartment.Location = new System.Drawing.Point(290, 464);
+            this.tbdepartment.Name = "tbdepartment";
+            this.tbdepartment.Size = new System.Drawing.Size(193, 20);
+            this.tbdepartment.TabIndex = 64;
             // 
-            // dtped
+            // dtenddate
             // 
-            this.dtped.Location = new System.Drawing.Point(565, 397);
-            this.dtped.Name = "dtped";
-            this.dtped.Size = new System.Drawing.Size(193, 20);
-            this.dtped.TabIndex = 66;
+            this.dtenddate.Location = new System.Drawing.Point(565, 397);
+            this.dtenddate.Name = "dtenddate";
+            this.dtenddate.Size = new System.Drawing.Size(193, 20);
+            this.dtenddate.TabIndex = 66;
             // 
             // tbtoe
             // 
@@ -458,37 +459,37 @@ namespace HRManagementSystem
             this.postlabel.TabIndex = 68;
             this.postlabel.Text = "Post";
             // 
-            // deptlabel
+            // departmentlabel
             // 
-            this.deptlabel.AutoSize = true;
-            this.deptlabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deptlabel.Location = new System.Drawing.Point(288, 442);
-            this.deptlabel.Name = "deptlabel";
-            this.deptlabel.Size = new System.Drawing.Size(89, 19);
-            this.deptlabel.TabIndex = 69;
-            this.deptlabel.Text = "Department";
+            this.departmentlabel.AutoSize = true;
+            this.departmentlabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.departmentlabel.Location = new System.Drawing.Point(288, 442);
+            this.departmentlabel.Name = "departmentlabel";
+            this.departmentlabel.Size = new System.Drawing.Size(89, 19);
+            this.departmentlabel.TabIndex = 69;
+            this.departmentlabel.Text = "Department";
             // 
             // CreateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 585);
-            this.Controls.Add(this.deptlabel);
+            this.Controls.Add(this.departmentlabel);
             this.Controls.Add(this.postlabel);
             this.Controls.Add(this.tbtoe);
-            this.Controls.Add(this.dtped);
-            this.Controls.Add(this.tbdept);
+            this.Controls.Add(this.dtenddate);
+            this.Controls.Add(this.tbdepartment);
             this.Controls.Add(this.tbeadd);
             this.Controls.Add(this.toelabel);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.btnadd);
-            this.Controls.Add(this.dtpdob);
-            this.Controls.Add(this.dtpsd);
+            this.Controls.Add(this.submitbtn);
+            this.Controls.Add(this.dtdob);
+            this.Controls.Add(this.dtstartdate);
             this.Controls.Add(this.tbmnum);
             this.Controls.Add(this.tbpost);
             this.Controls.Add(this.edlabel);
             this.Controls.Add(this.eaddlabel);
-            this.Controls.Add(this.moblabel);
+            this.Controls.Add(this.mobilelabel);
             this.Controls.Add(this.tbms);
             this.Controls.Add(this.tbpnum);
             this.Controls.Add(this.tbparish);
@@ -503,18 +504,18 @@ namespace HRManagementSystem
             this.Controls.Add(this.ad2label);
             this.Controls.Add(this.ad1label);
             this.Controls.Add(this.tbadd1);
-            this.Controls.Add(this.tbpcode);
+            this.Controls.Add(this.tbpostalcode);
             this.Controls.Add(this.tbadd2);
-            this.Controls.Add(this.tbgenname);
+            this.Controls.Add(this.tbgender);
             this.Controls.Add(this.tbtrn);
             this.Controls.Add(this.tbnis);
             this.Controls.Add(this.tbmname);
-            this.Controls.Add(this.tnlname);
+            this.Controls.Add(this.tblname);
             this.Controls.Add(this.mnlabel);
             this.Controls.Add(this.lnlabel);
-            this.Controls.Add(this.genlabel);
-            this.Controls.Add(this.trn);
-            this.Controls.Add(this.nis);
+            this.Controls.Add(this.genderlabel);
+            this.Controls.Add(this.trnlabel);
+            this.Controls.Add(this.nislabel);
             this.Controls.Add(this.fnlabel);
             this.Controls.Add(this.nelabel);
             this.Controls.Add(this.tbfname);
@@ -530,18 +531,18 @@ namespace HRManagementSystem
         private System.Windows.Forms.TextBox tbfname;
         private System.Windows.Forms.Label nelabel;
         private System.Windows.Forms.Label fnlabel;
-        private System.Windows.Forms.Label nis;
-        private System.Windows.Forms.Label trn;
-        private System.Windows.Forms.Label genlabel;
+        private System.Windows.Forms.Label nislabel;
+        private System.Windows.Forms.Label trnlabel;
+        private System.Windows.Forms.Label genderlabel;
         private System.Windows.Forms.Label lnlabel;
         private System.Windows.Forms.Label mnlabel;
-        private System.Windows.Forms.TextBox tnlname;
+        private System.Windows.Forms.TextBox tblname;
         private System.Windows.Forms.TextBox tbmname;
         private System.Windows.Forms.TextBox tbnis;
         private System.Windows.Forms.TextBox tbtrn;
-        private System.Windows.Forms.TextBox tbgenname;
+        private System.Windows.Forms.TextBox tbgender;
         private System.Windows.Forms.TextBox tbadd2;
-        private System.Windows.Forms.TextBox tbpcode;
+        private System.Windows.Forms.TextBox tbpostalcode;
         private System.Windows.Forms.TextBox tbadd1;
         private System.Windows.Forms.Label ad1label;
         private System.Windows.Forms.Label ad2label;
@@ -556,22 +557,22 @@ namespace HRManagementSystem
         private System.Windows.Forms.TextBox tbparish;
         private System.Windows.Forms.TextBox tbpnum;
         private System.Windows.Forms.TextBox tbms;
-        private System.Windows.Forms.Label moblabel;
+        private System.Windows.Forms.Label mobilelabel;
         private System.Windows.Forms.Label eaddlabel;
         private System.Windows.Forms.Label edlabel;
         private System.Windows.Forms.TextBox tbpost;
         private System.Windows.Forms.TextBox tbmnum;
-        private System.Windows.Forms.DateTimePicker dtpsd;
-        private System.Windows.Forms.DateTimePicker dtpdob;
-        private System.Windows.Forms.Button btnadd;
+        private System.Windows.Forms.DateTimePicker dtstartdate;
+        private System.Windows.Forms.DateTimePicker dtdob;
+        private System.Windows.Forms.Button submitbtn;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label toelabel;
         private System.Windows.Forms.TextBox tbeadd;
-        private System.Windows.Forms.TextBox tbdept;
-        private System.Windows.Forms.DateTimePicker dtped;
+        private System.Windows.Forms.TextBox tbdepartment;
+        private System.Windows.Forms.DateTimePicker dtenddate;
         private System.Windows.Forms.ComboBox tbtoe;
         private System.Windows.Forms.Label postlabel;
-        private System.Windows.Forms.Label deptlabel;
+        private System.Windows.Forms.Label departmentlabel;
     }
 }
 
