@@ -37,6 +37,8 @@ namespace HRManagementSystem
         public virtual DbSet<Relationsip> Relationsips { get; set; }
         public virtual DbSet<Staff_Education> Staff_Education { get; set; }
         public virtual DbSet<Staff_Leave> Staff_Leave { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserRole> UserRoles { get; set; }
     }
 }

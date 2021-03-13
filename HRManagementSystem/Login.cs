@@ -52,9 +52,11 @@ namespace HRManagementSystem
                 }
                 else
                 {
-                    var dashBoard = new Dash_Board(this);
+                    var role = user.UserRoles.FirstOrDefault();
+                    var roleShortName = role.Role.shortname;
+                    var dashBoard = new Dash_Board(this, roleShortName);
                     dashBoard.Show();
-                   Hide();
+                    Hide();
                 }
 
 

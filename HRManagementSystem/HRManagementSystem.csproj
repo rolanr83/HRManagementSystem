@@ -164,6 +164,9 @@
     <Compile Include="Relationsip.cs">
       <DependentUpon>HRMSDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -174,6 +177,9 @@
       <DependentUpon>HRMSDb.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRole.cs">
       <DependentUpon>HRMSDb.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CreateUser.resx">

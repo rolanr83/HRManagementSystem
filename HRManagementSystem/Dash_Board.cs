@@ -14,6 +14,7 @@ namespace HRManagementSystem
     public partial class Dash_Board : Form
     {
         private Login _login;
+        public string _RoleName;
         public ManageUsers _manageUsers;
         //public string _roleName;
         //public User _user;
@@ -24,10 +25,11 @@ namespace HRManagementSystem
            
         }
 
-        public Dash_Board(Login login)
+        public Dash_Board(Login login, string roleShortName)
         {
             InitializeComponent();
             _login = login;
+            _RoleName = roleShortName;
             //_user = user;
             //_roleName = user.UserRoles.FirstOrDefault().Role.shortname;
         }
@@ -75,6 +77,15 @@ namespace HRManagementSystem
         private void Dash_Board_FormClosing(object sender, FormClosingEventArgs e)
         {
             _login.Close();
+        }
+
+        private void Dash_Board_Load(object sender, EventArgs e)
+        {
+            if(_RoleName != "admin")
+            {
+                ManageUserMenuebtn.Visible = false;
+
+            }
         }
     }
 }
