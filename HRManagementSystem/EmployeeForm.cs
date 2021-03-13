@@ -16,5 +16,14 @@ namespace HRManagementSystem
         {
             InitializeComponent();
         }
+
+        private void addEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var createuser = new CreateUser();
+            createuser.MdiParent = this;
+            createuser.Show();
+            
+
+        }
     }
 }

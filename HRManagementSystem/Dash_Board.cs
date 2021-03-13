@@ -61,11 +61,6 @@ namespace HRManagementSystem
             //}
         }
 
-        private void Dash_Board_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            _login.Close();
-        }
-
         private void Dash_Board_Load(object sender, EventArgs e)
         {
             if(_RoleName != "admin")

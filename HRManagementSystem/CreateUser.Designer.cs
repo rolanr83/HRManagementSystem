@@ -468,7 +468,7 @@ namespace HRManagementSystem
             this.deptlabel.TabIndex = 69;
             this.deptlabel.Text = "Department";
             // 
-            // Form1
+            // CreateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -518,8 +518,8 @@ namespace HRManagementSystem
             this.Controls.Add(this.fnlabel);
             this.Controls.Add(this.nelabel);
             this.Controls.Add(this.tbfname);
-            this.Name = "Form1";
-            this.Text = "New Employee";
+            this.Name = "CreateUser";
+            this.Text = "Create Employee Records";
             this.ResumeLayout(false);
             this.PerformLayout();
 

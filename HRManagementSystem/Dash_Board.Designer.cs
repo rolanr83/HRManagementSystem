@@ -276,7 +276,6 @@ namespace HRManagementSystem
             this.IsMdiContainer = true;
             this.Name = "Dash_Board";
             this.Text = "Dash_Board";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dash_Board_FormClosing);
             this.Load += new System.EventHandler(this.Dash_Board_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
