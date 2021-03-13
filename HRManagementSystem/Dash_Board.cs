@@ -39,20 +39,7 @@ namespace HRManagementSystem
             InitializeComponent();
             _manageUsers = manageUsers;
         }
-        private void dbButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void proButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void deptButton_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void empButton_Click(object sender, EventArgs e)
         {
