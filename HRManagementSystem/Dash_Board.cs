@@ -32,14 +32,7 @@ namespace HRManagementSystem
             _RoleName = roleShortName;
             //_user = user;
             //_roleName = user.UserRoles.FirstOrDefault().Role.shortname;
-        }
-
-        public Dash_Board(ManageUsers manageUsers)
-        {
-            InitializeComponent();
-            _manageUsers = manageUsers;
-        }
-        
+        }      
 
         private void empButton_Click(object sender, EventArgs e)
         {
@@ -49,25 +42,21 @@ namespace HRManagementSystem
             
 
         }
-
-        private void userButton_Click(object sender, EventArgs e)
-        {
-            //if (!Utils.FormIsOpen(""))
-           // {
-                var manageUsers = new ManageUsers();
-                manageUsers.MdiParent = this;
-                manageUsers.Show();
-                //Hide();
-            //}
-        }
-
+       
         private void Dash_Board_Load(object sender, EventArgs e)
         {
             if(_RoleName != "admin")
             {
-                ManageUserMenuebtn.Visible = false;
+                btnManageUser.Visible = false;
 
             }
+        }
+
+        private void btnManageUser_Click(object sender, EventArgs e)
+        {
+            var manageUsers = new ManageUsers();
+            //manageUsers.MdiParent = this;
+            manageUsers.Show();
         }
     }
 }

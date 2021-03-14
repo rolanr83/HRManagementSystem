@@ -38,7 +38,7 @@ namespace HRManagementSystem
             this.employeebtn = new System.Windows.Forms.Button();
             this.Vacationbtn = new System.Windows.Forms.Button();
             this.appraisalbtn = new System.Windows.Forms.Button();
-            this.ManageUserMenuebtn = new System.Windows.Forms.Button();
+            this.btnManageUser = new System.Windows.Forms.Button();
             this.profilebtn = new System.Windows.Forms.Button();
             this.dashboardlabel = new System.Windows.Forms.Label();
             this.rbVacations = new HRManagementSystem.RoundButton();
@@ -144,18 +144,18 @@ namespace HRManagementSystem
             this.appraisalbtn.Text = "Appraisal";
             this.appraisalbtn.UseVisualStyleBackColor = false;
             // 
-            // ManageUserMenuebtn
+            // btnManageUser
             // 
-            this.ManageUserMenuebtn.BackColor = System.Drawing.Color.LightBlue;
-            this.ManageUserMenuebtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManageUserMenuebtn.ForeColor = System.Drawing.Color.Black;
-            this.ManageUserMenuebtn.Location = new System.Drawing.Point(751, 7);
-            this.ManageUserMenuebtn.Name = "ManageUserMenuebtn";
-            this.ManageUserMenuebtn.Size = new System.Drawing.Size(130, 28);
-            this.ManageUserMenuebtn.TabIndex = 24;
-            this.ManageUserMenuebtn.Text = "Manage User";
-            this.ManageUserMenuebtn.UseVisualStyleBackColor = false;
-            this.ManageUserMenuebtn.Click += new System.EventHandler(this.userButton_Click);
+            this.btnManageUser.BackColor = System.Drawing.Color.LightBlue;
+            this.btnManageUser.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageUser.ForeColor = System.Drawing.Color.Black;
+            this.btnManageUser.Location = new System.Drawing.Point(751, 7);
+            this.btnManageUser.Name = "btnManageUser";
+            this.btnManageUser.Size = new System.Drawing.Size(130, 28);
+            this.btnManageUser.TabIndex = 24;
+            this.btnManageUser.Text = "Manage User";
+            this.btnManageUser.UseVisualStyleBackColor = false;
+            this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
             // 
             // profilebtn
             // 
@@ -259,7 +259,7 @@ namespace HRManagementSystem
             this.ClientSize = new System.Drawing.Size(893, 524);
             this.Controls.Add(this.dashboardlabel);
             this.Controls.Add(this.profilebtn);
-            this.Controls.Add(this.ManageUserMenuebtn);
+            this.Controls.Add(this.btnManageUser);
             this.Controls.Add(this.appraisalbtn);
             this.Controls.Add(this.Vacationbtn);
             this.Controls.Add(this.employeebtn);
@@ -297,7 +297,7 @@ namespace HRManagementSystem
         private System.Windows.Forms.Button employeebtn;
         private System.Windows.Forms.Button Vacationbtn;
         private System.Windows.Forms.Button appraisalbtn;
-        private System.Windows.Forms.Button ManageUserMenuebtn;
+        private System.Windows.Forms.Button btnManageUser;
         private System.Windows.Forms.Button profilebtn;
         private System.Windows.Forms.Label dashboardlabel;
     }
