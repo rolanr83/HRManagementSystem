@@ -20,7 +20,7 @@ namespace HRManagementSystem
         public Nullable<int> StaffId { get; set; }
         public Nullable<int> LeaveTypeId { get; set; }
     
-        public virtual Employee Employee { get; set; }
         public virtual Leave_Type Leave_Type { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }

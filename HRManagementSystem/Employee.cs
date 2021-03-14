@@ -36,20 +36,28 @@ namespace HRManagementSystem
         public string Address_2 { get; set; }
         public string Postal_Code { get; set; }
         public string Parish { get; set; }
+        public string Email_Address { get; set; }
         public string Country { get; set; }
         public string Marital_Stuts { get; set; }
         public string Home_Number { get; set; }
         public string Mobile_Number { get; set; }
         public System.DateTime Start_Date { get; set; }
         public Nullable<System.DateTime> End_Date { get; set; }
+        public string Department { get; set; }
+        public string Post { get; set; }
         public string Employment_Status { get; set; }
         public Nullable<int> DepartmentId { get; set; }
         public Nullable<int> PositionId { get; set; }
         public Nullable<int> EmploymentStatusid { get; set; }
     
-        public virtual Department Department { get; set; }
+        public virtual Department Department1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Emergency> Emergencies { get; set; }
+        public virtual Employee Employee1 { get; set; }
+        public virtual Employee Employee2 { get; set; }
+        public virtual Employee Employee11 { get; set; }
+        public virtual Employee Employee3 { get; set; }
+        public virtual EmploymentStatu EmploymentStatu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Employee_Previous_Jobs> Employee_Previous_Jobs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -58,10 +66,5 @@ namespace HRManagementSystem
         public virtual ICollection<Staff_Education> Staff_Education { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Staff_Leave> Staff_Leave { get; set; }
-        public virtual Employee Employee1 { get; set; }
-        public virtual Employee Employee2 { get; set; }
-        public virtual Employee Employee11 { get; set; }
-        public virtual Employee Employee3 { get; set; }
-        public virtual EmploymentStatu EmploymentStatu { get; set; }
     }
 }

@@ -28,7 +28,6 @@ namespace HRManagementSystem
         public virtual DbSet<Appraisal> Appraisals { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
         public virtual DbSet<Emergency> Emergencies { get; set; }
-        public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Employee_Previous_Jobs> Employee_Previous_Jobs { get; set; }
         public virtual DbSet<Internal_Employment_History> Internal_Employment_History { get; set; }
         public virtual DbSet<Leave_Type> Leave_Type { get; set; }
@@ -41,5 +40,6 @@ namespace HRManagementSystem
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
         public virtual DbSet<EmploymentStatu> EmploymentStatus { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
     }
 }
