@@ -57,6 +57,7 @@
           <Property Name="Employment_Status" Type="nvarchar" MaxLength="30" />
           <Property Name="DepartmentId" Type="int" />
           <Property Name="PositionId" Type="int" />
+          <Property Name="EmploymentStatusid" Type="int" />
         </EntityType>
         <EntityType Name="Employee_Previous_Jobs">
           <Key>
@@ -69,6 +70,13 @@
           <Property Name="Organization" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Responsibilities" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="StaffId" Type="int" />
+        </EntityType>
+        <EntityType Name="EmploymentStatus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Internal_Employment_History">
           <Key>
@@ -192,6 +200,42 @@
             </Principal>
             <Dependent Role="Employee">
               <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Employee1" Type="Self.Employee" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Employee1">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Employee1">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Employee1" Type="Self.Employee" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Employee1">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_EmploymentStatus">
+          <End Role="EmploymentStatus" Type="Self.EmploymentStatus" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmploymentStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="EmploymentStatusid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -321,6 +365,7 @@
           <EntitySet Name="Emergency" EntityType="Self.Emergency" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee_Previous_Jobs" EntityType="Self.Employee_Previous_Jobs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmploymentStatus" EntityType="Self.EmploymentStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Internal_Employment_History" EntityType="Self.Internal_Employment_History" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Leave_Type" EntityType="Self.Leave_Type" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
@@ -341,6 +386,18 @@
           </AssociationSet>
           <AssociationSet Name="FK_Employee_Department" Association="Self.FK_Employee_Department">
             <End Role="Department" EntitySet="Department" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Employee" Association="Self.FK_Employee_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Employee1" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Employee1" Association="Self.FK_Employee_Employee1">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="Employee1" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_EmploymentStatus" Association="Self.FK_Employee_EmploymentStatus">
+            <End Role="EmploymentStatus" EntitySet="EmploymentStatus" />
             <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
           <AssociationSet Name="FK_Employee_Previous_Jobs_Employee" Association="Self.FK_Employee_Previous_Jobs_Employee">
@@ -450,6 +507,12 @@
           <NavigationProperty Name="Internal_Employment_History" Relationship="Self.FK_Internal_Employment_History_Employee" FromRole="Employee" ToRole="Internal_Employment_History" />
           <NavigationProperty Name="Staff_Education" Relationship="Self.FK_Staff_Education_Employee" FromRole="Employee" ToRole="Staff_Education" />
           <NavigationProperty Name="Staff_Leave" Relationship="Self.FK_Staff_Leave_Employee" FromRole="Employee" ToRole="Staff_Leave" />
+          <Property Name="EmploymentStatusid" Type="Int32" />
+          <NavigationProperty Name="Employee1" Relationship="HRMSModel.FK_Employee_Employee" FromRole="Employee" ToRole="Employee1" />
+          <NavigationProperty Name="Employee2" Relationship="HRMSModel.FK_Employee_Employee" FromRole="Employee1" ToRole="Employee" />
+          <NavigationProperty Name="Employee11" Relationship="HRMSModel.FK_Employee_Employee1" FromRole="Employee" ToRole="Employee1" />
+          <NavigationProperty Name="Employee3" Relationship="HRMSModel.FK_Employee_Employee1" FromRole="Employee1" ToRole="Employee" />
+          <NavigationProperty Name="EmploymentStatu" Relationship="HRMSModel.FK_Employee_EmploymentStatus" FromRole="Employee" ToRole="EmploymentStatu" />
         </EntityType>
         <EntityType Name="Employee_Previous_Jobs">
           <Key>
@@ -739,6 +802,19 @@
             <End Role="User" EntitySet="Users" />
             <End Role="UserRole" EntitySet="UserRoles" />
           </AssociationSet>
+          <AssociationSet Name="FK_Employee_Employee" Association="HRMSModel.FK_Employee_Employee">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Employee1" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Employee1" Association="HRMSModel.FK_Employee_Employee1">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Employee1" EntitySet="Employees" />
+          </AssociationSet>
+          <EntitySet Name="EmploymentStatus" EntityType="HRMSModel.EmploymentStatu" />
+          <AssociationSet Name="FK_Employee_EmploymentStatus" Association="HRMSModel.FK_Employee_EmploymentStatus">
+            <End Role="EmploymentStatu" EntitySet="EmploymentStatus" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Role">
           <Key>
@@ -793,6 +869,50 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Employee_Employee">
+          <End Type="HRMSModel.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="HRMSModel.Employee" Role="Employee1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Employee1">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Employee1">
+          <End Type="HRMSModel.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="HRMSModel.Employee" Role="Employee1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="StaffId" />
+            </Principal>
+            <Dependent Role="Employee1">
+              <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EmploymentStatu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employees" Relationship="HRMSModel.FK_Employee_EmploymentStatus" FromRole="EmploymentStatu" ToRole="Employee" />
+        </EntityType>
+        <Association Name="FK_Employee_EmploymentStatus">
+          <End Type="HRMSModel.EmploymentStatu" Role="EmploymentStatu" Multiplicity="0..1" />
+          <End Type="HRMSModel.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EmploymentStatu">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="EmploymentStatusid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -832,6 +952,7 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="HRMSModel.Employee">
               <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmploymentStatusid" ColumnName="EmploymentStatusid" />
                 <ScalarProperty Name="StaffId" ColumnName="StaffId" />
                 <ScalarProperty Name="First_Name" ColumnName="First_Name" />
                 <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
@@ -964,6 +1085,14 @@
               <MappingFragment StoreEntitySet="UserRoles">
                 <ScalarProperty Name="rolesid" ColumnName="rolesid" />
                 <ScalarProperty Name="useid" ColumnName="useid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmploymentStatus">
+            <EntityTypeMapping TypeName="HRMSModel.EmploymentStatu">
+              <MappingFragment StoreEntitySet="EmploymentStatus">
+                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

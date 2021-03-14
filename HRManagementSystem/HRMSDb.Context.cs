@@ -40,5 +40,6 @@ namespace HRManagementSystem
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UserRole> UserRoles { get; set; }
+        public virtual DbSet<EmploymentStatu> EmploymentStatus { get; set; }
     }
 }

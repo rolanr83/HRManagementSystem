@@ -45,6 +45,7 @@ namespace HRManagementSystem
         public string Employment_Status { get; set; }
         public Nullable<int> DepartmentId { get; set; }
         public Nullable<int> PositionId { get; set; }
+        public Nullable<int> EmploymentStatusid { get; set; }
     
         public virtual Department Department { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -57,5 +58,10 @@ namespace HRManagementSystem
         public virtual ICollection<Staff_Education> Staff_Education { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Staff_Leave> Staff_Leave { get; set; }
+        public virtual Employee Employee1 { get; set; }
+        public virtual Employee Employee2 { get; set; }
+        public virtual Employee Employee11 { get; set; }
+        public virtual Employee Employee3 { get; set; }
+        public virtual EmploymentStatu EmploymentStatu { get; set; }
     }
 }

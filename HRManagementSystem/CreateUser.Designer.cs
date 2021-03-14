@@ -71,7 +71,7 @@ namespace HRManagementSystem
             this.tbeadd = new System.Windows.Forms.TextBox();
             this.tbdepartment = new System.Windows.Forms.TextBox();
             this.dtenddate = new System.Windows.Forms.DateTimePicker();
-            this.tbtoe = new System.Windows.Forms.ComboBox();
+            this.cbEmploymentStatus = new System.Windows.Forms.ComboBox();
             this.postlabel = new System.Windows.Forms.Label();
             this.departmentlabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -413,9 +413,9 @@ namespace HRManagementSystem
             this.toelabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toelabel.Location = new System.Drawing.Point(12, 442);
             this.toelabel.Name = "toelabel";
-            this.toelabel.Size = new System.Drawing.Size(146, 19);
+            this.toelabel.Size = new System.Drawing.Size(138, 19);
             this.toelabel.TabIndex = 62;
-            this.toelabel.Text = "Type of Employment";
+            this.toelabel.Text = "Employment Status";
             // 
             // tbeadd
             // 
@@ -438,16 +438,13 @@ namespace HRManagementSystem
             this.dtenddate.Size = new System.Drawing.Size(193, 20);
             this.dtenddate.TabIndex = 66;
             // 
-            // tbtoe
+            // cbEmploymentStatus
             // 
-            this.tbtoe.FormattingEnabled = true;
-            this.tbtoe.Items.AddRange(new object[] {
-            "Permanent",
-            "Contract"});
-            this.tbtoe.Location = new System.Drawing.Point(16, 464);
-            this.tbtoe.Name = "tbtoe";
-            this.tbtoe.Size = new System.Drawing.Size(189, 21);
-            this.tbtoe.TabIndex = 67;
+            this.cbEmploymentStatus.FormattingEnabled = true;
+            this.cbEmploymentStatus.Location = new System.Drawing.Point(16, 464);
+            this.cbEmploymentStatus.Name = "cbEmploymentStatus";
+            this.cbEmploymentStatus.Size = new System.Drawing.Size(189, 21);
+            this.cbEmploymentStatus.TabIndex = 67;
             // 
             // postlabel
             // 
@@ -476,7 +473,7 @@ namespace HRManagementSystem
             this.ClientSize = new System.Drawing.Size(827, 585);
             this.Controls.Add(this.departmentlabel);
             this.Controls.Add(this.postlabel);
-            this.Controls.Add(this.tbtoe);
+            this.Controls.Add(this.cbEmploymentStatus);
             this.Controls.Add(this.dtenddate);
             this.Controls.Add(this.tbdepartment);
             this.Controls.Add(this.tbeadd);
@@ -521,6 +518,7 @@ namespace HRManagementSystem
             this.Controls.Add(this.tbfname);
             this.Name = "CreateUser";
             this.Text = "Create Employee Records";
+            this.Load += new System.EventHandler(this.CreateUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -570,7 +568,7 @@ namespace HRManagementSystem
         private System.Windows.Forms.TextBox tbeadd;
         private System.Windows.Forms.TextBox tbdepartment;
         private System.Windows.Forms.DateTimePicker dtenddate;
-        private System.Windows.Forms.ComboBox tbtoe;
+        private System.Windows.Forms.ComboBox cbEmploymentStatus;
         private System.Windows.Forms.Label postlabel;
         private System.Windows.Forms.Label departmentlabel;
     }

@@ -33,6 +33,10 @@
         <EntityTypeShape EntityType="HRMSModel.UserRole" Width="1.5" PointX="3" PointY="0.875" />
         <AssociationConnector Association="HRMSModel.FK_UserRoles_Roles" />
         <AssociationConnector Association="HRMSModel.FK_UserRoles_User" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_Employee" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_Employee1" />
+        <EntityTypeShape EntityType="HRMSModel.EmploymentStatu" Width="1.5" PointX="0.75" PointY="11.375" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_EmploymentStatus" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

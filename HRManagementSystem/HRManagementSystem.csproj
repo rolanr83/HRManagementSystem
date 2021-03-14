@@ -115,6 +115,9 @@
     <Compile Include="Employee_Previous_Jobs.cs">
       <DependentUpon>HRMSDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmploymentStatu.cs">
+      <DependentUpon>HRMSDb.tt</DependentUpon>
+    </Compile>
     <Compile Include="HRMSDb.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

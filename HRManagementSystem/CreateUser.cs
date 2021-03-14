@@ -12,9 +12,11 @@ namespace HRManagementSystem
 {
     public partial class CreateUser : Form
     {
+        private readonly HRMSEntities2 hRMSEntities2;
         public CreateUser()
         {
             InitializeComponent();
+            hRMSEntities2 = new HRMSEntities2();
         }
 
         private void submitbtn_Click(object sender, EventArgs e)
@@ -39,7 +41,7 @@ namespace HRManagementSystem
                 string EmailAddress = tbeadd.Text;
                 var Startdate = dtstartdate.Value;
                 var Enddate = dtenddate.Value;
-                var TypeOfEmployement = tbtoe.Text;
+                var TypeOfEmployement = cbEmploymentStatus.Text;
                 string Department = tbdepartment.Text;
                 string Post = tbpost.Text;
 
@@ -83,6 +85,14 @@ namespace HRManagementSystem
             }
                     
 
+        }
+
+        private void CreateUser_Load(object sender, EventArgs e)
+        {
+            var hrms = hRMSEntities2.EmploymentStatus.ToList();
+            cbEmploymentStatus.DisplayMember = "Name";
+            cbEmploymentStatus.ValueMember = "id";
+            cbEmploymentStatus.DataSource = hrms;
         }
     }
 }
