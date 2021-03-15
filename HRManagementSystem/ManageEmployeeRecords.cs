@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HRManagementSystem
 {
-    public partial class EmployeeForm : Form
+    public partial class ManageEmployeeRecords : Form
     {
-        public EmployeeForm()
+        public ManageEmployeeRecords()
         {
             InitializeComponent();
         }
@@ -21,9 +21,14 @@ namespace HRManagementSystem
         {
             var createuser = new CreateUser();
             createuser.MdiParent = this;
-            createuser.Show();
-            
+            createuser.Show();         
+        }
 
+        private void viewEmployeeListingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var emploeelisting = new ManageEmployeeListing();
+            emploeelisting.MdiParent = this;
+            emploeelisting.Show();
         }
     }
 }

@@ -36,7 +36,7 @@ namespace HRManagementSystem
 
         private void empButton_Click(object sender, EventArgs e)
         {
-            var employeeFrom = new EmployeeForm ();
+            var employeeFrom = new ManageEmployeeRecords ();
                 employeeFrom.Show();
             //Hide();
             

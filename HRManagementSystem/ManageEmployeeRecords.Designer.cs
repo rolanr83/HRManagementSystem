@@ -1,7 +1,7 @@
 ﻿
 namespace HRManagementSystem
 {
-    partial class EmployeeForm
+    partial class ManageEmployeeRecords
     {
         /// <summary>
         /// Required designer variable.
@@ -32,16 +32,15 @@ namespace HRManagementSystem
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.manageEmployeeRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editEmployeeRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewEmployeeRecordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewArchiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewEmployeeListingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manageEmployeeRecordsToolStripMenuItem});
+            this.manageEmployeeRecordsToolStripMenuItem,
+            this.viewEmployeeListingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -51,10 +50,7 @@ namespace HRManagementSystem
             // manageEmployeeRecordsToolStripMenuItem
             // 
             this.manageEmployeeRecordsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addEmployeeToolStripMenuItem,
-            this.editEmployeeRecordsToolStripMenuItem,
-            this.viewEmployeeRecordsToolStripMenuItem,
-            this.viewArchiveToolStripMenuItem});
+            this.addEmployeeToolStripMenuItem});
             this.manageEmployeeRecordsToolStripMenuItem.Name = "manageEmployeeRecordsToolStripMenuItem";
             this.manageEmployeeRecordsToolStripMenuItem.Size = new System.Drawing.Size(162, 20);
             this.manageEmployeeRecordsToolStripMenuItem.Text = "Manage Employee Records";
@@ -62,29 +58,18 @@ namespace HRManagementSystem
             // addEmployeeToolStripMenuItem
             // 
             this.addEmployeeToolStripMenuItem.Name = "addEmployeeToolStripMenuItem";
-            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.addEmployeeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addEmployeeToolStripMenuItem.Text = "Add Employee";
             this.addEmployeeToolStripMenuItem.Click += new System.EventHandler(this.addEmployeeToolStripMenuItem_Click);
             // 
-            // editEmployeeRecordsToolStripMenuItem
+            // viewEmployeeListingToolStripMenuItem
             // 
-            this.editEmployeeRecordsToolStripMenuItem.Name = "editEmployeeRecordsToolStripMenuItem";
-            this.editEmployeeRecordsToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.editEmployeeRecordsToolStripMenuItem.Text = "Edit Employee Records";
+            this.viewEmployeeListingToolStripMenuItem.Name = "viewEmployeeListingToolStripMenuItem";
+            this.viewEmployeeListingToolStripMenuItem.Size = new System.Drawing.Size(137, 20);
+            this.viewEmployeeListingToolStripMenuItem.Text = "View Employee Listing";
+            this.viewEmployeeListingToolStripMenuItem.Click += new System.EventHandler(this.viewEmployeeListingToolStripMenuItem_Click);
             // 
-            // viewEmployeeRecordsToolStripMenuItem
-            // 
-            this.viewEmployeeRecordsToolStripMenuItem.Name = "viewEmployeeRecordsToolStripMenuItem";
-            this.viewEmployeeRecordsToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.viewEmployeeRecordsToolStripMenuItem.Text = "View Employee Records";
-            // 
-            // viewArchiveToolStripMenuItem
-            // 
-            this.viewArchiveToolStripMenuItem.Name = "viewArchiveToolStripMenuItem";
-            this.viewArchiveToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-            this.viewArchiveToolStripMenuItem.Text = "View Archive";
-            // 
-            // EmployeeForm
+            // ManageEmployeeRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -92,7 +77,7 @@ namespace HRManagementSystem
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "EmployeeForm";
+            this.Name = "ManageEmployeeRecords";
             this.Text = "Human Resource Management System";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -106,8 +91,6 @@ namespace HRManagementSystem
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem manageEmployeeRecordsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addEmployeeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editEmployeeRecordsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewEmployeeRecordsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewArchiveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewEmployeeListingToolStripMenuItem;
     }
 }

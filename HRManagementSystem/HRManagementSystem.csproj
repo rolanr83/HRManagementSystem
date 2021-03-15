@@ -106,11 +106,17 @@
     <Compile Include="Employee.cs">
       <DependentUpon>HRMSDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeForm.cs">
+    <Compile Include="ManageEmployeeListing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeeForm.Designer.cs">
-      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    <Compile Include="ManageEmployeeListing.Designer.cs">
+      <DependentUpon>ManageEmployeeListing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageEmployeeRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageEmployeeRecords.Designer.cs">
+      <DependentUpon>ManageEmployeeRecords.cs</DependentUpon>
     </Compile>
     <Compile Include="Employee_Previous_Jobs.cs">
       <DependentUpon>HRMSDb.tt</DependentUpon>
@@ -191,8 +197,11 @@
     <EmbeddedResource Include="Dash_Board.resx">
       <DependentUpon>Dash_Board.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeForm.resx">
-      <DependentUpon>EmployeeForm.cs</DependentUpon>
+    <EmbeddedResource Include="ManageEmployeeListing.resx">
+      <DependentUpon>ManageEmployeeListing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageEmployeeRecords.resx">
+      <DependentUpon>ManageEmployeeRecords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
