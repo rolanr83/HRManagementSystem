@@ -35,7 +35,7 @@ namespace HRManagementSystem
                 string Address2 = tbadd2.Text;
                 string Parish = tbparish.Text;
                 string Country = tbcountry.Text;
-                //string DOB = dtdob.Value;
+                var DOB = dtdob.Value;
                 string MaritalStatus = tbms.Text;
                 string MobileNumber = tbmnum.Text;
                 string EmailAddress = tbeadd.Text;
@@ -55,8 +55,8 @@ namespace HRManagementSystem
                     || string.IsNullOrWhiteSpace(Address1) || string.IsNullOrWhiteSpace(Address2)
                     || string.IsNullOrWhiteSpace(Parish) || string.IsNullOrWhiteSpace(Country)
                     || string.IsNullOrWhiteSpace(MobileNumber) || string.IsNullOrWhiteSpace(EmailAddress)
-                    /*||string.IsNullOrWhiteSpace(DOB)*/ || string.IsNullOrWhiteSpace(TypeOfEmployement)
-                    || string.IsNullOrWhiteSpace(Department) || string.IsNullOrWhiteSpace(Post))
+                    || string.IsNullOrWhiteSpace(TypeOfEmployement) || string.IsNullOrWhiteSpace(Department) 
+                    || string.IsNullOrWhiteSpace(Post))
                 {
                     isValid = false;
                     errorMessage += "Error: Please Enter Missing information. \n\r";
@@ -81,7 +81,7 @@ namespace HRManagementSystem
                     employee.Address_2 = Address2;
                     employee.Parish = Parish;
                     employee.Country = Country;
-                    //employee.Date_Of_Birth = DOB;
+                    employee.Date_Of_Birth = DOB;
                     employee.Marital_Stuts = MaritalStatus;
                     employee.Mobile_Number = MobileNumber;
                     employee.Email_Address = EmailAddress;

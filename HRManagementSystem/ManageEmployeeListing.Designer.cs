@@ -31,9 +31,8 @@ namespace HRManagementSystem
         {
             this.label1 = new System.Windows.Forms.Label();
             this.gvManageemployeeList = new System.Windows.Forms.DataGridView();
-            this.AddEmployeebtn = new System.Windows.Forms.Button();
-            this.EditEmployeebtn = new System.Windows.Forms.Button();
             this.DeleteEmployeebtn = new System.Windows.Forms.Button();
+            this.EditEmployeebtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvManageemployeeList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,28 +54,6 @@ namespace HRManagementSystem
             this.gvManageemployeeList.Size = new System.Drawing.Size(1015, 288);
             this.gvManageemployeeList.TabIndex = 1;
             // 
-            // AddEmployeebtn
-            // 
-            this.AddEmployeebtn.Font = new System.Drawing.Font("Arial", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddEmployeebtn.Location = new System.Drawing.Point(192, 437);
-            this.AddEmployeebtn.Name = "AddEmployeebtn";
-            this.AddEmployeebtn.Size = new System.Drawing.Size(137, 43);
-            this.AddEmployeebtn.TabIndex = 2;
-            this.AddEmployeebtn.Text = "Add";
-            this.AddEmployeebtn.UseVisualStyleBackColor = true;
-            this.AddEmployeebtn.Click += new System.EventHandler(this.AddEmployeebtn_Click);
-            // 
-            // EditEmployeebtn
-            // 
-            this.EditEmployeebtn.Font = new System.Drawing.Font("Arial", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditEmployeebtn.Location = new System.Drawing.Point(486, 437);
-            this.EditEmployeebtn.Name = "EditEmployeebtn";
-            this.EditEmployeebtn.Size = new System.Drawing.Size(107, 43);
-            this.EditEmployeebtn.TabIndex = 3;
-            this.EditEmployeebtn.Text = "Edit";
-            this.EditEmployeebtn.UseVisualStyleBackColor = true;
-            this.EditEmployeebtn.Click += new System.EventHandler(this.EditEmployeebtn_Click);
-            // 
             // DeleteEmployeebtn
             // 
             this.DeleteEmployeebtn.Font = new System.Drawing.Font("Arial", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -87,6 +64,16 @@ namespace HRManagementSystem
             this.DeleteEmployeebtn.Text = "Delete";
             this.DeleteEmployeebtn.UseVisualStyleBackColor = true;
             // 
+            // EditEmployeebtn
+            // 
+            this.EditEmployeebtn.Font = new System.Drawing.Font("Arial", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditEmployeebtn.Location = new System.Drawing.Point(142, 437);
+            this.EditEmployeebtn.Name = "EditEmployeebtn";
+            this.EditEmployeebtn.Size = new System.Drawing.Size(107, 43);
+            this.EditEmployeebtn.TabIndex = 3;
+            this.EditEmployeebtn.Text = "Edit";
+            this.EditEmployeebtn.UseVisualStyleBackColor = true;
+            // 
             // ManageEmployeeListing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -94,7 +81,6 @@ namespace HRManagementSystem
             this.ClientSize = new System.Drawing.Size(1068, 492);
             this.Controls.Add(this.DeleteEmployeebtn);
             this.Controls.Add(this.EditEmployeebtn);
-            this.Controls.Add(this.AddEmployeebtn);
             this.Controls.Add(this.gvManageemployeeList);
             this.Controls.Add(this.label1);
             this.Name = "ManageEmployeeListing";
@@ -110,8 +96,7 @@ namespace HRManagementSystem
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView gvManageemployeeList;
-        private System.Windows.Forms.Button AddEmployeebtn;
-        private System.Windows.Forms.Button EditEmployeebtn;
         private System.Windows.Forms.Button DeleteEmployeebtn;
+        private System.Windows.Forms.Button EditEmployeebtn;
     }
 }

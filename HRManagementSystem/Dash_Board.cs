@@ -16,8 +16,7 @@ namespace HRManagementSystem
         private Login _login;
         public string _RoleName;
         public ManageUsers _manageUsers;
-        //public string _roleName;
-        //public User _user;
+        
 
         public Dash_Board()
         {
@@ -30,7 +29,6 @@ namespace HRManagementSystem
             InitializeComponent();
             _login = login;
             _RoleName = roleShortName;
-            //_user = user;
             //_roleName = user.UserRoles.FirstOrDefault().Role.shortname;
         }      
 

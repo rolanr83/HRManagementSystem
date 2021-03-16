@@ -66,16 +66,5 @@ namespace HRManagementSystem
             gvManageemployeeList.Columns[20].HeaderText = "End Date";           
         }
 
-        private void AddEmployeebtn_Click(object sender, EventArgs e)
-        {
-            //var createuser = new CreateUser();
-            //createuser.MdiParent = this;
-            //createuser.Show();
-        }
-
-        private void EditEmployeebtn_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
