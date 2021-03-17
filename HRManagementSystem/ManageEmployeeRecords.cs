@@ -24,11 +24,22 @@ namespace HRManagementSystem
             createuser.Show();         
         }
 
-        private void viewEmployeeListingToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void viewEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var emploeelisting = new ManageEmployeeListing();
-            emploeelisting.MdiParent = this;
-            emploeelisting.Show();
+               var emploeelisting = new ManageEmployeeListing();
+               emploeelisting.MdiParent = this;
+               emploeelisting.Show();
+        }
+
+        private void editEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,7 +30,7 @@ namespace HRManagementSystem
         private void InitializeComponent()
         {
             this.tbfname = new System.Windows.Forms.TextBox();
-            this.nelabel = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.fnlabel = new System.Windows.Forms.Label();
             this.nislabel = new System.Windows.Forms.Label();
             this.trnlabel = new System.Windows.Forms.Label();
@@ -74,6 +74,8 @@ namespace HRManagementSystem
             this.cbEmploymentStatus = new System.Windows.Forms.ComboBox();
             this.postlabel = new System.Windows.Forms.Label();
             this.departmentlabel = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.lblId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbfname
@@ -83,17 +85,16 @@ namespace HRManagementSystem
             this.tbfname.Size = new System.Drawing.Size(204, 20);
             this.tbfname.TabIndex = 20;
             // 
-            // nelabel
+            // lblTitle
             // 
-            this.nelabel.AutoSize = true;
-            this.nelabel.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.nelabel.Font = new System.Drawing.Font("Lucida Bright", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nelabel.Location = new System.Drawing.Point(272, 9);
-            this.nelabel.Name = "nelabel";
-            this.nelabel.Size = new System.Drawing.Size(294, 42);
-            this.nelabel.TabIndex = 21;
-            this.nelabel.Text = "New Employee";
-            this.nelabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblTitle.Font = new System.Drawing.Font("Lucida Bright", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(272, 9);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(0, 42);
+            this.lblTitle.TabIndex = 21;
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // fnlabel
             // 
@@ -390,7 +391,7 @@ namespace HRManagementSystem
             // submitbtn
             // 
             this.submitbtn.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submitbtn.Location = new System.Drawing.Point(292, 528);
+            this.submitbtn.Location = new System.Drawing.Point(77, 528);
             this.submitbtn.Name = "submitbtn";
             this.submitbtn.Size = new System.Drawing.Size(191, 45);
             this.submitbtn.TabIndex = 59;
@@ -466,11 +467,33 @@ namespace HRManagementSystem
             this.departmentlabel.TabIndex = 69;
             this.departmentlabel.Text = "Department";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Monotype Corsiva", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(424, 528);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(191, 45);
+            this.btnCancel.TabIndex = 70;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(552, 13);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(0, 13);
+            this.lblId.TabIndex = 71;
+            this.lblId.Visible = false;
+            // 
             // CreateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(827, 585);
+            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.departmentlabel);
             this.Controls.Add(this.postlabel);
             this.Controls.Add(this.cbEmploymentStatus);
@@ -514,7 +537,7 @@ namespace HRManagementSystem
             this.Controls.Add(this.trnlabel);
             this.Controls.Add(this.nislabel);
             this.Controls.Add(this.fnlabel);
-            this.Controls.Add(this.nelabel);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tbfname);
             this.Name = "CreateUser";
             this.Text = "Create Employee Records";
@@ -527,7 +550,7 @@ namespace HRManagementSystem
         #endregion
 
         private System.Windows.Forms.TextBox tbfname;
-        private System.Windows.Forms.Label nelabel;
+        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label fnlabel;
         private System.Windows.Forms.Label nislabel;
         private System.Windows.Forms.Label trnlabel;
@@ -571,6 +594,8 @@ namespace HRManagementSystem
         private System.Windows.Forms.ComboBox cbEmploymentStatus;
         private System.Windows.Forms.Label postlabel;
         private System.Windows.Forms.Label departmentlabel;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label lblId;
     }
 }
 

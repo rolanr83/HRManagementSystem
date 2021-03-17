@@ -66,5 +66,29 @@ namespace HRManagementSystem
             gvManageemployeeList.Columns[20].HeaderText = "End Date";           
         }
 
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            var createUser = new CreateUser();
+            createUser.MdiParent = this.MdiParent;
+            createUser.Show();
+        }
+
+        private void btnEdituserbtn_Click(object sender, EventArgs e)
+        {
+            var id = (int)gvManageemployeeList.SelectedRows[0].Cells["STAFF_ID"].Value;
+            var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
+            var createUser = new CreateUser(employee);
+            createUser.MdiParent = this.MdiParent;
+            createUser.Show();
+        }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            var id = (int)gvManageemployeeList.SelectedRows[0].Cells["STAFF_ID"].Value;
+            var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
+            _db.Employees.Remove(employee);
+            _db.SaveChanges();
+            gvManageemployeeList.Refresh();
+        }
     }
 }

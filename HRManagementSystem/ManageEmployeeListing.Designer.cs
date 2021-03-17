@@ -31,8 +31,9 @@ namespace HRManagementSystem
         {
             this.label1 = new System.Windows.Forms.Label();
             this.gvManageemployeeList = new System.Windows.Forms.DataGridView();
-            this.DeleteEmployeebtn = new System.Windows.Forms.Button();
-            this.EditEmployeebtn = new System.Windows.Forms.Button();
+            this.btnDeleteUser = new System.Windows.Forms.Button();
+            this.btnEdituserbtn = new System.Windows.Forms.Button();
+            this.btnAddUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvManageemployeeList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,9 +43,9 @@ namespace HRManagementSystem
             this.label1.Font = new System.Drawing.Font("Matura MT Script Capitals", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(284, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(430, 53);
+            this.label1.Size = new System.Drawing.Size(472, 53);
             this.label1.TabIndex = 0;
-            this.label1.Text = "View Employee List ";
+            this.label1.Text = "View Employee Records";
             // 
             // gvManageemployeeList
             // 
@@ -54,33 +55,47 @@ namespace HRManagementSystem
             this.gvManageemployeeList.Size = new System.Drawing.Size(1015, 288);
             this.gvManageemployeeList.TabIndex = 1;
             // 
-            // DeleteEmployeebtn
+            // btnDeleteUser
             // 
-            this.DeleteEmployeebtn.Font = new System.Drawing.Font("Arial", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteEmployeebtn.Location = new System.Drawing.Point(790, 437);
-            this.DeleteEmployeebtn.Name = "DeleteEmployeebtn";
-            this.DeleteEmployeebtn.Size = new System.Drawing.Size(130, 43);
-            this.DeleteEmployeebtn.TabIndex = 4;
-            this.DeleteEmployeebtn.Text = "Delete";
-            this.DeleteEmployeebtn.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.Font = new System.Drawing.Font("Arial", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteUser.Location = new System.Drawing.Point(790, 437);
+            this.btnDeleteUser.Name = "btnDeleteUser";
+            this.btnDeleteUser.Size = new System.Drawing.Size(130, 43);
+            this.btnDeleteUser.TabIndex = 4;
+            this.btnDeleteUser.Text = "Delete";
+            this.btnDeleteUser.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
             // 
-            // EditEmployeebtn
+            // btnEdituserbtn
             // 
-            this.EditEmployeebtn.Font = new System.Drawing.Font("Arial", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditEmployeebtn.Location = new System.Drawing.Point(142, 437);
-            this.EditEmployeebtn.Name = "EditEmployeebtn";
-            this.EditEmployeebtn.Size = new System.Drawing.Size(107, 43);
-            this.EditEmployeebtn.TabIndex = 3;
-            this.EditEmployeebtn.Text = "Edit";
-            this.EditEmployeebtn.UseVisualStyleBackColor = true;
+            this.btnEdituserbtn.Font = new System.Drawing.Font("Arial", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdituserbtn.Location = new System.Drawing.Point(463, 437);
+            this.btnEdituserbtn.Name = "btnEdituserbtn";
+            this.btnEdituserbtn.Size = new System.Drawing.Size(107, 43);
+            this.btnEdituserbtn.TabIndex = 3;
+            this.btnEdituserbtn.Text = "Edit";
+            this.btnEdituserbtn.UseVisualStyleBackColor = true;
+            this.btnEdituserbtn.Click += new System.EventHandler(this.btnEdituserbtn_Click);
+            // 
+            // btnAddUser
+            // 
+            this.btnAddUser.Font = new System.Drawing.Font("Arial", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddUser.Location = new System.Drawing.Point(124, 437);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(107, 43);
+            this.btnAddUser.TabIndex = 5;
+            this.btnAddUser.Text = "Add";
+            this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // ManageEmployeeListing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 492);
-            this.Controls.Add(this.DeleteEmployeebtn);
-            this.Controls.Add(this.EditEmployeebtn);
+            this.Controls.Add(this.btnAddUser);
+            this.Controls.Add(this.btnDeleteUser);
+            this.Controls.Add(this.btnEdituserbtn);
             this.Controls.Add(this.gvManageemployeeList);
             this.Controls.Add(this.label1);
             this.Name = "ManageEmployeeListing";
@@ -96,7 +111,8 @@ namespace HRManagementSystem
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView gvManageemployeeList;
-        private System.Windows.Forms.Button DeleteEmployeebtn;
-        private System.Windows.Forms.Button EditEmployeebtn;
+        private System.Windows.Forms.Button btnDeleteUser;
+        private System.Windows.Forms.Button btnEdituserbtn;
+        private System.Windows.Forms.Button btnAddUser;
     }
 }
