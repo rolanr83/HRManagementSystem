@@ -31,155 +31,121 @@ namespace HRManagementSystem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dash_Board));
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.tbHeadings = new System.Windows.Forms.TextBox();
-            this.hrms = new System.Windows.Forms.Label();
-            this.dashboardbtn = new System.Windows.Forms.Button();
-            this.departmentbtn = new System.Windows.Forms.Button();
-            this.employeebtn = new System.Windows.Forms.Button();
-            this.Vacationbtn = new System.Windows.Forms.Button();
-            this.appraisalbtn = new System.Windows.Forms.Button();
-            this.btnManageUser = new System.Windows.Forms.Button();
-            this.profilebtn = new System.Windows.Forms.Button();
-            this.dashboardlabel = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dashBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmanageusers = new System.Windows.Forms.ToolStripMenuItem();
+            this.myProfileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.departmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vacationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.appriasalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.appraisalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.rbVacations = new HRManagementSystem.RoundButton();
             this.rbAppraisal = new HRManagementSystem.RoundButton();
             this.rbEmployees = new HRManagementSystem.RoundButton();
             this.rbMyProfile = new HRManagementSystem.RoundButton();
             this.rbDepartments = new HRManagementSystem.RoundButton();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox1.Location = new System.Drawing.Point(1, 0);
+            this.textBox1.Location = new System.Drawing.Point(149, 0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(892, 42);
+            this.textBox1.Size = new System.Drawing.Size(743, 61);
             this.textBox1.TabIndex = 0;
             // 
-            // tbHeadings
+            // menuStrip1
             // 
-            this.tbHeadings.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.tbHeadings.Location = new System.Drawing.Point(1, 40);
-            this.tbHeadings.Multiline = true;
-            this.tbHeadings.Name = "tbHeadings";
-            this.tbHeadings.Size = new System.Drawing.Size(214, 482);
-            this.tbHeadings.TabIndex = 1;
+            this.menuStrip1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip1.Font = new System.Drawing.Font("Arial", 15F);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dashBoardToolStripMenuItem,
+            this.tsmanageusers,
+            this.myProfileToolStripMenuItem,
+            this.departmentToolStripMenuItem,
+            this.vacationToolStripMenuItem,
+            this.appriasalToolStripMenuItem,
+            this.appraisalToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.menuStrip1.Size = new System.Drawing.Size(156, 524);
+            this.menuStrip1.TabIndex = 32;
+            this.menuStrip1.Text = "Menu";
             // 
-            // hrms
+            // dashBoardToolStripMenuItem
             // 
-            this.hrms.AutoSize = true;
-            this.hrms.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.hrms.Font = new System.Drawing.Font("Times New Roman", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hrms.ForeColor = System.Drawing.SystemColors.Info;
-            this.hrms.Location = new System.Drawing.Point(51, 48);
-            this.hrms.Name = "hrms";
-            this.hrms.Size = new System.Drawing.Size(103, 41);
-            this.hrms.TabIndex = 10;
-            this.hrms.Text = "Menu";
+            this.dashBoardToolStripMenuItem.Name = "dashBoardToolStripMenuItem";
+            this.dashBoardToolStripMenuItem.Size = new System.Drawing.Size(143, 27);
+            this.dashBoardToolStripMenuItem.Text = "Dash Board";
             // 
-            // dashboardbtn
+            // tsmanageusers
             // 
-            this.dashboardbtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dashboardbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dashboardbtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashboardbtn.ForeColor = System.Drawing.Color.White;
-            this.dashboardbtn.Location = new System.Drawing.Point(44, 107);
-            this.dashboardbtn.Name = "dashboardbtn";
-            this.dashboardbtn.Size = new System.Drawing.Size(129, 39);
-            this.dashboardbtn.TabIndex = 18;
-            this.dashboardbtn.Text = "Dash Board";
-            this.dashboardbtn.UseVisualStyleBackColor = false;
+            this.tsmanageusers.Name = "tsmanageusers";
+            this.tsmanageusers.Size = new System.Drawing.Size(143, 27);
+            this.tsmanageusers.Text = "Manage Users";
+            this.tsmanageusers.Click += new System.EventHandler(this.employeeToolStripMenuItem_Click);
             // 
-            // departmentbtn
+            // myProfileToolStripMenuItem
             // 
-            this.departmentbtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.departmentbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.departmentbtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.departmentbtn.ForeColor = System.Drawing.Color.White;
-            this.departmentbtn.Location = new System.Drawing.Point(44, 317);
-            this.departmentbtn.Name = "departmentbtn";
-            this.departmentbtn.Size = new System.Drawing.Size(129, 39);
-            this.departmentbtn.TabIndex = 20;
-            this.departmentbtn.Text = "Departments";
-            this.departmentbtn.UseVisualStyleBackColor = false;
+            this.myProfileToolStripMenuItem.Name = "myProfileToolStripMenuItem";
+            this.myProfileToolStripMenuItem.Size = new System.Drawing.Size(143, 27);
+            this.myProfileToolStripMenuItem.Text = "Employee";
+            this.myProfileToolStripMenuItem.Click += new System.EventHandler(this.myProfileToolStripMenuItem_Click);
             // 
-            // employeebtn
+            // departmentToolStripMenuItem
             // 
-            this.employeebtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.employeebtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.employeebtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeebtn.ForeColor = System.Drawing.Color.White;
-            this.employeebtn.Location = new System.Drawing.Point(44, 176);
-            this.employeebtn.Name = "employeebtn";
-            this.employeebtn.Size = new System.Drawing.Size(129, 39);
-            this.employeebtn.TabIndex = 21;
-            this.employeebtn.Text = "Employees";
-            this.employeebtn.UseVisualStyleBackColor = false;
-            this.employeebtn.Click += new System.EventHandler(this.empButton_Click);
+            this.departmentToolStripMenuItem.Name = "departmentToolStripMenuItem";
+            this.departmentToolStripMenuItem.Size = new System.Drawing.Size(143, 27);
+            this.departmentToolStripMenuItem.Text = "My Profile";
             // 
-            // Vacationbtn
+            // vacationToolStripMenuItem
             // 
-            this.Vacationbtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.Vacationbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Vacationbtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Vacationbtn.ForeColor = System.Drawing.Color.White;
-            this.Vacationbtn.Location = new System.Drawing.Point(44, 389);
-            this.Vacationbtn.Name = "Vacationbtn";
-            this.Vacationbtn.Size = new System.Drawing.Size(129, 39);
-            this.Vacationbtn.TabIndex = 22;
-            this.Vacationbtn.Text = "Vacation";
-            this.Vacationbtn.UseVisualStyleBackColor = false;
+            this.vacationToolStripMenuItem.Name = "vacationToolStripMenuItem";
+            this.vacationToolStripMenuItem.Size = new System.Drawing.Size(143, 27);
+            this.vacationToolStripMenuItem.Text = "Department";
             // 
-            // appraisalbtn
+            // appriasalToolStripMenuItem
             // 
-            this.appraisalbtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.appraisalbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.appraisalbtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.appraisalbtn.ForeColor = System.Drawing.Color.White;
-            this.appraisalbtn.Location = new System.Drawing.Point(44, 463);
-            this.appraisalbtn.Name = "appraisalbtn";
-            this.appraisalbtn.Size = new System.Drawing.Size(129, 39);
-            this.appraisalbtn.TabIndex = 23;
-            this.appraisalbtn.Text = "Appraisal";
-            this.appraisalbtn.UseVisualStyleBackColor = false;
+            this.appriasalToolStripMenuItem.Name = "appriasalToolStripMenuItem";
+            this.appriasalToolStripMenuItem.Size = new System.Drawing.Size(143, 27);
+            this.appriasalToolStripMenuItem.Text = "Vacation";
             // 
-            // btnManageUser
+            // appraisalToolStripMenuItem
             // 
-            this.btnManageUser.BackColor = System.Drawing.Color.LightBlue;
-            this.btnManageUser.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnManageUser.ForeColor = System.Drawing.Color.Black;
-            this.btnManageUser.Location = new System.Drawing.Point(751, 7);
-            this.btnManageUser.Name = "btnManageUser";
-            this.btnManageUser.Size = new System.Drawing.Size(130, 28);
-            this.btnManageUser.TabIndex = 24;
-            this.btnManageUser.Text = "Manage User";
-            this.btnManageUser.UseVisualStyleBackColor = false;
-            this.btnManageUser.Click += new System.EventHandler(this.btnManageUser_Click);
+            this.appraisalToolStripMenuItem.Name = "appraisalToolStripMenuItem";
+            this.appraisalToolStripMenuItem.Size = new System.Drawing.Size(143, 27);
+            this.appraisalToolStripMenuItem.Text = "Appraisal";
             // 
-            // profilebtn
+            // label1
             // 
-            this.profilebtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.profilebtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.profilebtn.Font = new System.Drawing.Font("Lucida Sans Unicode", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.profilebtn.ForeColor = System.Drawing.Color.White;
-            this.profilebtn.Location = new System.Drawing.Point(44, 251);
-            this.profilebtn.Name = "profilebtn";
-            this.profilebtn.Size = new System.Drawing.Size(129, 39);
-            this.profilebtn.TabIndex = 27;
-            this.profilebtn.Text = "My Profile";
-            this.profilebtn.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.PowderBlue;
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(348, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(426, 37);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Human Resource Management System";
             // 
-            // dashboardlabel
+            // statusStrip1
             // 
-            this.dashboardlabel.AutoSize = true;
-            this.dashboardlabel.BackColor = System.Drawing.Color.LightSlateGray;
-            this.dashboardlabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashboardlabel.Location = new System.Drawing.Point(358, 7);
-            this.dashboardlabel.Name = "dashboardlabel";
-            this.dashboardlabel.Size = new System.Drawing.Size(169, 32);
-            this.dashboardlabel.TabIndex = 28;
-            this.dashboardlabel.Text = "Dash Board";
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripProgressBar1});
+            this.statusStrip1.Location = new System.Drawing.Point(156, 502);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(737, 22);
+            this.statusStrip1.TabIndex = 35;
+            this.statusStrip1.Text = "statusStrip1";
             // 
             // rbVacations
             // 
@@ -251,32 +217,35 @@ namespace HRManagementSystem
             this.rbDepartments.TabIndex = 13;
             this.rbDepartments.UseVisualStyleBackColor = false;
             // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            // 
             // Dash_Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
             this.ClientSize = new System.Drawing.Size(893, 524);
-            this.Controls.Add(this.dashboardlabel);
-            this.Controls.Add(this.profilebtn);
-            this.Controls.Add(this.btnManageUser);
-            this.Controls.Add(this.appraisalbtn);
-            this.Controls.Add(this.Vacationbtn);
-            this.Controls.Add(this.employeebtn);
-            this.Controls.Add(this.departmentbtn);
-            this.Controls.Add(this.dashboardbtn);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.rbVacations);
             this.Controls.Add(this.rbAppraisal);
             this.Controls.Add(this.rbEmployees);
             this.Controls.Add(this.rbMyProfile);
             this.Controls.Add(this.rbDepartments);
-            this.Controls.Add(this.hrms);
-            this.Controls.Add(this.tbHeadings);
             this.Controls.Add(this.textBox1);
             this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Dash_Board";
             this.Text = "Dash_Board";
             this.Load += new System.EventHandler(this.Dash_Board_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,20 +254,21 @@ namespace HRManagementSystem
         #endregion
 
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox tbHeadings;
-        private System.Windows.Forms.Label hrms;
         private RoundButton rbDepartments;
         private RoundButton rbMyProfile;
         private RoundButton rbEmployees;
         private RoundButton rbAppraisal;
         private RoundButton rbVacations;
-        private System.Windows.Forms.Button dashboardbtn;
-        private System.Windows.Forms.Button departmentbtn;
-        private System.Windows.Forms.Button employeebtn;
-        private System.Windows.Forms.Button Vacationbtn;
-        private System.Windows.Forms.Button appraisalbtn;
-        private System.Windows.Forms.Button btnManageUser;
-        private System.Windows.Forms.Button profilebtn;
-        private System.Windows.Forms.Label dashboardlabel;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem dashBoardToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmanageusers;
+        private System.Windows.Forms.ToolStripMenuItem myProfileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem departmentToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem vacationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem appriasalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem appraisalToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
     }
 }

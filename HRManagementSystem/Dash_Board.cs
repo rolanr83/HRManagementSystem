@@ -31,30 +31,28 @@ namespace HRManagementSystem
             _RoleName = roleShortName;
             //_roleName = user.UserRoles.FirstOrDefault().Role.shortname;
         }      
-
-        private void empButton_Click(object sender, EventArgs e)
-        {
-            var employeeFrom = new ManageEmployeeRecords ();
-                employeeFrom.Show();
-            //Hide();
-            
-
-        }
        
         private void Dash_Board_Load(object sender, EventArgs e)
         {
             if(_RoleName != "admin")
             {
-                btnManageUser.Visible = false;
+                tsmanageusers.Visible = false;
 
             }
         }
 
-        private void btnManageUser_Click(object sender, EventArgs e)
+        private void employeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var manageUsers = new ManageUsers();
             //manageUsers.MdiParent = this;
             manageUsers.Show();
+        }
+
+        private void myProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var employeeFrom = new ManageEmployeeRecords();
+            employeeFrom.Show();
+            //Hide();
         }
     }
 }
