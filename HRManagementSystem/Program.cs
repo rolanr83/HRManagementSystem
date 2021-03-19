@@ -16,7 +16,7 @@ namespace HRManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ManageEmployeeRecords());
+            Application.Run(new Dash_Board());
         }
     }
 }

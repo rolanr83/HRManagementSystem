@@ -42,11 +42,11 @@ namespace HRManagementSystem
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.rbVacations = new HRManagementSystem.RoundButton();
-            this.rbAppraisal = new HRManagementSystem.RoundButton();
             this.rbEmployees = new HRManagementSystem.RoundButton();
             this.rbMyProfile = new HRManagementSystem.RoundButton();
             this.rbDepartments = new HRManagementSystem.RoundButton();
+            this.rbVacations = new HRManagementSystem.RoundButton();
+            this.rbAppraisal = new HRManagementSystem.RoundButton();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -54,10 +54,10 @@ namespace HRManagementSystem
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.textBox1.Location = new System.Drawing.Point(149, 0);
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(743, 61);
+            this.textBox1.Size = new System.Drawing.Size(892, 94);
             this.textBox1.TabIndex = 0;
             // 
             // menuStrip1
@@ -131,7 +131,7 @@ namespace HRManagementSystem
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.PowderBlue;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(348, 13);
+            this.label1.Location = new System.Drawing.Point(323, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(426, 37);
             this.label1.TabIndex = 33;
@@ -143,7 +143,7 @@ namespace HRManagementSystem
             this.toolStripProgressBar1});
             this.statusStrip1.Location = new System.Drawing.Point(192, 502);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(701, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(699, 22);
             this.statusStrip1.TabIndex = 35;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -151,6 +151,48 @@ namespace HRManagementSystem
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
             this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            // 
+            // rbEmployees
+            // 
+            this.rbEmployees.BackColor = System.Drawing.Color.GhostWhite;
+            this.rbEmployees.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbEmployees.BackgroundImage")));
+            this.rbEmployees.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rbEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbEmployees.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
+            this.rbEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbEmployees.Location = new System.Drawing.Point(661, 213);
+            this.rbEmployees.Name = "rbEmployees";
+            this.rbEmployees.Size = new System.Drawing.Size(113, 102);
+            this.rbEmployees.TabIndex = 15;
+            this.rbEmployees.UseVisualStyleBackColor = false;
+            // 
+            // rbMyProfile
+            // 
+            this.rbMyProfile.BackColor = System.Drawing.Color.GhostWhite;
+            this.rbMyProfile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbMyProfile.BackgroundImage")));
+            this.rbMyProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rbMyProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbMyProfile.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
+            this.rbMyProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbMyProfile.Location = new System.Drawing.Point(289, 213);
+            this.rbMyProfile.Name = "rbMyProfile";
+            this.rbMyProfile.Size = new System.Drawing.Size(113, 102);
+            this.rbMyProfile.TabIndex = 14;
+            this.rbMyProfile.UseVisualStyleBackColor = false;
+            // 
+            // rbDepartments
+            // 
+            this.rbDepartments.BackColor = System.Drawing.Color.GhostWhite;
+            this.rbDepartments.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbDepartments.BackgroundImage")));
+            this.rbDepartments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.rbDepartments.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbDepartments.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
+            this.rbDepartments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbDepartments.Location = new System.Drawing.Point(472, 100);
+            this.rbDepartments.Name = "rbDepartments";
+            this.rbDepartments.Size = new System.Drawing.Size(113, 102);
+            this.rbDepartments.TabIndex = 13;
+            this.rbDepartments.UseVisualStyleBackColor = false;
             // 
             // rbVacations
             // 
@@ -180,54 +222,13 @@ namespace HRManagementSystem
             this.rbAppraisal.TabIndex = 16;
             this.rbAppraisal.UseVisualStyleBackColor = false;
             // 
-            // rbEmployees
-            // 
-            this.rbEmployees.BackColor = System.Drawing.Color.GhostWhite;
-            this.rbEmployees.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbEmployees.BackgroundImage")));
-            this.rbEmployees.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rbEmployees.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbEmployees.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
-            this.rbEmployees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbEmployees.Location = new System.Drawing.Point(659, 188);
-            this.rbEmployees.Name = "rbEmployees";
-            this.rbEmployees.Size = new System.Drawing.Size(113, 102);
-            this.rbEmployees.TabIndex = 15;
-            this.rbEmployees.UseVisualStyleBackColor = false;
-            // 
-            // rbMyProfile
-            // 
-            this.rbMyProfile.BackColor = System.Drawing.Color.GhostWhite;
-            this.rbMyProfile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbMyProfile.BackgroundImage")));
-            this.rbMyProfile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rbMyProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbMyProfile.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
-            this.rbMyProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbMyProfile.Location = new System.Drawing.Point(285, 188);
-            this.rbMyProfile.Name = "rbMyProfile";
-            this.rbMyProfile.Size = new System.Drawing.Size(113, 102);
-            this.rbMyProfile.TabIndex = 14;
-            this.rbMyProfile.UseVisualStyleBackColor = false;
-            // 
-            // rbDepartments
-            // 
-            this.rbDepartments.BackColor = System.Drawing.Color.GhostWhite;
-            this.rbDepartments.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rbDepartments.BackgroundImage")));
-            this.rbDepartments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.rbDepartments.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbDepartments.FlatAppearance.BorderColor = System.Drawing.Color.GhostWhite;
-            this.rbDepartments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbDepartments.Location = new System.Drawing.Point(467, 64);
-            this.rbDepartments.Name = "rbDepartments";
-            this.rbDepartments.Size = new System.Drawing.Size(113, 102);
-            this.rbDepartments.TabIndex = 13;
-            this.rbDepartments.UseVisualStyleBackColor = false;
-            // 
             // Dash_Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(893, 524);
+            this.ClientSize = new System.Drawing.Size(891, 524);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
@@ -235,7 +236,6 @@ namespace HRManagementSystem
             this.Controls.Add(this.rbMyProfile);
             this.Controls.Add(this.rbDepartments);
             this.Controls.Add(this.textBox1);
-            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Dash_Board";
             this.Text = "Dash_Board";

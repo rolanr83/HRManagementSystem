@@ -13,7 +13,7 @@ namespace HRManagementSystem
     public partial class ManageEmployeeListing : Form
     {
         private readonly HRMSEntities2 _db;
-       // private CreateUser  CreateUser;
+        private CreateUser  CreateUser;
         public ManageEmployeeListing()
         {
             InitializeComponent();
@@ -71,6 +71,7 @@ namespace HRManagementSystem
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             var createUser = new CreateUser();
+            //lblTitle.Text = "Add New Employee";
             createUser.MdiParent = this.MdiParent;
             createUser.Show();
         }
@@ -80,6 +81,7 @@ namespace HRManagementSystem
             var id = (int)gvManageemployeeList.SelectedRows[0].Cells["StaffId"].Value;
             var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
             var createUser = new CreateUser(employee);
+            //lblTitle.Text = "Edit Employee";
             createUser.MdiParent = this.MdiParent;
             createUser.Show();
         }
