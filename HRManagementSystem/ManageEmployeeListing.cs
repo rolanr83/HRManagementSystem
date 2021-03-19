@@ -70,7 +70,7 @@ namespace HRManagementSystem
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            var createUser = new CreateUser();
+            var createUser = new CreateUser(this);
             //lblTitle.Text = "Add New Employee";
             createUser.MdiParent = this.MdiParent;
             createUser.Show();
@@ -80,7 +80,7 @@ namespace HRManagementSystem
         {
             var id = (int)gvManageemployeeList.SelectedRows[0].Cells["StaffId"].Value;
             var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
-            var createUser = new CreateUser(employee);
+            var createUser = new CreateUser(employee, this);
             //lblTitle.Text = "Edit Employee";
             createUser.MdiParent = this.MdiParent;
             createUser.Show();
@@ -98,10 +98,10 @@ namespace HRManagementSystem
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            populateGrid();
+            PopulateGrid();
         }
 
-        private void populateGrid()
+        public void PopulateGrid()
         {
             var employees = _db.Employees
                 .Select(q => new

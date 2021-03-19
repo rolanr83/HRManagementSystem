@@ -173,6 +173,8 @@ namespace HRManagementSystem
                     employee.EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue; // comment out this line when you are ready to this
 
                     _db.SaveChanges();
+                    MessageBox.Show("Update Operation Completed. Refresh Grid to see Changes");
+                    Close();
 
                 }
 
@@ -203,12 +205,10 @@ namespace HRManagementSystem
 
                     _db.Employees.Add(newemployee);
                     _db.SaveChanges();
+                    _manageEmployeeListing.PopulateGrid();
                     MessageBox.Show(errorMessage);
                 }
-                //else
-                //{
-                //    MessageBox.Show(errorMessage);
-                //}
+                
             }
             catch (Exception ex)
             {
