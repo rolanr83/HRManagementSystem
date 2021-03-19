@@ -44,15 +44,15 @@ namespace HRManagementSystem
         private void employeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var manageUsers = new ManageUsers();
-            //manageUsers.MdiParent = this;
-            manageUsers.Show();
+            manageUsers.ShowDialog();
+            manageUsers.MdiParent = this;
         }
 
         private void myProfileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var employeeFrom = new ManageEmployeeRecords();
-            employeeFrom.Show();
-            //Hide();
+            employeeFrom.ShowDialog();
+            MdiParent = MdiParent;
         }
     }
 }

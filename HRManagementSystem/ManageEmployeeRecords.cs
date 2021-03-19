@@ -27,9 +27,15 @@ namespace HRManagementSystem
 
         private void viewEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-               var emploeelisting = new ManageEmployeeListing();
-               emploeelisting.MdiParent = this;
-               emploeelisting.Show();
+            var OpenForms = Application.OpenForms.Cast<Form>();
+            var isOpen = OpenForms.Any(q => q.Name == "ManageEmployeeListing");
+            if (!isOpen)
+            {
+                var emploeelisting = new ManageEmployeeListing();
+                emploeelisting.ShowDialog();
+                emploeelisting.MdiParent = this;
+            }
+            
         }
 
         private void editEmployeeToolStripMenuItem_Click(object sender, EventArgs e)

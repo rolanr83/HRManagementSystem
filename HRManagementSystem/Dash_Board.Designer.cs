@@ -236,6 +236,7 @@ namespace HRManagementSystem
             this.Controls.Add(this.rbMyProfile);
             this.Controls.Add(this.rbDepartments);
             this.Controls.Add(this.textBox1);
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Dash_Board";
             this.Text = "Dash_Board";

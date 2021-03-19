@@ -13,7 +13,7 @@ namespace HRManagementSystem
     public partial class ManageEmployeeListing : Form
     {
         private readonly HRMSEntities2 _db;
-        private CreateUser  CreateUser;
+       // private CreateUser  CreateUser;
         public ManageEmployeeListing()
         {
             InitializeComponent();

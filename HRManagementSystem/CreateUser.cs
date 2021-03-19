@@ -13,25 +13,39 @@ namespace HRManagementSystem
     public partial class CreateUser : Form
     {
         private readonly HRMSEntities2 _db;
+        private ManageEmployeeListing _manageEmployeeListing;
 
         public bool isEditMode; /*{ get; set; }*/
 
-        public CreateUser()
+        public CreateUser(ManageEmployeeListing manageEmployeeListing = null)
         {
             InitializeComponent();
             lblTitle.Text = "Add New Employee";
+            this.Text = "Add New Employee";
             isEditMode = false;
+            _manageEmployeeListing = manageEmployeeListing;
             _db = new HRMSEntities2();
 
         }
 
-        public CreateUser(Employee staffToEdit)
+        public CreateUser(Employee staffToEdit, ManageEmployeeListing manageEmployeeListing = null)
         {
             InitializeComponent();
             lblTitle.Text = "Edit Employee";
+            this.Text = "Edit Employee";
             _db = new HRMSEntities2();
-            isEditMode = true;
-            PopulateFields(staffToEdit);
+            if(staffToEdit == null)
+            {
+                MessageBox.Show("Please ensure that you selected a valid record to edit");
+                Close();
+            }
+            else
+            {
+                isEditMode = true;
+                _db = new HRMSEntities2();
+                PopulateFields(staffToEdit);
+            }
+            
         }
 
         private void PopulateFields(Employee staff)
@@ -62,64 +76,6 @@ namespace HRManagementSystem
 
         private void submitbtn_Click(object sender, EventArgs e)
         {
-            //if (isEditMode)
-            //{
-            //    var id = int.Parse(lblId.Text);
-            //    var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
-            //    employee.First_Name = tbfname.Text;
-            //    employee.Middle_Name = tbmname.Text;
-            //    employee.Last_Name = tblname.Text;
-            //    employee.Gender = tbgender.Text;
-            //    employee.TRN = tbtrn.Text;
-            //    employee.NIS = tbnis.Text;
-            //    employee.Address_1 = tbadd1.Text;
-            //    employee.Address_2 = tbadd2.Text;
-            //    employee.Parish = tbparish.Text;
-            //    employee.Country = tbcountry.Text;
-            //    employee.Date_Of_Birth = dtdob.Value;
-            //    employee.Marital_Stuts = tbms.Text;
-            //    employee.Mobile_Number = tbmnum.Text;
-            //    employee.Email_Address = tbeadd.Text;
-            //    employee.Start_Date = dtstartdate.Value;
-            //    employee.End_Date = dtenddate.Value;
-            //    employee.Department = tbdepartment.Text;
-            //    employee.Post = tbpost.Text;
-            //    employee.EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue; // comment out this line when you are ready to this
-
-            //    _db.SaveChanges();
-
-            //}
-            //else
-            //{
-            //    var newemployee = new Employee
-            //    {
-            //        First_Name = tbfname.Text,
-            //        Middle_Name = tbmname.Text,
-            //        Last_Name = tblname.Text,
-            //        Gender = tbgender.Text,
-            //        TRN = tbtrn.Text,
-            //        NIS = tbnis.Text,
-            //        Address_1 = tbadd1.Text,
-            //        Address_2 = tbadd2.Text,
-            //        Parish = tbparish.Text,
-            //        Country = tbcountry.Text,
-            //        Date_Of_Birth = dtdob.Value,
-            //        Marital_Stuts = tbms.Text,
-            //        Mobile_Number = tbmnum.Text,
-            //        Email_Address = tbeadd.Text,
-            //        Start_Date = dtstartdate.Value,
-            //        End_Date = dtenddate.Value,
-            //        Department = tbdepartment.Text,
-            //        Post = tbpost.Text,
-            //        EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue
-            //    };
-
-            //    _db.Employees.Add(newemployee);
-            //    _db.SaveChanges();
-
-            //}
-
-
             try
             {
                 string FirstName = tbfname.Text;
