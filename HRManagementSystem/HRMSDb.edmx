@@ -448,236 +448,37 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HRMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Appraisal">
-          <Key>
-            <PropertyRef Name="AppraisalId" />
-          </Key>
-          <Property Name="AppraisalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Review_Period" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Start_Date" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="End_Date" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Internal_Employment_History" Relationship="Self.FK_Internal_Employment_History_Appraisal" FromRole="Appraisal" ToRole="Internal_Employment_History" />
-        </EntityType>
-        <EntityType Name="Department">
-          <Key>
-            <PropertyRef Name="DepartmentId" />
-          </Key>
-          <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Department_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Employees" Relationship="HRMSModel.FK_Employee_Department" FromRole="Department" ToRole="Employee" />
-        </EntityType>
-        <EntityType Name="Emergency">
-          <Key>
-            <PropertyRef Name="EmergencyId" />
-          </Key>
-          <Property Name="EmergencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Emergency_Contact" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="StaffId" Type="Int32" />
-          <Property Name="RelationshipId" Type="Int32" />
-          <NavigationProperty Name="Relationsip" Relationship="Self.FK_Emergency_Relationsip" FromRole="Emergency" ToRole="Relationsip" />
-          <NavigationProperty Name="Employee" Relationship="HRMSModel.FK_Emergency_Employee" FromRole="Emergency" ToRole="Employee" />
-        </EntityType>
-        <EntityType Name="Employee_Previous_Jobs">
-          <Key>
-            <PropertyRef Name="PreviousEmpId" />
-          </Key>
-          <Property Name="PreviousEmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Start_Year" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="End_Year" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Job_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Organization" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Responsibilities" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="StaffId" Type="Int32" />
-          <NavigationProperty Name="Employee" Relationship="HRMSModel.FK_Employee_Previous_Jobs_Employee" FromRole="Employee_Previous_Jobs" ToRole="Employee" />
-        </EntityType>
-        <EntityType Name="Internal_Employment_History">
-          <Key>
-            <PropertyRef Name="InterEmpId" />
-          </Key>
-          <Property Name="InterEmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Date_Of_Employment" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Appointment_Authority" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Terms_Of_Appointment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="StaffId" Type="Int32" />
-          <Property Name="PositionId" Type="Int32" />
-          <Property Name="AppraisalId" Type="Int32" />
-          <NavigationProperty Name="Appraisal" Relationship="Self.FK_Internal_Employment_History_Appraisal" FromRole="Internal_Employment_History" ToRole="Appraisal" />
-          <NavigationProperty Name="Position" Relationship="Self.FK_Internal_Employment_History_Position" FromRole="Internal_Employment_History" ToRole="Position" />
-          <NavigationProperty Name="Employee" Relationship="HRMSModel.FK_Internal_Employment_History_Employee" FromRole="Internal_Employment_History" ToRole="Employee" />
-        </EntityType>
-        <EntityType Name="Leave_Type">
-          <Key>
-            <PropertyRef Name="LeaveTypeId" />
-          </Key>
-          <Property Name="LeaveTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Leave_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Staff_Leave" Relationship="Self.FK_Staff_Leave_Staff_Type" FromRole="Leave_Type" ToRole="Staff_Leave" />
-        </EntityType>
-        <EntityType Name="Position">
-          <Key>
-            <PropertyRef Name="PositionId" />
-          </Key>
-          <Property Name="PositionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Postion_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Postion_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Salary_Scale" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="level" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Internal_Employment_History" Relationship="Self.FK_Internal_Employment_History_Position" FromRole="Position" ToRole="Internal_Employment_History" />
-        </EntityType>
-        <EntityType Name="Qualification">
-          <Key>
-            <PropertyRef Name="QualificationId" />
-          </Key>
-          <Property Name="QualificationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Qualification_Type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Staff_Education" Relationship="Self.FK_Staff_Education_Qualification" FromRole="Qualification" ToRole="Staff_Education" />
-        </EntityType>
-        <EntityType Name="Relationsip">
-          <Key>
-            <PropertyRef Name="RelationshipId" />
-          </Key>
-          <Property Name="RelationshipId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Relationship" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Emergencies" Relationship="Self.FK_Emergency_Relationsip" FromRole="Relationsip" ToRole="Emergency" />
-        </EntityType>
-        <EntityType Name="Staff_Education">
-          <Key>
-            <PropertyRef Name="EducationId" />
-          </Key>
-          <Property Name="EducationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Institution_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Start_Year" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Graduation_Year" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="StaffId" Type="Int32" />
-          <Property Name="QualificationId" Type="Int32" />
-          <NavigationProperty Name="Qualification" Relationship="Self.FK_Staff_Education_Qualification" FromRole="Staff_Education" ToRole="Qualification" />
-          <NavigationProperty Name="Employee" Relationship="HRMSModel.FK_Staff_Education_Employee" FromRole="Staff_Education" ToRole="Employee" />
-        </EntityType>
-        <EntityType Name="Staff_Leave">
-          <Key>
-            <PropertyRef Name="LeaveId" />
-          </Key>
-          <Property Name="LeaveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Start_Date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="End_Date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="StaffId" Type="Int32" />
-          <Property Name="LeaveTypeId" Type="Int32" />
-          <NavigationProperty Name="Leave_Type" Relationship="Self.FK_Staff_Leave_Staff_Type" FromRole="Staff_Leave" ToRole="Leave_Type" />
-          <NavigationProperty Name="Employee" Relationship="HRMSModel.FK_Staff_Leave_Employee" FromRole="Staff_Leave" ToRole="Employee" />
-        </EntityType>
-        <Association Name="FK_Internal_Employment_History_Appraisal">
-          <End Role="Appraisal" Type="Self.Appraisal" Multiplicity="0..1" />
-          <End Role="Internal_Employment_History" Type="Self.Internal_Employment_History" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Appraisal">
-              <PropertyRef Name="AppraisalId" />
-            </Principal>
-            <Dependent Role="Internal_Employment_History">
-              <PropertyRef Name="AppraisalId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Emergency_Relationsip">
-          <End Role="Relationsip" Type="Self.Relationsip" Multiplicity="0..1" />
-          <End Role="Emergency" Type="Self.Emergency" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Relationsip">
-              <PropertyRef Name="RelationshipId" />
-            </Principal>
-            <Dependent Role="Emergency">
-              <PropertyRef Name="RelationshipId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Internal_Employment_History_Position">
-          <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
-          <End Role="Internal_Employment_History" Type="Self.Internal_Employment_History" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Position">
-              <PropertyRef Name="PositionId" />
-            </Principal>
-            <Dependent Role="Internal_Employment_History">
-              <PropertyRef Name="PositionId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Staff_Leave_Staff_Type">
-          <End Role="Leave_Type" Type="Self.Leave_Type" Multiplicity="0..1" />
-          <End Role="Staff_Leave" Type="Self.Staff_Leave" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Leave_Type">
-              <PropertyRef Name="LeaveTypeId" />
-            </Principal>
-            <Dependent Role="Staff_Leave">
-              <PropertyRef Name="LeaveTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Staff_Education_Qualification">
-          <End Role="Qualification" Type="Self.Qualification" Multiplicity="0..1" />
-          <End Role="Staff_Education" Type="Self.Staff_Education" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Qualification">
-              <PropertyRef Name="QualificationId" />
-            </Principal>
-            <Dependent Role="Staff_Education">
-              <PropertyRef Name="QualificationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="HRMSEntities2" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Appraisals" EntityType="Self.Appraisal" />
-          <EntitySet Name="Departments" EntityType="Self.Department" />
-          <EntitySet Name="Emergencies" EntityType="Self.Emergency" />
-          <EntitySet Name="Employee_Previous_Jobs" EntityType="Self.Employee_Previous_Jobs" />
-          <EntitySet Name="Internal_Employment_History" EntityType="Self.Internal_Employment_History" />
-          <EntitySet Name="Leave_Type" EntityType="Self.Leave_Type" />
-          <EntitySet Name="Positions" EntityType="Self.Position" />
-          <EntitySet Name="Qualifications" EntityType="Self.Qualification" />
-          <EntitySet Name="Relationsips" EntityType="Self.Relationsip" />
-          <EntitySet Name="Staff_Education" EntityType="Self.Staff_Education" />
-          <EntitySet Name="Staff_Leave" EntityType="Self.Staff_Leave" />
-          <AssociationSet Name="FK_Internal_Employment_History_Appraisal" Association="Self.FK_Internal_Employment_History_Appraisal">
+          <EntitySet Name="Appraisals" EntityType="HRMSModel.Appraisal" />
+          <EntitySet Name="Departments" EntityType="HRMSModel.Department" />
+          <EntitySet Name="Emergencies" EntityType="HRMSModel.Emergency" />
+          <EntitySet Name="Employees" EntityType="HRMSModel.Employee" />
+          <EntitySet Name="Employee_Previous_Jobs" EntityType="HRMSModel.Employee_Previous_Jobs" />
+          <EntitySet Name="EmploymentStatus" EntityType="HRMSModel.EmploymentStatu" />
+          <EntitySet Name="Internal_Employment_History" EntityType="HRMSModel.Internal_Employment_History" />
+          <EntitySet Name="Leave_Type" EntityType="HRMSModel.Leave_Type" />
+          <EntitySet Name="Positions" EntityType="HRMSModel.Position" />
+          <EntitySet Name="Qualifications" EntityType="HRMSModel.Qualification" />
+          <EntitySet Name="Relationsips" EntityType="HRMSModel.Relationsip" />
+          <EntitySet Name="Roles" EntityType="HRMSModel.Role" />
+          <EntitySet Name="Staff_Education" EntityType="HRMSModel.Staff_Education" />
+          <EntitySet Name="Staff_Leave" EntityType="HRMSModel.Staff_Leave" />
+          <EntitySet Name="Users" EntityType="HRMSModel.User" />
+          <EntitySet Name="UserRoles" EntityType="HRMSModel.UserRole" />
+          <AssociationSet Name="FK_Internal_Employment_History_Appraisal" Association="HRMSModel.FK_Internal_Employment_History_Appraisal">
             <End Role="Appraisal" EntitySet="Appraisals" />
             <End Role="Internal_Employment_History" EntitySet="Internal_Employment_History" />
           </AssociationSet>
-          <AssociationSet Name="FK_Emergency_Relationsip" Association="Self.FK_Emergency_Relationsip">
-            <End Role="Relationsip" EntitySet="Relationsips" />
-            <End Role="Emergency" EntitySet="Emergencies" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Internal_Employment_History_Position" Association="Self.FK_Internal_Employment_History_Position">
-            <End Role="Position" EntitySet="Positions" />
-            <End Role="Internal_Employment_History" EntitySet="Internal_Employment_History" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Staff_Leave_Staff_Type" Association="Self.FK_Staff_Leave_Staff_Type">
-            <End Role="Leave_Type" EntitySet="Leave_Type" />
-            <End Role="Staff_Leave" EntitySet="Staff_Leave" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Staff_Education_Qualification" Association="Self.FK_Staff_Education_Qualification">
-            <End Role="Qualification" EntitySet="Qualifications" />
-            <End Role="Staff_Education" EntitySet="Staff_Education" />
-          </AssociationSet>
-          <EntitySet Name="Roles" EntityType="HRMSModel.Role" />
-          <EntitySet Name="Users" EntityType="HRMSModel.User" />
-          <EntitySet Name="UserRoles" EntityType="HRMSModel.UserRole" />
-          <AssociationSet Name="FK_UserRoles_Roles" Association="HRMSModel.FK_UserRoles_Roles">
-            <End Role="Role" EntitySet="Roles" />
-            <End Role="UserRole" EntitySet="UserRoles" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserRoles_User" Association="HRMSModel.FK_UserRoles_User">
-            <End Role="User" EntitySet="Users" />
-            <End Role="UserRole" EntitySet="UserRoles" />
-          </AssociationSet>
-          <EntitySet Name="EmploymentStatus" EntityType="HRMSModel.EmploymentStatu" />
-          <EntitySet Name="Employees" EntityType="HRMSModel.Employee" />
           <AssociationSet Name="FK_Employee_Department" Association="HRMSModel.FK_Employee_Department">
             <End Role="Department" EntitySet="Departments" />
             <End Role="Employee" EntitySet="Employees" />
           </AssociationSet>
           <AssociationSet Name="FK_Emergency_Employee" Association="HRMSModel.FK_Emergency_Employee">
             <End Role="Employee" EntitySet="Employees" />
+            <End Role="Emergency" EntitySet="Emergencies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Emergency_Relationsip" Association="HRMSModel.FK_Emergency_Relationsip">
+            <End Role="Relationsip" EntitySet="Relationsips" />
             <End Role="Emergency" EntitySet="Emergencies" />
           </AssociationSet>
           <AssociationSet Name="FK_Employee_Employee" Association="HRMSModel.FK_Employee_Employee">
@@ -708,67 +509,57 @@
             <End Role="Employee" EntitySet="Employees" />
             <End Role="Staff_Leave" EntitySet="Staff_Leave" />
           </AssociationSet>
+          <AssociationSet Name="FK_Internal_Employment_History_Position" Association="HRMSModel.FK_Internal_Employment_History_Position">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="Internal_Employment_History" EntitySet="Internal_Employment_History" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Leave_Staff_Type" Association="HRMSModel.FK_Staff_Leave_Staff_Type">
+            <End Role="Leave_Type" EntitySet="Leave_Type" />
+            <End Role="Staff_Leave" EntitySet="Staff_Leave" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Staff_Education_Qualification" Association="HRMSModel.FK_Staff_Education_Qualification">
+            <End Role="Qualification" EntitySet="Qualifications" />
+            <End Role="Staff_Education" EntitySet="Staff_Education" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoles_Roles" Association="HRMSModel.FK_UserRoles_Roles">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="UserRole" EntitySet="UserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoles_User" Association="HRMSModel.FK_UserRoles_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="UserRole" EntitySet="UserRoles" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Role">
+        <EntityType Name="Appraisal">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="AppraisalId" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="shortname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="UserRoles" Relationship="HRMSModel.FK_UserRoles_Roles" FromRole="Role" ToRole="UserRole" />
+          <Property Name="AppraisalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Review_Period" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Start_Date" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="End_Date" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Internal_Employment_History" Relationship="HRMSModel.FK_Internal_Employment_History_Appraisal" FromRole="Appraisal" ToRole="Internal_Employment_History" />
         </EntityType>
-        <EntityType Name="User">
+        <EntityType Name="Department">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="DepartmentId" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="isActive" Type="Boolean" />
-          <NavigationProperty Name="UserRoles" Relationship="HRMSModel.FK_UserRoles_User" FromRole="User" ToRole="UserRole" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Department_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employees" Relationship="HRMSModel.FK_Employee_Department" FromRole="Department" ToRole="Employee" />
         </EntityType>
-        <EntityType Name="UserRole">
+        <EntityType Name="Emergency">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="EmergencyId" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="useid" Type="Int32" />
-          <Property Name="rolesid" Type="Int32" />
-          <NavigationProperty Name="Role" Relationship="HRMSModel.FK_UserRoles_Roles" FromRole="UserRole" ToRole="Role" />
-          <NavigationProperty Name="User" Relationship="HRMSModel.FK_UserRoles_User" FromRole="UserRole" ToRole="User" />
-        </EntityType>
-        <Association Name="FK_UserRoles_Roles">
-          <End Type="HRMSModel.Role" Role="Role" Multiplicity="0..1" />
-          <End Type="HRMSModel.UserRole" Role="UserRole" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Role">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="UserRole">
-              <PropertyRef Name="rolesid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UserRoles_User">
-          <End Type="HRMSModel.User" Role="User" Multiplicity="0..1" />
-          <End Type="HRMSModel.UserRole" Role="UserRole" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="UserRole">
-              <PropertyRef Name="useid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="EmploymentStatu">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Employees" Relationship="HRMSModel.FK_Employee_EmploymentStatus" FromRole="EmploymentStatu" ToRole="Employee" />
+          <Property Name="EmergencyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="First_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emergency_Contact" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="StaffId" Type="Int32" />
+          <Property Name="RelationshipId" Type="Int32" />
+          <NavigationProperty Name="Employee" Relationship="HRMSModel.FK_Emergency_Employee" FromRole="Emergency" ToRole="Employee" />
+          <NavigationProperty Name="Relationsip" Relationship="HRMSModel.FK_Emergency_Relationsip" FromRole="Emergency" ToRole="Relationsip" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
@@ -811,6 +602,143 @@
           <NavigationProperty Name="Staff_Education" Relationship="HRMSModel.FK_Staff_Education_Employee" FromRole="Employee" ToRole="Staff_Education" />
           <NavigationProperty Name="Staff_Leave" Relationship="HRMSModel.FK_Staff_Leave_Employee" FromRole="Employee" ToRole="Staff_Leave" />
         </EntityType>
+        <EntityType Name="Employee_Previous_Jobs">
+          <Key>
+            <PropertyRef Name="PreviousEmpId" />
+          </Key>
+          <Property Name="PreviousEmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Start_Year" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="End_Year" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Job_Title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Organization" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Responsibilities" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StaffId" Type="Int32" />
+          <NavigationProperty Name="Employee" Relationship="HRMSModel.FK_Employee_Previous_Jobs_Employee" FromRole="Employee_Previous_Jobs" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="EmploymentStatu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employees" Relationship="HRMSModel.FK_Employee_EmploymentStatus" FromRole="EmploymentStatu" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Internal_Employment_History">
+          <Key>
+            <PropertyRef Name="InterEmpId" />
+          </Key>
+          <Property Name="InterEmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date_Of_Employment" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Appointment_Authority" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Terms_Of_Appointment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StaffId" Type="Int32" />
+          <Property Name="PositionId" Type="Int32" />
+          <Property Name="AppraisalId" Type="Int32" />
+          <NavigationProperty Name="Appraisal" Relationship="HRMSModel.FK_Internal_Employment_History_Appraisal" FromRole="Internal_Employment_History" ToRole="Appraisal" />
+          <NavigationProperty Name="Employee" Relationship="HRMSModel.FK_Internal_Employment_History_Employee" FromRole="Internal_Employment_History" ToRole="Employee" />
+          <NavigationProperty Name="Position" Relationship="HRMSModel.FK_Internal_Employment_History_Position" FromRole="Internal_Employment_History" ToRole="Position" />
+        </EntityType>
+        <EntityType Name="Leave_Type">
+          <Key>
+            <PropertyRef Name="LeaveTypeId" />
+          </Key>
+          <Property Name="LeaveTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Leave_Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Staff_Leave" Relationship="HRMSModel.FK_Staff_Leave_Staff_Type" FromRole="Leave_Type" ToRole="Staff_Leave" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="PositionId" />
+          </Key>
+          <Property Name="PositionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Postion_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Postion_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Salary_Scale" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="level" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Internal_Employment_History" Relationship="HRMSModel.FK_Internal_Employment_History_Position" FromRole="Position" ToRole="Internal_Employment_History" />
+        </EntityType>
+        <EntityType Name="Qualification">
+          <Key>
+            <PropertyRef Name="QualificationId" />
+          </Key>
+          <Property Name="QualificationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Qualification_Type" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Staff_Education" Relationship="HRMSModel.FK_Staff_Education_Qualification" FromRole="Qualification" ToRole="Staff_Education" />
+        </EntityType>
+        <EntityType Name="Relationsip">
+          <Key>
+            <PropertyRef Name="RelationshipId" />
+          </Key>
+          <Property Name="RelationshipId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Relationship" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Emergencies" Relationship="HRMSModel.FK_Emergency_Relationsip" FromRole="Relationsip" ToRole="Emergency" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="shortname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserRoles" Relationship="HRMSModel.FK_UserRoles_Roles" FromRole="Role" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="Staff_Education">
+          <Key>
+            <PropertyRef Name="EducationId" />
+          </Key>
+          <Property Name="EducationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Institution_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Start_Year" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Graduation_Year" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="StaffId" Type="Int32" />
+          <Property Name="QualificationId" Type="Int32" />
+          <NavigationProperty Name="Employee" Relationship="HRMSModel.FK_Staff_Education_Employee" FromRole="Staff_Education" ToRole="Employee" />
+          <NavigationProperty Name="Qualification" Relationship="HRMSModel.FK_Staff_Education_Qualification" FromRole="Staff_Education" ToRole="Qualification" />
+        </EntityType>
+        <EntityType Name="Staff_Leave">
+          <Key>
+            <PropertyRef Name="LeaveId" />
+          </Key>
+          <Property Name="LeaveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Start_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="End_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="StaffId" Type="Int32" />
+          <Property Name="LeaveTypeId" Type="Int32" />
+          <NavigationProperty Name="Employee" Relationship="HRMSModel.FK_Staff_Leave_Employee" FromRole="Staff_Leave" ToRole="Employee" />
+          <NavigationProperty Name="Leave_Type" Relationship="HRMSModel.FK_Staff_Leave_Staff_Type" FromRole="Staff_Leave" ToRole="Leave_Type" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <NavigationProperty Name="UserRoles" Relationship="HRMSModel.FK_UserRoles_User" FromRole="User" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="useid" Type="Int32" />
+          <Property Name="rolesid" Type="Int32" />
+          <NavigationProperty Name="Role" Relationship="HRMSModel.FK_UserRoles_Roles" FromRole="UserRole" ToRole="Role" />
+          <NavigationProperty Name="User" Relationship="HRMSModel.FK_UserRoles_User" FromRole="UserRole" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Internal_Employment_History_Appraisal">
+          <End Type="HRMSModel.Appraisal" Role="Appraisal" Multiplicity="0..1" />
+          <End Type="HRMSModel.Internal_Employment_History" Role="Internal_Employment_History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Appraisal">
+              <PropertyRef Name="AppraisalId" />
+            </Principal>
+            <Dependent Role="Internal_Employment_History">
+              <PropertyRef Name="AppraisalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Employee_Department">
           <End Type="HRMSModel.Department" Role="Department" Multiplicity="0..1" />
           <End Type="HRMSModel.Employee" Role="Employee" Multiplicity="*" />
@@ -832,6 +760,18 @@
             </Principal>
             <Dependent Role="Emergency">
               <PropertyRef Name="StaffId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Emergency_Relationsip">
+          <End Type="HRMSModel.Relationsip" Role="Relationsip" Multiplicity="0..1" />
+          <End Type="HRMSModel.Emergency" Role="Emergency" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relationsip">
+              <PropertyRef Name="RelationshipId" />
+            </Principal>
+            <Dependent Role="Emergency">
+              <PropertyRef Name="RelationshipId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -919,7 +859,67 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <Association Name="FK_Internal_Employment_History_Position">
+          <End Type="HRMSModel.Position" Role="Position" Multiplicity="0..1" />
+          <End Type="HRMSModel.Internal_Employment_History" Role="Internal_Employment_History" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="PositionId" />
+            </Principal>
+            <Dependent Role="Internal_Employment_History">
+              <PropertyRef Name="PositionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_Leave_Staff_Type">
+          <End Type="HRMSModel.Leave_Type" Role="Leave_Type" Multiplicity="0..1" />
+          <End Type="HRMSModel.Staff_Leave" Role="Staff_Leave" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Leave_Type">
+              <PropertyRef Name="LeaveTypeId" />
+            </Principal>
+            <Dependent Role="Staff_Leave">
+              <PropertyRef Name="LeaveTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Staff_Education_Qualification">
+          <End Type="HRMSModel.Qualification" Role="Qualification" Multiplicity="0..1" />
+          <End Type="HRMSModel.Staff_Education" Role="Staff_Education" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Qualification">
+              <PropertyRef Name="QualificationId" />
+            </Principal>
+            <Dependent Role="Staff_Education">
+              <PropertyRef Name="QualificationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoles_Roles">
+          <End Type="HRMSModel.Role" Role="Role" Multiplicity="0..1" />
+          <End Type="HRMSModel.UserRole" Role="UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="rolesid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoles_User">
+          <End Type="HRMSModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="HRMSModel.UserRole" Role="UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserRole">
+              <PropertyRef Name="useid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -928,150 +928,30 @@
           <EntitySetMapping Name="Appraisals">
             <EntityTypeMapping TypeName="HRMSModel.Appraisal">
               <MappingFragment StoreEntitySet="Appraisal">
-                <ScalarProperty Name="AppraisalId" ColumnName="AppraisalId" />
-                <ScalarProperty Name="Review_Period" ColumnName="Review_Period" />
-                <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
                 <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+                <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+                <ScalarProperty Name="Review_Period" ColumnName="Review_Period" />
+                <ScalarProperty Name="AppraisalId" ColumnName="AppraisalId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Departments">
             <EntityTypeMapping TypeName="HRMSModel.Department">
               <MappingFragment StoreEntitySet="Department">
-                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
                 <ScalarProperty Name="Department_Name" ColumnName="Department_Name" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Emergencies">
             <EntityTypeMapping TypeName="HRMSModel.Emergency">
               <MappingFragment StoreEntitySet="Emergency">
-                <ScalarProperty Name="EmergencyId" ColumnName="EmergencyId" />
-                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
-                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="RelationshipId" ColumnName="RelationshipId" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
                 <ScalarProperty Name="Emergency_Contact" ColumnName="Emergency_Contact" />
-                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
-                <ScalarProperty Name="RelationshipId" ColumnName="RelationshipId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Employee_Previous_Jobs">
-            <EntityTypeMapping TypeName="HRMSModel.Employee_Previous_Jobs">
-              <MappingFragment StoreEntitySet="Employee_Previous_Jobs">
-                <ScalarProperty Name="PreviousEmpId" ColumnName="PreviousEmpId" />
-                <ScalarProperty Name="Start_Year" ColumnName="Start_Year" />
-                <ScalarProperty Name="End_Year" ColumnName="End_Year" />
-                <ScalarProperty Name="Job_Title" ColumnName="Job_Title" />
-                <ScalarProperty Name="Organization" ColumnName="Organization" />
-                <ScalarProperty Name="Responsibilities" ColumnName="Responsibilities" />
-                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Internal_Employment_History">
-            <EntityTypeMapping TypeName="HRMSModel.Internal_Employment_History">
-              <MappingFragment StoreEntitySet="Internal_Employment_History">
-                <ScalarProperty Name="InterEmpId" ColumnName="InterEmpId" />
-                <ScalarProperty Name="Date_Of_Employment" ColumnName="Date_Of_Employment" />
-                <ScalarProperty Name="Appointment_Authority" ColumnName="Appointment_Authority" />
-                <ScalarProperty Name="Terms_Of_Appointment" ColumnName="Terms_Of_Appointment" />
-                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
-                <ScalarProperty Name="PositionId" ColumnName="PositionId" />
-                <ScalarProperty Name="AppraisalId" ColumnName="AppraisalId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Leave_Type">
-            <EntityTypeMapping TypeName="HRMSModel.Leave_Type">
-              <MappingFragment StoreEntitySet="Leave_Type">
-                <ScalarProperty Name="LeaveTypeId" ColumnName="LeaveTypeId" />
-                <ScalarProperty Name="Leave_Name" ColumnName="Leave_Name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Positions">
-            <EntityTypeMapping TypeName="HRMSModel.Position">
-              <MappingFragment StoreEntitySet="Position">
-                <ScalarProperty Name="PositionId" ColumnName="PositionId" />
-                <ScalarProperty Name="Postion_Name" ColumnName="Postion_Name" />
-                <ScalarProperty Name="Postion_Description" ColumnName="Postion_Description" />
-                <ScalarProperty Name="Salary_Scale" ColumnName="Salary_Scale" />
-                <ScalarProperty Name="level" ColumnName="level" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Qualifications">
-            <EntityTypeMapping TypeName="HRMSModel.Qualification">
-              <MappingFragment StoreEntitySet="Qualification">
-                <ScalarProperty Name="QualificationId" ColumnName="QualificationId" />
-                <ScalarProperty Name="Qualification_Type" ColumnName="Qualification_Type" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Relationsips">
-            <EntityTypeMapping TypeName="HRMSModel.Relationsip">
-              <MappingFragment StoreEntitySet="Relationsip">
-                <ScalarProperty Name="RelationshipId" ColumnName="RelationshipId" />
-                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Staff_Education">
-            <EntityTypeMapping TypeName="HRMSModel.Staff_Education">
-              <MappingFragment StoreEntitySet="Staff_Education">
-                <ScalarProperty Name="EducationId" ColumnName="EducationId" />
-                <ScalarProperty Name="Institution_Name" ColumnName="Institution_Name" />
-                <ScalarProperty Name="Start_Year" ColumnName="Start_Year" />
-                <ScalarProperty Name="Graduation_Year" ColumnName="Graduation_Year" />
-                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
-                <ScalarProperty Name="QualificationId" ColumnName="QualificationId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Staff_Leave">
-            <EntityTypeMapping TypeName="HRMSModel.Staff_Leave">
-              <MappingFragment StoreEntitySet="Staff_Leave">
-                <ScalarProperty Name="LeaveId" ColumnName="LeaveId" />
-                <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
-                <ScalarProperty Name="End_Date" ColumnName="End_Date" />
-                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
-                <ScalarProperty Name="LeaveTypeId" ColumnName="LeaveTypeId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Roles">
-            <EntityTypeMapping TypeName="HRMSModel.Role">
-              <MappingFragment StoreEntitySet="Roles">
-                <ScalarProperty Name="shortname" ColumnName="shortname" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Users">
-            <EntityTypeMapping TypeName="HRMSModel.User">
-              <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="isActive" ColumnName="isActive" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="username" ColumnName="username" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="UserRoles">
-            <EntityTypeMapping TypeName="HRMSModel.UserRole">
-              <MappingFragment StoreEntitySet="UserRoles">
-                <ScalarProperty Name="rolesid" ColumnName="rolesid" />
-                <ScalarProperty Name="useid" ColumnName="useid" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="EmploymentStatus">
-            <EntityTypeMapping TypeName="HRMSModel.EmploymentStatu">
-              <MappingFragment StoreEntitySet="EmploymentStatus">
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="EmergencyId" ColumnName="EmergencyId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1106,7 +986,127 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          </EntityContainerMapping>
+          <EntitySetMapping Name="Employee_Previous_Jobs">
+            <EntityTypeMapping TypeName="HRMSModel.Employee_Previous_Jobs">
+              <MappingFragment StoreEntitySet="Employee_Previous_Jobs">
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="Responsibilities" ColumnName="Responsibilities" />
+                <ScalarProperty Name="Organization" ColumnName="Organization" />
+                <ScalarProperty Name="Job_Title" ColumnName="Job_Title" />
+                <ScalarProperty Name="End_Year" ColumnName="End_Year" />
+                <ScalarProperty Name="Start_Year" ColumnName="Start_Year" />
+                <ScalarProperty Name="PreviousEmpId" ColumnName="PreviousEmpId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmploymentStatus">
+            <EntityTypeMapping TypeName="HRMSModel.EmploymentStatu">
+              <MappingFragment StoreEntitySet="EmploymentStatus">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Internal_Employment_History">
+            <EntityTypeMapping TypeName="HRMSModel.Internal_Employment_History">
+              <MappingFragment StoreEntitySet="Internal_Employment_History">
+                <ScalarProperty Name="AppraisalId" ColumnName="AppraisalId" />
+                <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="Terms_Of_Appointment" ColumnName="Terms_Of_Appointment" />
+                <ScalarProperty Name="Appointment_Authority" ColumnName="Appointment_Authority" />
+                <ScalarProperty Name="Date_Of_Employment" ColumnName="Date_Of_Employment" />
+                <ScalarProperty Name="InterEmpId" ColumnName="InterEmpId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Leave_Type">
+            <EntityTypeMapping TypeName="HRMSModel.Leave_Type">
+              <MappingFragment StoreEntitySet="Leave_Type">
+                <ScalarProperty Name="Leave_Name" ColumnName="Leave_Name" />
+                <ScalarProperty Name="LeaveTypeId" ColumnName="LeaveTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Positions">
+            <EntityTypeMapping TypeName="HRMSModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="level" ColumnName="level" />
+                <ScalarProperty Name="Salary_Scale" ColumnName="Salary_Scale" />
+                <ScalarProperty Name="Postion_Description" ColumnName="Postion_Description" />
+                <ScalarProperty Name="Postion_Name" ColumnName="Postion_Name" />
+                <ScalarProperty Name="PositionId" ColumnName="PositionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Qualifications">
+            <EntityTypeMapping TypeName="HRMSModel.Qualification">
+              <MappingFragment StoreEntitySet="Qualification">
+                <ScalarProperty Name="Qualification_Type" ColumnName="Qualification_Type" />
+                <ScalarProperty Name="QualificationId" ColumnName="QualificationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Relationsips">
+            <EntityTypeMapping TypeName="HRMSModel.Relationsip">
+              <MappingFragment StoreEntitySet="Relationsip">
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="RelationshipId" ColumnName="RelationshipId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="HRMSModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="shortname" ColumnName="shortname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staff_Education">
+            <EntityTypeMapping TypeName="HRMSModel.Staff_Education">
+              <MappingFragment StoreEntitySet="Staff_Education">
+                <ScalarProperty Name="QualificationId" ColumnName="QualificationId" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="Graduation_Year" ColumnName="Graduation_Year" />
+                <ScalarProperty Name="Start_Year" ColumnName="Start_Year" />
+                <ScalarProperty Name="Institution_Name" ColumnName="Institution_Name" />
+                <ScalarProperty Name="EducationId" ColumnName="EducationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staff_Leave">
+            <EntityTypeMapping TypeName="HRMSModel.Staff_Leave">
+              <MappingFragment StoreEntitySet="Staff_Leave">
+                <ScalarProperty Name="LeaveTypeId" ColumnName="LeaveTypeId" />
+                <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+                <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+                <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+                <ScalarProperty Name="LeaveId" ColumnName="LeaveId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="HRMSModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="HRMSModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRoles">
+                <ScalarProperty Name="rolesid" ColumnName="rolesid" />
+                <ScalarProperty Name="useid" ColumnName="useid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

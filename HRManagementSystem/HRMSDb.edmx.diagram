@@ -5,31 +5,26 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="d925220e12964b7db446e693d801d743" Name="Diagram1">
-        <EntityTypeShape EntityType="HRMSModel.Appraisal" Width="1.5" PointX="6" PointY="15.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="HRMSModel.Department" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="HRMSModel.Emergency" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="HRMSModel.Employee_Previous_Jobs" Width="1.5" PointX="5.25" PointY="11.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="HRMSModel.Internal_Employment_History" Width="1.5" PointX="8.25" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="HRMSModel.Leave_Type" Width="1.5" PointX="6" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="HRMSModel.Position" Width="1.5" PointX="6" PointY="17.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="HRMSModel.Qualification" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="HRMSModel.Relationsip" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="HRMSModel.Staff_Education" Width="1.5" PointX="5.25" PointY="4.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="HRMSModel.Staff_Leave" Width="1.5" PointX="8.25" PointY="4.375" IsExpanded="true" />
-        <AssociationConnector Association="HRMSModel.FK_Internal_Employment_History_Appraisal" ManuallyRouted="false" />
-        <AssociationConnector Association="HRMSModel.FK_Emergency_Relationsip" ManuallyRouted="false" />
-        <AssociationConnector Association="HRMSModel.FK_Internal_Employment_History_Position" ManuallyRouted="false" />
-        <AssociationConnector Association="HRMSModel.FK_Staff_Leave_Staff_Type" ManuallyRouted="false" />
-        <AssociationConnector Association="HRMSModel.FK_Staff_Education_Qualification" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="HRMSModel.Role" Width="1.5" PointX="0.75" PointY="4" />
-        <EntityTypeShape EntityType="HRMSModel.User" Width="1.5" PointX="0.75" PointY="0.875" />
-        <EntityTypeShape EntityType="HRMSModel.UserRole" Width="1.5" PointX="3" PointY="0.875" />
-        <AssociationConnector Association="HRMSModel.FK_UserRoles_Roles" />
-        <AssociationConnector Association="HRMSModel.FK_UserRoles_User" />
-        <EntityTypeShape EntityType="HRMSModel.EmploymentStatu" Width="1.5" PointX="0.75" PointY="11.375" />
-        <EntityTypeShape EntityType="HRMSModel.Employee" Width="1.5" PointX="9" PointY="12" />
+        <EntityTypeShape EntityType="HRMSModel.Appraisal" Width="1.5" PointX="3" PointY="20.125" />
+        <EntityTypeShape EntityType="HRMSModel.Department" Width="1.5" PointX="0.75" PointY="5.875" />
+        <EntityTypeShape EntityType="HRMSModel.Emergency" Width="1.5" PointX="8.25" PointY="8.375" />
+        <EntityTypeShape EntityType="HRMSModel.Employee" Width="1.5" PointX="3" PointY="5.625" />
+        <EntityTypeShape EntityType="HRMSModel.Employee_Previous_Jobs" Width="1.5" PointX="5.25" PointY="21.75" />
+        <EntityTypeShape EntityType="HRMSModel.EmploymentStatu" Width="1.5" PointX="0.75" PointY="8.875" />
+        <EntityTypeShape EntityType="HRMSModel.Internal_Employment_History" Width="1.5" PointX="5.25" PointY="12.125" />
+        <EntityTypeShape EntityType="HRMSModel.Leave_Type" Width="1.5" PointX="3" PointY="14.875" />
+        <EntityTypeShape EntityType="HRMSModel.Position" Width="1.5" PointX="3" PointY="17.125" />
+        <EntityTypeShape EntityType="HRMSModel.Qualification" Width="1.5" PointX="3" PointY="2.875" />
+        <EntityTypeShape EntityType="HRMSModel.Relationsip" Width="1.5" PointX="6" PointY="1.875" />
+        <EntityTypeShape EntityType="HRMSModel.Role" Width="1.5" PointX="7.75" PointY="5" />
+        <EntityTypeShape EntityType="HRMSModel.Staff_Education" Width="1.5" PointX="5.25" PointY="4.375" />
+        <EntityTypeShape EntityType="HRMSModel.Staff_Leave" Width="1.5" PointX="5.25" PointY="8.375" />
+        <EntityTypeShape EntityType="HRMSModel.User" Width="1.5" PointX="7.75" PointY="11.875" />
+        <EntityTypeShape EntityType="HRMSModel.UserRole" Width="1.5" PointX="10" PointY="4.875" />
+        <AssociationConnector Association="HRMSModel.FK_Internal_Employment_History_Appraisal" />
         <AssociationConnector Association="HRMSModel.FK_Employee_Department" />
         <AssociationConnector Association="HRMSModel.FK_Emergency_Employee" />
+        <AssociationConnector Association="HRMSModel.FK_Emergency_Relationsip" />
         <AssociationConnector Association="HRMSModel.FK_Employee_Employee" />
         <AssociationConnector Association="HRMSModel.FK_Employee_Employee1" />
         <AssociationConnector Association="HRMSModel.FK_Employee_EmploymentStatus" />
@@ -37,7 +32,12 @@
         <AssociationConnector Association="HRMSModel.FK_Internal_Employment_History_Employee" />
         <AssociationConnector Association="HRMSModel.FK_Staff_Education_Employee" />
         <AssociationConnector Association="HRMSModel.FK_Staff_Leave_Employee" />
-        </Diagram>
+        <AssociationConnector Association="HRMSModel.FK_Internal_Employment_History_Position" />
+        <AssociationConnector Association="HRMSModel.FK_Staff_Leave_Staff_Type" />
+        <AssociationConnector Association="HRMSModel.FK_Staff_Education_Qualification" />
+        <AssociationConnector Association="HRMSModel.FK_UserRoles_Roles" />
+        <AssociationConnector Association="HRMSModel.FK_UserRoles_User" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

@@ -21,7 +21,7 @@ namespace HRManagementSystem
         public Nullable<int> StaffId { get; set; }
         public Nullable<int> QualificationId { get; set; }
     
-        public virtual Qualification Qualification { get; set; }
         public virtual Employee Employee { get; set; }
+        public virtual Qualification Qualification { get; set; }
     }
 }

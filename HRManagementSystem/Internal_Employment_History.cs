@@ -23,7 +23,7 @@ namespace HRManagementSystem
         public Nullable<int> AppraisalId { get; set; }
     
         public virtual Appraisal Appraisal { get; set; }
-        public virtual Position Position { get; set; }
         public virtual Employee Employee { get; set; }
+        public virtual Position Position { get; set; }
     }
 }

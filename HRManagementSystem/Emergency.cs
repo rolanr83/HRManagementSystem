@@ -21,7 +21,7 @@ namespace HRManagementSystem
         public Nullable<int> StaffId { get; set; }
         public Nullable<int> RelationshipId { get; set; }
     
-        public virtual Relationsip Relationsip { get; set; }
         public virtual Employee Employee { get; set; }
+        public virtual Relationsip Relationsip { get; set; }
     }
 }
