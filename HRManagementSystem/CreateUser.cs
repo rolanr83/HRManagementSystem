@@ -12,16 +12,16 @@ namespace HRManagementSystem
 {
     public partial class CreateUser : Form
     {
-        private readonly HRMSEntities2 hRMSEntities2;
+        private readonly HRMSEntities2 _db;
 
-        public bool IsEditMode { get; set; }
+        public bool isEditMode; /*{ get; set; }*/
 
         public CreateUser()
         {
             InitializeComponent();
             lblTitle.Text = "Add New Employee";
-            IsEditMode = false;
-            hRMSEntities2 = new HRMSEntities2();
+            isEditMode = false;
+            _db = new HRMSEntities2();
 
         }
 
@@ -29,8 +29,8 @@ namespace HRManagementSystem
         {
             InitializeComponent();
             lblTitle.Text = "Edit Employee";
-            hRMSEntities2 = new HRMSEntities2();
-            IsEditMode = true;
+            _db = new HRMSEntities2();
+            isEditMode = true;
             PopulateFields(staffToEdit);
         }
 
@@ -62,10 +62,66 @@ namespace HRManagementSystem
 
         private void submitbtn_Click(object sender, EventArgs e)
         {
+            //if (isEditMode)
+            //{
+            //    var id = int.Parse(lblId.Text);
+            //    var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
+            //    employee.First_Name = tbfname.Text;
+            //    employee.Middle_Name = tbmname.Text;
+            //    employee.Last_Name = tblname.Text;
+            //    employee.Gender = tbgender.Text;
+            //    employee.TRN = tbtrn.Text;
+            //    employee.NIS = tbnis.Text;
+            //    employee.Address_1 = tbadd1.Text;
+            //    employee.Address_2 = tbadd2.Text;
+            //    employee.Parish = tbparish.Text;
+            //    employee.Country = tbcountry.Text;
+            //    employee.Date_Of_Birth = dtdob.Value;
+            //    employee.Marital_Stuts = tbms.Text;
+            //    employee.Mobile_Number = tbmnum.Text;
+            //    employee.Email_Address = tbeadd.Text;
+            //    employee.Start_Date = dtstartdate.Value;
+            //    employee.End_Date = dtenddate.Value;
+            //    employee.Department = tbdepartment.Text;
+            //    employee.Post = tbpost.Text;
+            //    employee.EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue; // comment out this line when you are ready to this
+
+            //    _db.SaveChanges();
+
+            //}
+            //else
+            //{
+            //    var newemployee = new Employee
+            //    {
+            //        First_Name = tbfname.Text,
+            //        Middle_Name = tbmname.Text,
+            //        Last_Name = tblname.Text,
+            //        Gender = tbgender.Text,
+            //        TRN = tbtrn.Text,
+            //        NIS = tbnis.Text,
+            //        Address_1 = tbadd1.Text,
+            //        Address_2 = tbadd2.Text,
+            //        Parish = tbparish.Text,
+            //        Country = tbcountry.Text,
+            //        Date_Of_Birth = dtdob.Value,
+            //        Marital_Stuts = tbms.Text,
+            //        Mobile_Number = tbmnum.Text,
+            //        Email_Address = tbeadd.Text,
+            //        Start_Date = dtstartdate.Value,
+            //        End_Date = dtenddate.Value,
+            //        Department = tbdepartment.Text,
+            //        Post = tbpost.Text,
+            //        EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue
+            //    };
+
+            //    _db.Employees.Add(newemployee);
+            //    _db.SaveChanges();
+
+            //}
+
+
             try
             {
-                //MessageBox.Show($"{tbfname.Text} {tblname.Text} Record Created ");
-                //OR
                 string FirstName = tbfname.Text;
                 string MiddleName = tbmname.Text;
                 string LastName = tblname.Text;
@@ -108,7 +164,6 @@ namespace HRManagementSystem
                     isValid = false;
                     errorMessage += "Error: Please Enter A Valid Date. \n\r";
                 }
-                //if(isValid == true)
                 if (isValid)
                 {
                     var employee = new Employee();
@@ -132,86 +187,84 @@ namespace HRManagementSystem
                     employee.Post = Post;
                     employee.EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue;
 
-                    hRMSEntities2.Employees.Add(employee);
-                    hRMSEntities2.SaveChanges();
-
-
-
+                    _db.Employees.Add(employee);
 
                     MessageBox.Show($"{FirstName} {LastName} Record Created ");
                 }
 
+                if (isEditMode)
+                {
+                    var id = int.Parse(lblId.Text);
+                    var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
+                    employee.First_Name = tbfname.Text;
+                    employee.Middle_Name = tbmname.Text;
+                    employee.Last_Name = tblname.Text;
+                    employee.Gender = tbgender.Text;
+                    employee.TRN = tbtrn.Text;
+                    employee.NIS = tbnis.Text;
+                    employee.Address_1 = tbadd1.Text;
+                    employee.Address_2 = tbadd2.Text;
+                    employee.Parish = tbparish.Text;
+                    employee.Country = tbcountry.Text;
+                    employee.Date_Of_Birth = dtdob.Value;
+                    employee.Marital_Stuts = tbms.Text;
+                    employee.Mobile_Number = tbmnum.Text;
+                    employee.Email_Address = tbeadd.Text;
+                    employee.Start_Date = dtstartdate.Value;
+                    employee.End_Date = dtenddate.Value;
+                    employee.Department = tbdepartment.Text;
+                    employee.Post = tbpost.Text;
+                    employee.EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue; // comment out this line when you are ready to this
+
+                    _db.SaveChanges();
+
+                }
+
                 else
                 {
+                    var newemployee = new Employee
+                    {
+                        First_Name = tbfname.Text,
+                        Middle_Name = tbmname.Text,
+                        Last_Name = tblname.Text,
+                        Gender = tbgender.Text,
+                        TRN = tbtrn.Text,
+                        NIS = tbnis.Text,
+                        Address_1 = tbadd1.Text,
+                        Address_2 = tbadd2.Text,
+                        Parish = tbparish.Text,
+                        Country = tbcountry.Text,
+                        Date_Of_Birth = dtdob.Value,
+                        Marital_Stuts = tbms.Text,
+                        Mobile_Number = tbmnum.Text,
+                        Email_Address = tbeadd.Text,
+                        Start_Date = dtstartdate.Value,
+                        End_Date = dtenddate.Value,
+                        Department = tbdepartment.Text,
+                        Post = tbpost.Text,
+                        EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue
+                    };
+
+                    _db.Employees.Add(newemployee);
+                    _db.SaveChanges();
                     MessageBox.Show(errorMessage);
                 }
+                //else
+                //{
+                //    MessageBox.Show(errorMessage);
+                //}
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 //throw;
-            }
-
-            if(IsEditMode)
-            {
-                var id = int.Parse(lblId.Text);
-                var employee = hRMSEntities2.Employees.FirstOrDefault(q => q.StaffId == id);
-                employee.First_Name = tbfname.Text;
-                employee.Middle_Name = tbmname.Text;
-                employee.Last_Name = tblname.Text;
-                employee.Gender = tbgender.Text;
-                employee.TRN = tbtrn.Text;
-                employee.NIS = tbnis.Text;
-                employee.Address_1 = tbadd1.Text;
-                employee.Address_2 = tbadd2.Text;
-                employee.Parish = tbparish.Text;
-                employee.Country = tbcountry.Text;
-                employee.Date_Of_Birth = dtdob.Value;
-                employee.Marital_Stuts = tbms.Text;
-                employee.Mobile_Number = tbmnum.Text;
-                employee.Email_Address = tbeadd.Text;
-                employee.Start_Date = dtstartdate.Value;
-                employee.End_Date = dtenddate.Value;
-                employee.Department = tbdepartment.Text;
-                employee.Post = tbpost.Text;
-                employee.EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue;
-
-                hRMSEntities2.SaveChanges();
-            }
-            else
-            {
-                var newemployee = new Employee
-                {
-                    First_Name = tbfname.Text,
-                    Middle_Name = tbmname.Text,
-                    Last_Name = tblname.Text,
-                    Gender = tbgender.Text,
-                    TRN = tbtrn.Text,
-                    NIS = tbnis.Text,
-                    Address_1 = tbadd1.Text,
-                    Address_2 = tbadd2.Text,
-                    Parish = tbparish.Text,
-                    Country = tbcountry.Text,
-                    Date_Of_Birth = dtdob.Value,
-                    Marital_Stuts = tbms.Text,
-                    Mobile_Number = tbmnum.Text,
-                    Email_Address = tbeadd.Text,
-                    Start_Date = dtstartdate.Value,
-                    End_Date = dtenddate.Value,
-                    Department = tbdepartment.Text,
-                    Post = tbpost.Text,
-                    EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue
-                };
-
-                hRMSEntities2.SaveChanges();
-            }
-                    
+            }      
 
         }
 
         private void CreateUser_Load(object sender, EventArgs e)
         {
-            var hrms = hRMSEntities2.EmploymentStatus.ToList();
+            var hrms = _db.EmploymentStatus.ToList();
             cbEmploymentStatus.DisplayMember = "Name";
             cbEmploymentStatus.ValueMember = "id";
             cbEmploymentStatus.DataSource = hrms;

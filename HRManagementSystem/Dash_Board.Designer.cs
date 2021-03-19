@@ -41,12 +41,12 @@ namespace HRManagementSystem
             this.appraisalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.rbVacations = new HRManagementSystem.RoundButton();
             this.rbAppraisal = new HRManagementSystem.RoundButton();
             this.rbEmployees = new HRManagementSystem.RoundButton();
             this.rbMyProfile = new HRManagementSystem.RoundButton();
             this.rbDepartments = new HRManagementSystem.RoundButton();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -78,52 +78,52 @@ namespace HRManagementSystem
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(156, 524);
+            this.menuStrip1.Size = new System.Drawing.Size(192, 524);
             this.menuStrip1.TabIndex = 32;
             this.menuStrip1.Text = "Menu";
             // 
             // dashBoardToolStripMenuItem
             // 
             this.dashBoardToolStripMenuItem.Name = "dashBoardToolStripMenuItem";
-            this.dashBoardToolStripMenuItem.Size = new System.Drawing.Size(143, 27);
+            this.dashBoardToolStripMenuItem.Size = new System.Drawing.Size(179, 27);
             this.dashBoardToolStripMenuItem.Text = "Dash Board";
             // 
             // tsmanageusers
             // 
             this.tsmanageusers.Name = "tsmanageusers";
-            this.tsmanageusers.Size = new System.Drawing.Size(143, 27);
+            this.tsmanageusers.Size = new System.Drawing.Size(179, 27);
             this.tsmanageusers.Text = "Manage Users";
             this.tsmanageusers.Click += new System.EventHandler(this.employeeToolStripMenuItem_Click);
             // 
             // myProfileToolStripMenuItem
             // 
             this.myProfileToolStripMenuItem.Name = "myProfileToolStripMenuItem";
-            this.myProfileToolStripMenuItem.Size = new System.Drawing.Size(143, 27);
-            this.myProfileToolStripMenuItem.Text = "Employee";
+            this.myProfileToolStripMenuItem.Size = new System.Drawing.Size(179, 27);
+            this.myProfileToolStripMenuItem.Text = "Manage Employee";
             this.myProfileToolStripMenuItem.Click += new System.EventHandler(this.myProfileToolStripMenuItem_Click);
             // 
             // departmentToolStripMenuItem
             // 
             this.departmentToolStripMenuItem.Name = "departmentToolStripMenuItem";
-            this.departmentToolStripMenuItem.Size = new System.Drawing.Size(143, 27);
+            this.departmentToolStripMenuItem.Size = new System.Drawing.Size(179, 27);
             this.departmentToolStripMenuItem.Text = "My Profile";
             // 
             // vacationToolStripMenuItem
             // 
             this.vacationToolStripMenuItem.Name = "vacationToolStripMenuItem";
-            this.vacationToolStripMenuItem.Size = new System.Drawing.Size(143, 27);
+            this.vacationToolStripMenuItem.Size = new System.Drawing.Size(179, 27);
             this.vacationToolStripMenuItem.Text = "Department";
             // 
             // appriasalToolStripMenuItem
             // 
             this.appriasalToolStripMenuItem.Name = "appriasalToolStripMenuItem";
-            this.appriasalToolStripMenuItem.Size = new System.Drawing.Size(143, 27);
+            this.appriasalToolStripMenuItem.Size = new System.Drawing.Size(179, 27);
             this.appriasalToolStripMenuItem.Text = "Vacation";
             // 
             // appraisalToolStripMenuItem
             // 
             this.appraisalToolStripMenuItem.Name = "appraisalToolStripMenuItem";
-            this.appraisalToolStripMenuItem.Size = new System.Drawing.Size(143, 27);
+            this.appraisalToolStripMenuItem.Size = new System.Drawing.Size(179, 27);
             this.appraisalToolStripMenuItem.Text = "Appraisal";
             // 
             // label1
@@ -141,11 +141,16 @@ namespace HRManagementSystem
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar1});
-            this.statusStrip1.Location = new System.Drawing.Point(156, 502);
+            this.statusStrip1.Location = new System.Drawing.Point(192, 502);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(737, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(701, 22);
             this.statusStrip1.TabIndex = 35;
             this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
             // 
             // rbVacations
             // 
@@ -217,11 +222,6 @@ namespace HRManagementSystem
             this.rbDepartments.TabIndex = 13;
             this.rbDepartments.UseVisualStyleBackColor = false;
             // 
-            // toolStripProgressBar1
-            // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
-            // 
             // Dash_Board
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,8 +231,6 @@ namespace HRManagementSystem
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.rbVacations);
-            this.Controls.Add(this.rbAppraisal);
             this.Controls.Add(this.rbEmployees);
             this.Controls.Add(this.rbMyProfile);
             this.Controls.Add(this.rbDepartments);

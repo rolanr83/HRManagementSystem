@@ -34,6 +34,7 @@ namespace HRManagementSystem
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.btnEdituserbtn = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvManageemployeeList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@ namespace HRManagementSystem
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Font = new System.Drawing.Font("Arial", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteUser.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteUser.Location = new System.Drawing.Point(790, 437);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(130, 43);
@@ -68,7 +69,7 @@ namespace HRManagementSystem
             // 
             // btnEdituserbtn
             // 
-            this.btnEdituserbtn.Font = new System.Drawing.Font("Arial", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdituserbtn.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdituserbtn.Location = new System.Drawing.Point(463, 437);
             this.btnEdituserbtn.Name = "btnEdituserbtn";
             this.btnEdituserbtn.Size = new System.Drawing.Size(107, 43);
@@ -79,7 +80,7 @@ namespace HRManagementSystem
             // 
             // btnAddUser
             // 
-            this.btnAddUser.Font = new System.Drawing.Font("Arial", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddUser.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddUser.Location = new System.Drawing.Point(124, 437);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(107, 43);
@@ -88,11 +89,23 @@ namespace HRManagementSystem
             this.btnAddUser.UseVisualStyleBackColor = true;
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Arial", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Location = new System.Drawing.Point(51, 65);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(107, 43);
+            this.btnRefresh.TabIndex = 6;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // ManageEmployeeListing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1068, 492);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.btnEdituserbtn);
@@ -114,5 +127,6 @@ namespace HRManagementSystem
         private System.Windows.Forms.Button btnDeleteUser;
         private System.Windows.Forms.Button btnEdituserbtn;
         private System.Windows.Forms.Button btnAddUser;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
