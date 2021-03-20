@@ -106,12 +106,6 @@
     <Compile Include="Employee.cs">
       <DependentUpon>HRMSDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="ManageEmployeeListing.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ManageEmployeeListing.Designer.cs">
-      <DependentUpon>ManageEmployeeListing.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManageEmployeeRecords.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,9 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dash_Board.resx">
       <DependentUpon>Dash_Board.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ManageEmployeeListing.resx">
-      <DependentUpon>ManageEmployeeListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageEmployeeRecords.resx">
       <DependentUpon>ManageEmployeeRecords.cs</DependentUpon>

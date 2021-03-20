@@ -41,18 +41,28 @@ namespace HRManagementSystem
             }
         }
 
-        private void employeeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmanageusers_Click(object sender, EventArgs e)
         {
-            var manageUsers = new ManageUsers();
-            manageUsers.ShowDialog();
-            manageUsers.MdiParent = this;
+            var OpenForms = Application.OpenForms.Cast<Form>();
+            var isOpen = OpenForms.Any(q => q.Name == "ManageEmployeeListing");
+            if (!isOpen)
+            {
+                var manageUsers = new ManageUsers();
+                manageUsers.ShowDialog();
+                manageUsers.MdiParent = this;
+            }
         }
 
-        private void myProfileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void myProfileToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            var employeeFrom = new ManageEmployeeRecords();
-            employeeFrom.ShowDialog();
-            MdiParent = MdiParent;
+            var OpenForms = Application.OpenForms.Cast<Form>();
+            var isOpen = OpenForms.Any(q => q.Name == "ManageEmployeeListing");
+            if (!isOpen)
+            {
+                var emploeelisting = new ManageEmployeeRecords();
+                emploeelisting.ShowDialog();
+                emploeelisting.MdiParent = this;
+            }
         }
     }
 }

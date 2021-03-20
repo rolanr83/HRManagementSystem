@@ -13,11 +13,11 @@ namespace HRManagementSystem
     public partial class CreateUser : Form
     {
         private readonly HRMSEntities2 _db;
-        private ManageEmployeeListing _manageEmployeeListing;
+        private ManageEmployeeRecords _manageEmployeeListing;
 
         public bool isEditMode; /*{ get; set; }*/
 
-        public CreateUser(ManageEmployeeListing manageEmployeeListing = null)
+        public CreateUser(ManageEmployeeRecords manageEmployeeListing = null)
         {
             InitializeComponent();
             lblTitle.Text = "Add New Employee";
@@ -28,13 +28,14 @@ namespace HRManagementSystem
 
         }
 
-        public CreateUser(Employee staffToEdit, ManageEmployeeListing manageEmployeeListing = null)
+        public CreateUser(Employee staffToEdit, ManageEmployeeRecords manageEmployeeListing = null)
         {
             InitializeComponent();
             lblTitle.Text = "Edit Employee";
             this.Text = "Edit Employee";
             _db = new HRMSEntities2();
-            if(staffToEdit == null)
+            _manageEmployeeListing = manageEmployeeListing;
+            if (staffToEdit == null)
             {
                 MessageBox.Show("Please ensure that you selected a valid record to edit");
                 Close();
@@ -122,93 +123,71 @@ namespace HRManagementSystem
                 }
                 if (isValid)
                 {
-                    var employee = new Employee();
-                    employee.First_Name = FirstName;
-                    employee.Middle_Name = MiddleName;
-                    employee.Last_Name = LastName;
-                    employee.Gender = Gender;
-                    employee.TRN = TRN;
-                    employee.NIS = NIS;
-                    employee.Address_1 = Address1;
-                    employee.Address_2 = Address2;
-                    employee.Parish = Parish;
-                    employee.Country = Country;
-                    employee.Date_Of_Birth = DOB;
-                    employee.Marital_Stuts = MaritalStatus;
-                    employee.Mobile_Number = MobileNumber;
-                    employee.Email_Address = EmailAddress;
-                    employee.Start_Date = Startdate;
-                    employee.End_Date = Enddate;
-                    employee.Department = Department;
-                    employee.Post = Post;
-                    employee.EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue;
+                    if (isEditMode)
+                    {
+                        var id = int.Parse(lblId.Text);
+                        var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
+                        employee.First_Name = tbfname.Text;
+                        employee.Middle_Name = tbmname.Text;
+                        employee.Last_Name = tblname.Text;
+                        employee.Gender = tbgender.Text;
+                        employee.TRN = tbtrn.Text;
+                        employee.NIS = tbnis.Text;
+                        employee.Address_1 = tbadd1.Text;
+                        employee.Address_2 = tbadd2.Text;
+                        employee.Parish = tbparish.Text;
+                        employee.Country = tbcountry.Text;
+                        employee.Date_Of_Birth = dtdob.Value;
+                        employee.Marital_Stuts = tbms.Text;
+                        employee.Mobile_Number = tbmnum.Text;
+                        employee.Email_Address = tbeadd.Text;
+                        employee.Start_Date = dtstartdate.Value;
+                        employee.End_Date = dtenddate.Value;
+                        employee.Department = tbdepartment.Text;
+                        employee.Post = tbpost.Text;
+                        employee.EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue; // comment out this line when you are ready to this
 
-                    _db.Employees.Add(employee);
 
-                    MessageBox.Show($"{FirstName} {LastName} Record Created ");
-                }
 
-                if (isEditMode)
-                {
-                    var id = int.Parse(lblId.Text);
-                    var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
-                    employee.First_Name = tbfname.Text;
-                    employee.Middle_Name = tbmname.Text;
-                    employee.Last_Name = tblname.Text;
-                    employee.Gender = tbgender.Text;
-                    employee.TRN = tbtrn.Text;
-                    employee.NIS = tbnis.Text;
-                    employee.Address_1 = tbadd1.Text;
-                    employee.Address_2 = tbadd2.Text;
-                    employee.Parish = tbparish.Text;
-                    employee.Country = tbcountry.Text;
-                    employee.Date_Of_Birth = dtdob.Value;
-                    employee.Marital_Stuts = tbms.Text;
-                    employee.Mobile_Number = tbmnum.Text;
-                    employee.Email_Address = tbeadd.Text;
-                    employee.Start_Date = dtstartdate.Value;
-                    employee.End_Date = dtenddate.Value;
-                    employee.Department = tbdepartment.Text;
-                    employee.Post = tbpost.Text;
-                    employee.EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue; // comment out this line when you are ready to this
+                    }
 
+                    else
+                    {
+                        var newemployee = new Employee
+                        {
+                            First_Name = tbfname.Text,
+                            Middle_Name = tbmname.Text,
+                            Last_Name = tblname.Text,
+                            Gender = tbgender.Text,
+                            TRN = tbtrn.Text,
+                            NIS = tbnis.Text,
+                            Address_1 = tbadd1.Text,
+                            Address_2 = tbadd2.Text,
+                            Parish = tbparish.Text,
+                            Country = tbcountry.Text,
+                            Date_Of_Birth = dtdob.Value,
+                            Marital_Stuts = tbms.Text,
+                            Mobile_Number = tbmnum.Text,
+                            Email_Address = tbeadd.Text,
+                            Start_Date = dtstartdate.Value,
+                            End_Date = dtenddate.Value,
+                            Department = tbdepartment.Text,
+                            Post = tbpost.Text,
+                            EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue
+                        };
+
+                        _db.Employees.Add(newemployee);
+
+                    }
                     _db.SaveChanges();
-                    MessageBox.Show("Update Operation Completed. Refresh Grid to see Changes");
+                    _manageEmployeeListing.PopulateGrid();
+                    MessageBox.Show($"{FirstName} {LastName} Record Created ");
                     Close();
 
                 }
 
-                else
-                {
-                    var newemployee = new Employee
-                    {
-                        First_Name = tbfname.Text,
-                        Middle_Name = tbmname.Text,
-                        Last_Name = tblname.Text,
-                        Gender = tbgender.Text,
-                        TRN = tbtrn.Text,
-                        NIS = tbnis.Text,
-                        Address_1 = tbadd1.Text,
-                        Address_2 = tbadd2.Text,
-                        Parish = tbparish.Text,
-                        Country = tbcountry.Text,
-                        Date_Of_Birth = dtdob.Value,
-                        Marital_Stuts = tbms.Text,
-                        Mobile_Number = tbmnum.Text,
-                        Email_Address = tbeadd.Text,
-                        Start_Date = dtstartdate.Value,
-                        End_Date = dtenddate.Value,
-                        Department = tbdepartment.Text,
-                        Post = tbpost.Text,
-                        EmploymentStatusid = (int)cbEmploymentStatus.SelectedValue
-                    };
+              
 
-                    _db.Employees.Add(newemployee);
-                    _db.SaveChanges();
-                    _manageEmployeeListing.PopulateGrid();
-                    MessageBox.Show(errorMessage);
-                }
-                
             }
             catch (Exception ex)
             {
