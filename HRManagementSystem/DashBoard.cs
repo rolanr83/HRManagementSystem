@@ -11,20 +11,20 @@ using System.Windows.Forms;
 
 namespace HRManagementSystem
 {
-    public partial class Dash_Board : Form
+    public partial class DashBoard : Form
     {
         private Login _login;
         public string _RoleName;
         public ManageUsers _manageUsers;
         
 
-        public Dash_Board()
+        public DashBoard()
         {
             InitializeComponent();
            
         }
 
-        public Dash_Board(Login login, string roleShortName)
+        public DashBoard(Login login, string roleShortName)
         {
             InitializeComponent();
             _login = login;
@@ -44,7 +44,7 @@ namespace HRManagementSystem
         private void tsmanageusers_Click(object sender, EventArgs e)
         {
             var OpenForms = Application.OpenForms.Cast<Form>();
-            var isOpen = OpenForms.Any(q => q.Name == "ManageEmployeeListing");
+            var isOpen = OpenForms.Any(q => q.Name == "ManageUsers");
             if (!isOpen)
             {
                 var manageUsers = new ManageUsers();

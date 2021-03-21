@@ -13,7 +13,9 @@ namespace HRManagementSystem
     public partial class ManageEmployeeRecords : Form
     {
         private readonly HRMSEntities2 _db;
-       // private CreateUser  CreateUser;
+        //private object lblTitle;
+
+       //private CreateUser  _CreateUser;
         public ManageEmployeeRecords()
         {
             InitializeComponent();
@@ -70,7 +72,8 @@ namespace HRManagementSystem
         private void btnAddUser_Click(object sender, EventArgs e)
         {
             var createUser = new CreateUser(this);
-            //lblTitle.Text = "Add New Employee";
+            //lblTitle.text = "Add New Employee";
+            //_CreateUser = createUser;
             createUser.MdiParent = this.MdiParent;
             createUser.Show();
         }
@@ -80,7 +83,7 @@ namespace HRManagementSystem
             var id = (int)gvManageemployeeList.SelectedRows[0].Cells["StaffId"].Value;
             var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
             var createUser = new CreateUser(employee, this);
-            //lblTitle.Text = "Edit Employee";
+            //lblTitle.text = "Edit Employee";
             createUser.MdiParent = this.MdiParent;
             createUser.Show();
         }
@@ -90,28 +93,17 @@ namespace HRManagementSystem
             var id = (int)gvManageemployeeList.SelectedRows[0].Cells["StaffId"].Value;
             var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
 
-            //            DialogResult dr = MessageBox.Show("Are You Sure You Want To Delete This Record?",
-            //                  "Delete", MessageBoxButtons.YesNoCancel,
-            //                  MessageBoxIcon.Warning);
+            DialogResult dr = MessageBox.Show("Are You Sure You Want To Delete This Record?",
+                  "Delete", MessageBoxButtons.YesNoCancel,
+                  MessageBoxIcon.Warning);
 
-            //            if (dr == DialogResult.Yes)
-            //            {
-            //                //delete vehicle from table
-            //                _db.Employees.Remove(employee);
-            //                _db.SaveChanges();
-            //            }
-            //            PopulateGrid();
-            //        }
-            //            catch (Exception ex)
-            //            {
-            //                MessageBox.Show($"Error: {ex.Message}");
-            //            }
-
-
-            _db.Employees.Remove(employee);
-           _db.SaveChanges();
-
-            //gvManageemployeeList.Refresh();
+            if (dr == DialogResult.Yes)
+            {
+                //delete vehicle from table
+                _db.Employees.Remove(employee);
+                _db.SaveChanges();
+            }
+            PopulateGrid();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

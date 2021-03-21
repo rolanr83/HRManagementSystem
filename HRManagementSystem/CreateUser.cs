@@ -88,9 +88,11 @@ namespace HRManagementSystem
                 string Address1 = tbadd1.Text;
                 string Address2 = tbadd2.Text;
                 string Parish = tbparish.Text;
+                string PostalCode = tbpostalcode.Text;
                 string Country = tbcountry.Text;
                 var DOB = dtdob.Value;
                 string MaritalStatus = tbms.Text;
+                string HomeNumber = tbpnum.Text;
                 string MobileNumber = tbmnum.Text;
                 string EmailAddress = tbeadd.Text;
                 var Startdate = dtstartdate.Value;
@@ -136,9 +138,11 @@ namespace HRManagementSystem
                         employee.Address_1 = tbadd1.Text;
                         employee.Address_2 = tbadd2.Text;
                         employee.Parish = tbparish.Text;
+                        employee.Postal_Code = tbpostalcode.Text;
                         employee.Country = tbcountry.Text;
                         employee.Date_Of_Birth = dtdob.Value;
                         employee.Marital_Stuts = tbms.Text;
+                        employee.Home_Number = tbpnum.Text;
                         employee.Mobile_Number = tbmnum.Text;
                         employee.Email_Address = tbeadd.Text;
                         employee.Start_Date = dtstartdate.Value;
@@ -164,6 +168,7 @@ namespace HRManagementSystem
                             Address_1 = tbadd1.Text,
                             Address_2 = tbadd2.Text,
                             Parish = tbparish.Text,
+                            Postal_Code = tbpostalcode.Text,
                             Country = tbcountry.Text,
                             Date_Of_Birth = dtdob.Value,
                             Marital_Stuts = tbms.Text,

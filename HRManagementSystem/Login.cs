@@ -54,7 +54,7 @@ namespace HRManagementSystem
                 {
                     var role = user.UserRoles.FirstOrDefault();
                     var roleShortName = role.Role.shortname;
-                    var dashBoard = new Dash_Board(this, roleShortName);
+                    var dashBoard = new DashBoard(this, roleShortName);
                     dashBoard.Show();
                     Hide();
                 }

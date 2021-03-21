@@ -53,7 +53,7 @@ namespace HRManagementSystem
             this.gvManageemployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvManageemployeeList.Location = new System.Drawing.Point(25, 114);
             this.gvManageemployeeList.Name = "gvManageemployeeList";
-            this.gvManageemployeeList.Size = new System.Drawing.Size(1015, 288);
+            this.gvManageemployeeList.Size = new System.Drawing.Size(1244, 250);
             this.gvManageemployeeList.TabIndex = 1;
             // 
             // btnDeleteUser
@@ -100,18 +100,18 @@ namespace HRManagementSystem
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // ManageEmployeeListing
+            // ManageEmployeeRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1068, 492);
+            this.ClientSize = new System.Drawing.Size(1294, 492);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.btnEdituserbtn);
             this.Controls.Add(this.gvManageemployeeList);
             this.Controls.Add(this.label1);
-            this.Name = "ManageEmployeeListing";
+            this.Name = "ManageEmployeeRecords";
             this.Text = "Manage Employee Listing";
             this.Load += new System.EventHandler(this.ManageEmployeeListing_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvManageemployeeList)).EndInit();

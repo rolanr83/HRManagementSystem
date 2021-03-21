@@ -91,11 +91,11 @@
     <Compile Include="CreateUser.Designer.cs">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dash_Board.cs">
+    <Compile Include="DashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dash_Board.Designer.cs">
-      <DependentUpon>Dash_Board.cs</DependentUpon>
+    <Compile Include="DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
     <Compile Include="Department.cs">
       <DependentUpon>HRMSDb.tt</DependentUpon>
@@ -188,8 +188,8 @@
     <EmbeddedResource Include="CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dash_Board.resx">
-      <DependentUpon>Dash_Board.cs</DependentUpon>
+    <EmbeddedResource Include="DashBoard.resx">
+      <DependentUpon>DashBoard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageEmployeeRecords.resx">
       <DependentUpon>ManageEmployeeRecords.cs</DependentUpon>

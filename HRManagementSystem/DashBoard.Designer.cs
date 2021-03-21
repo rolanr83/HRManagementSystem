@@ -1,7 +1,7 @@
 ﻿
 namespace HRManagementSystem
 {
-    partial class Dash_Board
+    partial class DashBoard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace HRManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dash_Board));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoard));
             this.panel1 = new System.Windows.Forms.Panel();
             this.rbAppraisal = new HRManagementSystem.RoundButton();
             this.rbEmployees = new HRManagementSystem.RoundButton();
