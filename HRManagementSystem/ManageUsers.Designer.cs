@@ -33,6 +33,8 @@ namespace HRManagementSystem
             this.btnAddNewUser = new System.Windows.Forms.Button();
             this.btnResetPassword = new System.Windows.Forms.Button();
             this.btnDeactivateUser = new System.Windows.Forms.Button();
+            this.gvUserList = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.gvUserList)).BeginInit();
             this.SuspendLayout();
             // 
             // mualabel
@@ -75,11 +77,20 @@ namespace HRManagementSystem
             this.btnDeactivateUser.UseVisualStyleBackColor = true;
             this.btnDeactivateUser.Click += new System.EventHandler(this.btnDeactivateUser_Click);
             // 
+            // gvUserList
+            // 
+            this.gvUserList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvUserList.Location = new System.Drawing.Point(156, 74);
+            this.gvUserList.Name = "gvUserList";
+            this.gvUserList.Size = new System.Drawing.Size(486, 250);
+            this.gvUserList.TabIndex = 4;
+            // 
             // ManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(668, 360);
+            this.Controls.Add(this.gvUserList);
             this.Controls.Add(this.btnDeactivateUser);
             this.Controls.Add(this.btnResetPassword);
             this.Controls.Add(this.btnAddNewUser);
@@ -87,6 +98,7 @@ namespace HRManagementSystem
             this.Name = "ManageUsers";
             this.Text = "Manage Users";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageUsers_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.gvUserList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,5 +110,6 @@ namespace HRManagementSystem
         private System.Windows.Forms.Button btnAddNewUser;
         private System.Windows.Forms.Button btnResetPassword;
         private System.Windows.Forms.Button btnDeactivateUser;
+        private System.Windows.Forms.DataGridView gvUserList;
     }
 }

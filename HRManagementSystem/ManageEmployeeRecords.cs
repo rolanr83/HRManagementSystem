@@ -89,10 +89,9 @@ namespace HRManagementSystem
                 createUser.MdiParent = this.MdiParent;
                 createUser.Show();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-               // MessageBox.Show(ex.Message); to be fixed 
-               // MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
@@ -115,10 +114,9 @@ namespace HRManagementSystem
                 }
                 PopulateGrid();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-               // MessageBox.Show(ex.Message) To be fixed 
-              //  MessageBox.Show($"Error: {ex.Message}");
+               MessageBox.Show($"Error: {ex.Message}");
             }
         }
 

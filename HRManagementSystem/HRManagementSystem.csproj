@@ -185,6 +185,7 @@
     <Compile Include="UserRole.cs">
       <DependentUpon>HRMSDb.tt</DependentUpon>
     </Compile>
+    <Compile Include="Utils.cs" />
     <EmbeddedResource Include="CreateUser.resx">
       <DependentUpon>CreateUser.cs</DependentUpon>
     </EmbeddedResource>
