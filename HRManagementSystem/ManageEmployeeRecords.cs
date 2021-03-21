@@ -80,30 +80,46 @@ namespace HRManagementSystem
 
         private void btnEdituserbtn_Click(object sender, EventArgs e)// think about a try catch 
         {
-            var id = (int)gvManageemployeeList.SelectedRows[0].Cells["StaffId"].Value;
-            var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
-            var createUser = new CreateUser(employee, this);
-            //lblTitle.text = "Edit Employee";
-            createUser.MdiParent = this.MdiParent;
-            createUser.Show();
+            try
+            {
+                var id = (int)gvManageemployeeList.SelectedRows[0].Cells["StaffId"].Value;
+                var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
+                var createUser = new CreateUser(employee, this);
+                //lblTitle.text = "Edit Employee";
+                createUser.MdiParent = this.MdiParent;
+                createUser.Show();
+            }
+            catch (Exception)
+            {
+               // MessageBox.Show(ex.Message); to be fixed 
+               // MessageBox.Show($"Error: {ex.Message}");
+            }
         }
 
         private void btnDeleteUser_Click(object sender, EventArgs e)// think about a try catch
         {
-            var id = (int)gvManageemployeeList.SelectedRows[0].Cells["StaffId"].Value;
-            var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
-
-            DialogResult dr = MessageBox.Show("Are You Sure You Want To Delete This Record?",
-                  "Delete", MessageBoxButtons.YesNoCancel,
-                  MessageBoxIcon.Warning);
-
-            if (dr == DialogResult.Yes)
+            try
             {
-                //delete vehicle from table
-                _db.Employees.Remove(employee);
-                _db.SaveChanges();
+                var id = (int)gvManageemployeeList.SelectedRows[0].Cells["StaffId"].Value;
+                var employee = _db.Employees.FirstOrDefault(q => q.StaffId == id);
+
+                DialogResult dr = MessageBox.Show("Are You Sure You Want To Delete This Record?",
+                      "Delete", MessageBoxButtons.YesNoCancel,
+                      MessageBoxIcon.Warning);
+
+                if (dr == DialogResult.Yes)
+                {
+                    //delete vehicle from table
+                    _db.Employees.Remove(employee);
+                    _db.SaveChanges();
+                }
+                PopulateGrid();
             }
-            PopulateGrid();
+            catch (Exception)
+            {
+               // MessageBox.Show(ex.Message) To be fixed 
+              //  MessageBox.Show($"Error: {ex.Message}");
+            }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
