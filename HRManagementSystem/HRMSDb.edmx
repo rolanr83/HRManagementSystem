@@ -167,7 +167,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="useid" Type="int" />
+          <Property Name="userid" Type="int" />
           <Property Name="rolesid" Type="int" />
         </EntityType>
         <Association Name="FK_Emergency_Employee">
@@ -358,7 +358,7 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="UserRoles">
-              <PropertyRef Name="useid" />
+              <PropertyRef Name="userid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -464,7 +464,6 @@
           <EntitySet Name="Staff_Education" EntityType="HRMSModel.Staff_Education" />
           <EntitySet Name="Staff_Leave" EntityType="HRMSModel.Staff_Leave" />
           <EntitySet Name="Users" EntityType="HRMSModel.User" />
-          <EntitySet Name="UserRoles" EntityType="HRMSModel.UserRole" />
           <AssociationSet Name="FK_Internal_Employment_History_Appraisal" Association="HRMSModel.FK_Internal_Employment_History_Appraisal">
             <End Role="Appraisal" EntitySet="Appraisals" />
             <End Role="Internal_Employment_History" EntitySet="Internal_Employment_History" />
@@ -521,6 +520,7 @@
             <End Role="Qualification" EntitySet="Qualifications" />
             <End Role="Staff_Education" EntitySet="Staff_Education" />
           </AssociationSet>
+          <EntitySet Name="UserRoles" EntityType="HRMSModel.UserRole" />
           <AssociationSet Name="FK_UserRoles_Roles" Association="HRMSModel.FK_UserRoles_Roles">
             <End Role="Role" EntitySet="Roles" />
             <End Role="UserRole" EntitySet="UserRoles" />
@@ -529,7 +529,7 @@
             <End Role="User" EntitySet="Users" />
             <End Role="UserRole" EntitySet="UserRoles" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="Appraisal">
           <Key>
             <PropertyRef Name="AppraisalId" />
@@ -717,16 +717,6 @@
           <Property Name="isActive" Type="Boolean" />
           <NavigationProperty Name="UserRoles" Relationship="HRMSModel.FK_UserRoles_User" FromRole="User" ToRole="UserRole" />
         </EntityType>
-        <EntityType Name="UserRole">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="useid" Type="Int32" />
-          <Property Name="rolesid" Type="Int32" />
-          <NavigationProperty Name="Role" Relationship="HRMSModel.FK_UserRoles_Roles" FromRole="UserRole" ToRole="Role" />
-          <NavigationProperty Name="User" Relationship="HRMSModel.FK_UserRoles_User" FromRole="UserRole" ToRole="User" />
-        </EntityType>
         <Association Name="FK_Internal_Employment_History_Appraisal">
           <End Type="HRMSModel.Appraisal" Role="Appraisal" Multiplicity="0..1" />
           <End Type="HRMSModel.Internal_Employment_History" Role="Internal_Employment_History" Multiplicity="*" />
@@ -895,6 +885,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userid" Type="Int32" />
+          <Property Name="rolesid" Type="Int32" />
+          <NavigationProperty Name="Role" Relationship="HRMSModel.FK_UserRoles_Roles" FromRole="UserRole" ToRole="Role" />
+          <NavigationProperty Name="User" Relationship="HRMSModel.FK_UserRoles_User" FromRole="UserRole" ToRole="User" />
+        </EntityType>
         <Association Name="FK_UserRoles_Roles">
           <End Type="HRMSModel.Role" Role="Role" Multiplicity="0..1" />
           <End Type="HRMSModel.UserRole" Role="UserRole" Multiplicity="*" />
@@ -915,7 +915,7 @@
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="UserRole">
-              <PropertyRef Name="useid" />
+              <PropertyRef Name="userid" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1101,7 +1101,7 @@
             <EntityTypeMapping TypeName="HRMSModel.UserRole">
               <MappingFragment StoreEntitySet="UserRoles">
                 <ScalarProperty Name="rolesid" ColumnName="rolesid" />
-                <ScalarProperty Name="useid" ColumnName="useid" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

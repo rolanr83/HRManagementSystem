@@ -15,7 +15,7 @@ namespace HRManagementSystem
     public partial class UserRole
     {
         public int id { get; set; }
-        public Nullable<int> useid { get; set; }
+        public Nullable<int> userid { get; set; }
         public Nullable<int> rolesid { get; set; }
     
         public virtual Role Role { get; set; }

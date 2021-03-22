@@ -15,9 +15,8 @@ namespace HRManagementSystem
     {
         private Login _login;
         public string _roleName;
-        public ManageUsers _manageUsers;
-        public User user;
-        
+        public User _user;
+
 
         public DashBoard()
         {
@@ -29,12 +28,20 @@ namespace HRManagementSystem
         {
             InitializeComponent();
             _login = login;
-            _roleName = roleShortName;
+            _user = user;
             _roleName = user.UserRoles.FirstOrDefault().Role.shortname;
         }      
        
         private void Dash_Board_Load(object sender, EventArgs e)
         {
+            if (_user.password == Utils.DefaultHashedPassword())
+            {
+                var resetPassword = new ResetPassword(_user);
+                resetPassword.ShowDialog();
+            }
+
+            var username = _user.username;//fix this
+            tsiLoggingText.Text = $"Logged in As: {username}";
             if(_roleName != "admin")
             {
                 tsmanageusers.Visible = false;
@@ -63,6 +70,11 @@ namespace HRManagementSystem
                 emploeelisting.ShowDialog();
                 emploeelisting.MdiParent = this;
             }
+        }
+
+        private void DashBoard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _login.Close();
         }
     }
 }

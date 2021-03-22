@@ -34,6 +34,7 @@ namespace HRManagementSystem
             this.btnResetPassword = new System.Windows.Forms.Button();
             this.btnDeactivateUser = new System.Windows.Forms.Button();
             this.gvUserList = new System.Windows.Forms.DataGridView();
+            this.btnrefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvUserList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@ namespace HRManagementSystem
             // 
             // btnAddNewUser
             // 
-            this.btnAddNewUser.Location = new System.Drawing.Point(12, 95);
+            this.btnAddNewUser.Location = new System.Drawing.Point(12, 74);
             this.btnAddNewUser.Name = "btnAddNewUser";
             this.btnAddNewUser.Size = new System.Drawing.Size(107, 23);
             this.btnAddNewUser.TabIndex = 1;
@@ -59,7 +60,7 @@ namespace HRManagementSystem
             // 
             // btnResetPassword
             // 
-            this.btnResetPassword.Location = new System.Drawing.Point(12, 178);
+            this.btnResetPassword.Location = new System.Drawing.Point(12, 156);
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(107, 23);
             this.btnResetPassword.TabIndex = 2;
@@ -69,7 +70,7 @@ namespace HRManagementSystem
             // 
             // btnDeactivateUser
             // 
-            this.btnDeactivateUser.Location = new System.Drawing.Point(12, 266);
+            this.btnDeactivateUser.Location = new System.Drawing.Point(12, 228);
             this.btnDeactivateUser.Name = "btnDeactivateUser";
             this.btnDeactivateUser.Size = new System.Drawing.Size(107, 23);
             this.btnDeactivateUser.TabIndex = 3;
@@ -85,11 +86,22 @@ namespace HRManagementSystem
             this.gvUserList.Size = new System.Drawing.Size(486, 250);
             this.gvUserList.TabIndex = 4;
             // 
+            // btnrefresh
+            // 
+            this.btnrefresh.Location = new System.Drawing.Point(12, 301);
+            this.btnrefresh.Name = "btnrefresh";
+            this.btnrefresh.Size = new System.Drawing.Size(107, 23);
+            this.btnrefresh.TabIndex = 5;
+            this.btnrefresh.Text = "Refresh";
+            this.btnrefresh.UseVisualStyleBackColor = true;
+            this.btnrefresh.Click += new System.EventHandler(this.btnrefresh_Click);
+            // 
             // ManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 360);
+            this.ClientSize = new System.Drawing.Size(668, 394);
+            this.Controls.Add(this.btnrefresh);
             this.Controls.Add(this.gvUserList);
             this.Controls.Add(this.btnDeactivateUser);
             this.Controls.Add(this.btnResetPassword);
@@ -98,6 +110,7 @@ namespace HRManagementSystem
             this.Name = "ManageUsers";
             this.Text = "Manage Users";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ManageUsers_FormClosing);
+            this.Load += new System.EventHandler(this.ManageUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvUserList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -111,5 +124,6 @@ namespace HRManagementSystem
         private System.Windows.Forms.Button btnResetPassword;
         private System.Windows.Forms.Button btnDeactivateUser;
         private System.Windows.Forms.DataGridView gvUserList;
+        private System.Windows.Forms.Button btnrefresh;
     }
 }

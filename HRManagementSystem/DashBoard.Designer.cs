@@ -36,7 +36,7 @@ namespace HRManagementSystem
             this.rbMyProfile = new HRManagementSystem.RoundButton();
             this.rbDepartments = new HRManagementSystem.RoundButton();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.tsiLoggingText = new System.Windows.Forms.ToolStripStatusLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.rbVacations = new HRManagementSystem.RoundButton();
@@ -131,17 +131,17 @@ namespace HRManagementSystem
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripProgressBar1});
+            this.tsiLoggingText});
             this.statusStrip1.Location = new System.Drawing.Point(0, 502);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(891, 22);
             this.statusStrip1.TabIndex = 45;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripProgressBar1
+            // tsiLoggingText
             // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
+            this.tsiLoggingText.Name = "tsiLoggingText";
+            this.tsiLoggingText.Size = new System.Drawing.Size(0, 17);
             // 
             // label1
             // 
@@ -251,7 +251,7 @@ namespace HRManagementSystem
             this.appraisalToolStripMenuItem.Size = new System.Drawing.Size(179, 27);
             this.appraisalToolStripMenuItem.Text = "Appraisal";
             // 
-            // Dash_Board
+            // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -260,8 +260,9 @@ namespace HRManagementSystem
             this.ClientSize = new System.Drawing.Size(891, 524);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
-            this.Name = "Dash_Board";
+            this.Name = "DashBoard";
             this.Text = "Dash_Board";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DashBoard_FormClosing);
             this.Load += new System.EventHandler(this.Dash_Board_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -283,7 +284,6 @@ namespace HRManagementSystem
         private RoundButton rbMyProfile;
         private RoundButton rbDepartments;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private RoundButton rbVacations;
@@ -296,5 +296,6 @@ namespace HRManagementSystem
         private System.Windows.Forms.ToolStripMenuItem vacationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem appriasalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem appraisalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel tsiLoggingText;
     }
 }
