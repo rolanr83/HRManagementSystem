@@ -34,17 +34,6 @@ namespace HRManagementSystem
 
                 var hashed_password = Utils.HashPassword(password);
 
-                //byte[] data = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
-
-                //StringBuilder sBuilder = new StringBuilder();
-
-                //for (int i = 0; i < data.Length; i++)
-                //{
-                //    sBuilder.Append(data[i].ToString("x2"));
-                //}
-
-                //var hashed_password = sBuilder.ToString();
-
 
                 var user = _Db.Users.FirstOrDefault(q => q.username == username && q.password == hashed_password
                             && q.isActive == true);
@@ -56,7 +45,7 @@ namespace HRManagementSystem
                 {
                     var role = user.UserRoles.FirstOrDefault();
                     var roleShortName = role.Role.shortname;
-                    var dashBoard = new DashBoard(this, roleShortName);
+                    var dashBoard = new DashBoard(this, user);
                     dashBoard.Show();
                     Hide();
                 }

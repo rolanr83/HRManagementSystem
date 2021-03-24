@@ -95,7 +95,6 @@ namespace HRManagementSystem
             this.lblTitle.Size = new System.Drawing.Size(0, 42);
             this.lblTitle.TabIndex = 21;
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTitle.Visible = false;
             // 
             // fnlabel
             // 

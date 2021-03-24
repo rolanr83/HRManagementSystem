@@ -24,7 +24,7 @@ namespace HRManagementSystem
            
         }
 
-        public DashBoard(Login login, string roleShortName)
+        public DashBoard(Login login, User user)
         {
             InitializeComponent();
             _login = login;
@@ -40,9 +40,9 @@ namespace HRManagementSystem
                 resetPassword.ShowDialog();
             }
 
-            var username = _user.username;//fix this
+            var username = _user.username;
             tsiLoggingText.Text = $"Logged in As: {username}";
-            if(_roleName != "admin")
+            if (_roleName != "admin")
             {
                 tsmanageusers.Visible = false;
             }
