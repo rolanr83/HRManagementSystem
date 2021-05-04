@@ -18,6 +18,7 @@ namespace HRManagementSystem
         {
             InitializeComponent();
             _db = new HRMSEntities2();
+            _user = user;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,7 +38,7 @@ namespace HRManagementSystem
                 MessageBox.Show("Password was Reset Successfully");
                 Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show(" An Error has occured. Please try again");
             }

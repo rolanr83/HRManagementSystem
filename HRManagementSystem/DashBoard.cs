@@ -45,6 +45,7 @@ namespace HRManagementSystem
             if (_roleName != "admin")
             {
                 tsmanageusers.Visible = false;
+                myProfileToolStripMenuItem.Visible = false;
             }
         }
 

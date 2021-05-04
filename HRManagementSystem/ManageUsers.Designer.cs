@@ -50,7 +50,7 @@ namespace HRManagementSystem
             // 
             // btnAddNewUser
             // 
-            this.btnAddNewUser.Location = new System.Drawing.Point(12, 74);
+            this.btnAddNewUser.Location = new System.Drawing.Point(26, 74);
             this.btnAddNewUser.Name = "btnAddNewUser";
             this.btnAddNewUser.Size = new System.Drawing.Size(107, 23);
             this.btnAddNewUser.TabIndex = 1;
@@ -60,7 +60,7 @@ namespace HRManagementSystem
             // 
             // btnResetPassword
             // 
-            this.btnResetPassword.Location = new System.Drawing.Point(12, 156);
+            this.btnResetPassword.Location = new System.Drawing.Point(26, 156);
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(107, 23);
             this.btnResetPassword.TabIndex = 2;
@@ -72,23 +72,23 @@ namespace HRManagementSystem
             // 
             this.btnDeactivateUser.Location = new System.Drawing.Point(12, 228);
             this.btnDeactivateUser.Name = "btnDeactivateUser";
-            this.btnDeactivateUser.Size = new System.Drawing.Size(107, 23);
+            this.btnDeactivateUser.Size = new System.Drawing.Size(138, 23);
             this.btnDeactivateUser.TabIndex = 3;
-            this.btnDeactivateUser.Text = "Deactivate User";
+            this.btnDeactivateUser.Text = "Activate/Deactivate User";
             this.btnDeactivateUser.UseVisualStyleBackColor = true;
             this.btnDeactivateUser.Click += new System.EventHandler(this.btnDeactivateUser_Click);
             // 
             // gvUserList
             // 
             this.gvUserList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvUserList.Location = new System.Drawing.Point(156, 74);
+            this.gvUserList.Location = new System.Drawing.Point(178, 74);
             this.gvUserList.Name = "gvUserList";
-            this.gvUserList.Size = new System.Drawing.Size(486, 250);
+            this.gvUserList.Size = new System.Drawing.Size(464, 250);
             this.gvUserList.TabIndex = 4;
             // 
             // btnrefresh
             // 
-            this.btnrefresh.Location = new System.Drawing.Point(12, 301);
+            this.btnrefresh.Location = new System.Drawing.Point(26, 301);
             this.btnrefresh.Name = "btnrefresh";
             this.btnrefresh.Size = new System.Drawing.Size(107, 23);
             this.btnrefresh.TabIndex = 5;
